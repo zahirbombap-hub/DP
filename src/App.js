@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
-import { Welcome } from "./components/welcome/welcome.tsx";
-import AguaLinda from "./routes/agua-linda.tsx";
-import Boutique from "./routes/boutique-law-firm.tsx";
-import DigitalArtist from "./routes/digital-artist.tsx";
-import HandmadeWool from "./routes/handmade-wool.tsx";
-import Shoekos from "./routes/shoekos.tsx";
-import TattooArtist from "./routes/tattoo-artist.tsx";
-import NotFound from "./routes/notfound.tsx";
+import { Welcome } from "./components/welcome/welcome.jsx";
+import AguaLinda from "./routes/agua-linda.jsx";
+import Boutique from "./routes/boutique-law-firm.jsx";
+import DigitalArtist from "./routes/digital-artist.jsx";
+import HandmadeWool from "./routes/handmade-wool.jsx";
+import Shoekos from "./routes/shoekos.jsx";
+import TattooArtist from "./routes/tattoo-artist.jsx";
+import NotFound from "./routes/notfound.jsx";
 
 export function meta() {
   return [
