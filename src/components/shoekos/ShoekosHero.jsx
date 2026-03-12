@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export function ShoekosHero() {
   return (
     <section className="relative bg-black text-white py-24 lg:py-32 overflow-hidden">

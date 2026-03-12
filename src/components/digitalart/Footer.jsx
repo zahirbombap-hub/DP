@@ -9,9 +9,9 @@ export function Footer() {
           <span className="text-white font-bold tracking-widest uppercase">LIENZO SIN LÍMITES</span>
         </div>
         <div className="flex items-center gap-8">
-          <a className="text-slate-500 hover:text-[#00ffff] transition-colors" href="#">Instagram</a>
-          <a className="text-slate-500 hover:text-[#00ffff] transition-colors" href="#">Behance</a>
-          <a className="text-slate-500 hover:text-[#00ffff] transition-colors" href="#">Twitter</a>
+          <a className="text-slate-500 hover:text-[#00ffff] transition-colors" href="#top">Instagram</a>
+          <a className="text-slate-500 hover:text-[#00ffff] transition-colors" href="#top">Behance</a>
+          <a className="text-slate-500 hover:text-[#00ffff] transition-colors" href="#top">Twitter</a>
         </div>
         <p className="text-slate-600 text-sm">© 2024 LIENZO SIN LÍMITES. TODOS LOS DERECHOS RESERVADOS.</p>
       </div>

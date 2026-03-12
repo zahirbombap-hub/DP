@@ -6,7 +6,6 @@ import TattooCanvas from "./TattoCanvas.jsx";
 export default function App() {
     const canvasRef = useRef(null);
     const menuRef = useRef(null);
-    const [isTouchDevice, setIsTouchDevice] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMachineOn, setIsMachineOn] = useState(true);
     const [selectedColor, setSelectedColor] = useState("#ffffff");
@@ -14,22 +13,6 @@ export default function App() {
     const [isDesktop, setIsDesktop] = useState(true);
 
     const colors = ["#ffffff", "#ff3d4d", "#00ffff", "#ffff00", "#00ff00", "#ff00ff"];
-
-    useEffect(() => {
-        // Detect touch device
-        const isTouchDev = () => {
-            return (
-                (typeof window !== 'undefined' &&
-                    ('ontouchstart' in window ||
-                        navigator.maxTouchPoints > 0 ||
-                        navigator.msMaxTouchPoints > 0)) ||
-                /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|BlackBerry/.test(
-                    navigator.userAgent
-                )
-            );
-        };
-        setIsTouchDevice(isTouchDev());
-    }, []);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(min-width: 1024px)');

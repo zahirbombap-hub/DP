@@ -7,7 +7,7 @@ export function Collection() {
                     <h2 className="text-4xl md:text-5xl font-['Playfair_Display',serif] font-medium">La Edición de Otoño</h2>
                     <p className="text-slate-600 dark:text-slate-400 max-w-md">Una exploración de capas de lana orgánica teñidas naturalmente, diseñadas para perdurar en el tiempo.</p>
                 </div>
-                <a className="group flex items-center gap-2 text-[#d2691e] font-bold border-b-2 border-[#d2691e]/20 pb-1 hover:border-[#d2691e] transition-all" href="#">
+                <a className="group flex items-center gap-2 text-[#d2691e] font-bold border-b-2 border-[#d2691e]/20 pb-1 hover:border-[#d2691e] transition-all" href="#top">
                     Explorar la Colección
                     <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">trending_flat</span>
                 </a>

@@ -7,7 +7,7 @@ export function Footer() {
           <p className="font-black tracking-tighter text-xs uppercase text-white font-['Space_Grotesk',sans-serif]">Don Prueba © 2026</p>
         </div>
         <nav aria-label="Redes Sociales" className="flex flex-wrap justify-center gap-8">
-          <a className="text-[9px] font-black uppercase tracking-[0.2em] text-[#a1a1aa] hover:text-[#ff3d4d] transition-colors font-['Space_Grotesk',sans-serif]" href="#">Instagram</a>
+          <a className="text-[9px] font-black uppercase tracking-[0.2em] text-[#a1a1aa] hover:text-[#ff3d4d] transition-colors font-['Space_Grotesk',sans-serif]" href="#top">Instagram</a>
           <a
             className="text-[9px] font-black uppercase tracking-[0.2em] text-[#a1a1aa] hover:text-[#ff3d4d] transition-colors font-['Space_Grotesk',sans-serif]"
             href="https://wa.me/573228988201?text=Hola%2C%20quiero%20crear%20mi%20p%C3%A1gina%20web%20para%20mi%20negocio"

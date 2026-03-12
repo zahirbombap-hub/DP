@@ -282,9 +282,9 @@ export default function CodeTattoo2() {
               </div>
             </div>
             <div className="flex gap-8 text-sm font-bold uppercase tracking-widest">
-              <a className="hover:text-primary transition-colors" href="#">Instagram</a>
-              <a className="hover:text-primary transition-colors" href="#">Galería</a>
-              <a className="hover:text-primary transition-colors" href="#">Contacto</a>
+              <a className="hover:text-primary transition-colors" href="#top">Instagram</a>
+              <a className="hover:text-primary transition-colors" href="#top">Galería</a>
+              <a className="hover:text-primary transition-colors" href="#top">Contacto</a>
             </div>
             <div className="text-[10px] font-mono text-slate-700 uppercase">
               © 2024 TINTA &amp; PUNTILLISMO. ESTÉTICA RADICAL.

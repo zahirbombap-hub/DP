@@ -15,17 +15,17 @@ export function Footer() {
                 <div>
                     <h6 className="text-xs font-bold tracking-widest uppercase mb-6 text-[#b8860b]">Firma</h6>
                     <ul className="space-y-4 text-sm text-[#2a2a2a]/70">
-                        <li><a className="hover:text-[#b8860b] transition-colors" href="#">Nuestro Equipo</a></li>
-                        <li><a className="hover:text-[#b8860b] transition-colors" href="#">Historia</a></li>
-                        <li><a className="hover:text-[#b8860b] transition-colors" href="#">Carreras</a></li>
+                        <li><a className="hover:text-[#b8860b] transition-colors" href="#top">Nuestro Equipo</a></li>
+                        <li><a className="hover:text-[#b8860b] transition-colors" href="#top">Historia</a></li>
+                        <li><a className="hover:text-[#b8860b] transition-colors" href="#top">Carreras</a></li>
                     </ul>
                 </div>
                 <div>
                     <h6 className="text-xs font-bold tracking-widest uppercase mb-6 text-[#b8860b]">Práctica</h6>
                     <ul className="space-y-4 text-sm text-[#2a2a2a]/70">
-                        <li><a className="hover:text-[#b8860b] transition-colors" href="#">Corporativo</a></li>
-                        <li><a className="hover:text-[#b8860b] transition-colors" href="#">Litigio de PI</a></li>
-                        <li><a className="hover:text-[#b8860b] transition-colors" href="#">M&A</a></li>
+                        <li><a className="hover:text-[#b8860b] transition-colors" href="#top">Corporativo</a></li>
+                        <li><a className="hover:text-[#b8860b] transition-colors" href="#top">Litigio de PI</a></li>
+                        <li><a className="hover:text-[#b8860b] transition-colors" href="#top">M&A</a></li>
                     </ul>
                 </div>
                 <div>
@@ -41,9 +41,9 @@ export function Footer() {
         <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-[#b8860b]/20 flex flex-col md:flex-row justify-between items-center text-xs text-[#2a2a2a]/30 uppercase tracking-widest font-bold">
             <p>© 2024 Lex & Co. Todos los derechos reservados.</p>
             <div className="flex gap-8 mt-4 md:mt-0">
-                <a className="hover:text-[#b8860b]" href="#">LinkedIn</a>
-                <a className="hover:text-[#b8860b]" href="#">Instagram</a>
-                <a className="hover:text-[#b8860b]" href="#">Diario</a>
+                <a className="hover:text-[#b8860b]" href="#top">LinkedIn</a>
+                <a className="hover:text-[#b8860b]" href="#top">Instagram</a>
+                <a className="hover:text-[#b8860b]" href="#top">Diario</a>
             </div>
         </div>
     </footer>

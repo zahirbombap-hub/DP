@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 export function Portfolio() {
   const images = [
     '/multimedia/FotosTattosLopez/IMG_0001.jpeg',
@@ -15,7 +15,6 @@ export function Portfolio() {
   ];
 
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
 
@@ -54,7 +53,6 @@ export function Portfolio() {
     const y = e.clientY - rect.top;
     
     setHoveredCard(index);
-    setMousePos({ x, y });
 
     // Parallax effect optimizado
     const rotateX = (y - rect.height / 2) / 15;

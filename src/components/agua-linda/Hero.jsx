@@ -18,7 +18,7 @@ export function Hero() {
           <a className="bg-[#0077BE] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-600 transition-all flex items-center justify-center gap-2" href="#el-rey">
             <span className="material-symbols-outlined">local_shipping</span> Ver Productos
           </a>
-          <a className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all" href="#">
+          <a className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all" href="#top">
             Nuestra Historia
           </a>
         </div>

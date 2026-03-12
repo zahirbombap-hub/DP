@@ -7,7 +7,7 @@ export function PopularProducts({ products }) {
           <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Tendencias en la Capital</h2>
           <p className="text-gray-500 mt-2 text-lg">Lo que están comprando los bogotanos esta semana.</p>
         </div>
-        <a href="#" className="text-blue-600 font-bold hover:text-blue-800 flex items-center gap-1 transition-colors">
+        <a href="#top" className="text-blue-600 font-bold hover:text-blue-800 flex items-center gap-1 transition-colors">
           Ver catálogo completo <span className="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
