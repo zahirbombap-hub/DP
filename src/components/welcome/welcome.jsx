@@ -3,6 +3,7 @@ import { Header } from "./Header.jsx";
 import { Hero } from "./Hero.jsx";
 import { Cases } from "./Cases.jsx";
 import { HowItWorks } from "./HowItWorks.jsx";
+import { PricingSection } from "./PricingSection.jsx";
 import { Contact } from "./Contact.jsx";
 import { Footer } from "./Footer.jsx";
 // landing.css moved to global import in src/index.js
@@ -45,6 +46,7 @@ export function Welcome() {
         <Hero />
         <Cases />
         <HowItWorks />
+        <PricingSection />
         <Contact />
       </main>
       <Footer />

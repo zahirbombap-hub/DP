@@ -31,11 +31,11 @@ export function Cases() {
   }, []);
 
   return (
-    <section className="py-16 border-y border-[#8a0012]/30 bg-[#121212]/50 reveal" id="cases-section">
-      <div className="px-6 mb-12 flex flex-col md:flex-row md:items-end justify-between max-w-screen-2xl mx-auto gap-6">
+    <section className="py-2 sm:py-3 border-y border-[#8a0012]/30 bg-[#121212]/50 reveal" id="cases-section">
+      <div className="px-4 sm:px-6 mb-10 sm:mb-12 flex flex-col md:flex-row md:items-end justify-between max-w-screen-2xl mx-auto gap-6">
         <div className="max-w-xl">
           <span className="text-[#8a0012] text-[10px] font-black tracking-[0.3em] uppercase mb-3 block font-['Space_Grotesk',sans-serif]">Archivo 02 / Clientes Seleccionados</span>
-          <h2 className="text-5xl md:text-6xl font-black tracking-tighter uppercase italic leading-none text-white font-['Space_Grotesk',sans-serif]">Páginas para Empresas</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter uppercase italic leading-none text-white font-['Space_Grotesk',sans-serif]">Páginas para Empresas</h2>
         </div>
         <div className="flex gap-3">
           <button ref={prevBtnRef} aria-label="Proyecto Anterior" id="prev-project-btn" className="size-12 border border-[#8a0012]/50 hover:border-[#ff3d4d] flex items-center justify-center transition-all group hover:bg-[#8a0012]/20 text-white">
@@ -46,7 +46,7 @@ export function Cases() {
           </button>
         </div>
       </div>
-      <div ref={containerRef} id="portfolio-container" className="flex overflow-x-auto gap-8 px-6 pb-8 snap-x no-scrollbar">
+      <div ref={containerRef} id="portfolio-container" className="flex overflow-x-auto gap-8 px-4 sm:px-6 pb-8 snap-x no-scrollbar">
         {[
           {
             href: "/tattoo-artist",

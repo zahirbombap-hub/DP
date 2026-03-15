@@ -15,7 +15,7 @@ export default function App() {
     const colors = ["#ffffff", "#ff3d4d", "#00ffff", "#ffff00", "#00ff00", "#ff00ff"];
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(min-width: 1024px)');
+        const mediaQuery = window.matchMedia('(min-width: 800px)');
         const handleResize = () => {
             setIsDesktop(mediaQuery.matches);
         };
@@ -153,7 +153,7 @@ export default function App() {
                         cursor: none !important;
                     }
                 }
-                @media (max-width: 1024px) {
+                @media (max-width: 800px) {
                     * {
                         cursor: auto !important;
                     }

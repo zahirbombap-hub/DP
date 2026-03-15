@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="p-6 border-t border-[#8a0012]/30 bg-[#050505] reveal cinematic-load">
+    <footer className="p-4 sm:p-6 border-t border-[#8a0012]/30 bg-[#050505] reveal cinematic-load">
       <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex items-center gap-4">
           <div className="size-7 bg-[#8a0012] text-white font-['JetBrains_Mono',monospace] font-extrabold text-xs flex items-center justify-center dp-logo-mark">DP</div>

@@ -25,11 +25,11 @@ export function Contact() {
   };
 
   return (
-    <section className="py-24 px-6 border-t border-[#8a0012]/30 bg-[#121212]/20 reveal" id="contact-footer">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <section className="py-3 sm:py-3 px-4 sm:px-6 border-t border-[#8a0012]/30 bg-[#121212]/20 reveal" id="contact-footer">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
           <span className="text-[#ff3d4d] text-[10px] font-black tracking-[0.4em] uppercase mb-8 block font-['Space_Grotesk',sans-serif]">¿Tu empresa necesita una solución web?</span>
-          <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter italic mb-12 leading-[0.85] text-white font-['Space_Grotesk',sans-serif]">
+          <h2 className="text-5xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter italic mb-12 leading-[0.85] text-white font-['Space_Grotesk',sans-serif]">
             VAMOS A <br /> CREAR
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12 border-t border-[#8a0012]/30 pt-12">

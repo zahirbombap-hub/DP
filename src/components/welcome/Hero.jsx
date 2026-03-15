@@ -1,6 +1,6 @@
 export function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex flex-col items-center justify-center px-6 overflow-hidden">
+    <section className="relative min-h-[70vh] sm:min-h-[80vh] flex flex-col items-center justify-center px-4 sm:px-6 overflow-hidden">
       <style>{`
         @keyframes welcome-fade {
           0%, 20% { opacity: 1; }
