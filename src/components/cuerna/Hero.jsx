@@ -20,7 +20,7 @@ export function Hero() {
           loop
           playsInline
           preload="metadata"
-          poster="/multimedia/cuerna/Tablazo aereo.jpg"
+          poster="/multimedia/cuerna/Fondo.png"
           className="w-full h-full object-cover opacity-60 scale-110 blur-[2px]"
         >
           <source src="/multimedia/cuerna/fondo.mp4" type="video/mp4" />

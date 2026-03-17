@@ -9,6 +9,7 @@ import { Footer } from "../components/cuerna/Footer.jsx";
 export default function Cuerna() {
   const [loading, setLoading] = useState(true);
   const [preloaderFading, setPreloaderFading] = useState(false);
+  
   useEffect(() => {
     document.title = "CUERNA | El Templo del Desmadre - Bogotá";
     document.documentElement.lang = "es";
@@ -114,6 +115,8 @@ export default function Cuerna() {
     }
   }, [loading]);
 
+  // don't pre-position the cursor image in the center; wait for real mousemove
+
   const year = "2026";
 
   return (
@@ -132,23 +135,23 @@ export default function Cuerna() {
 
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-50 mix-blend-overlay noise-overlay"></div>
       {loading && (
-        <div
-          className={`fixed inset-0 z-60 bg-black text-white preloader-overlay ${
-            preloaderFading ? "preloader-fade" : ""
-          }`}
-        >
-          <div className="absolute top-20 left-0 right-0 pointer-events-none">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <div className="flex flex-col items-start gap-2 z-70">
-                  <div className="text-sm text-gray-300 opacity-90">Cargando elementos...</div>
-                  <img
-                    src="/multimedia/cuerna/logo cuerna.png"
-                    alt="Cuerna logo"
-                    className="w-12 h-12 sm:w-12 sm:h-12 preloader-logo"
-                  />
-                </div>
-              </div>
-            </div>
+        <div className={`fixed inset-0 z-[100] bg-black text-white preloader-overlay ${preloaderFading ? "preloader-fade" : ""}`}>
+          {/* full-screen background image with video-like effect */}
+          <img
+            src="/multimedia/cuerna/Fondo.png"
+            alt="Preloader background"
+            className="preloader-bg pointer-events-none absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* bottom-right fixed calavera and loading text above it */}
+          <img
+            src="/multimedia/cuerna/calaver-carga.png"
+            alt="calavera carga"
+            className="preloader-corner pointer-events-none absolute bottom-10 right-4 w-12 h-12 object-contain"
+          />
+          <div className="absolute bottom-4 right-4 pointer-events-none">
+            <div className="text-sm text-gray-300 opacity-90">Cargando elementos...</div>
+          </div>
         </div>
       )}
 
@@ -210,7 +213,7 @@ export default function Cuerna() {
         }
         /* Preloader styles */
         .preloader-overlay {
-          background: #000;
+          background: #000000;
           opacity: 1;
           transition: opacity 380ms ease-out, visibility 380ms ease-out;
         }
@@ -218,9 +221,30 @@ export default function Cuerna() {
           opacity: 0;
           visibility: hidden;
         }
+        .preloader-corner {
+          animation: preloader-spin 1500ms linear infinite;
+          will-change: transform;
+        }
         .preloader-logo {
           animation: preloader-spin 900ms linear infinite;
           filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6));
+        }
+        .preloader-bg {
+          transform-origin: center;
+          transform: scale(1.1);
+          filter: blur(2px) brightness(0.9) saturate(0.98);
+          opacity: 0.6;
+          will-change: transform, filter, opacity;
+        }
+        .preloader-cursor {
+          position: fixed;
+          width: 44px;
+          height: 44px;
+          transform: translate(-50%, -50%);
+          z-index: 9999;
+          pointer-events: none;
+          animation: preloader-spin 900ms linear infinite;
+          will-change: transform;
         }
         @keyframes preloader-spin {
           from { transform: rotate(0deg); }
