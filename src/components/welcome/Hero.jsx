@@ -12,7 +12,7 @@ export function Hero() {
         style={{ animation: 'welcome-fade 2.5s ease-out forwards' }} 
       />
       <div className="flex flex-col items-center text-center z-10">
-        <div className="mb-6 px-4 py-1 border border-[#8a0012]/40 bg-[#8a0012]/10 backdrop-blur-sm">
+        <div className="mt-4 mb-6 px-4 py-1 border border-[#8a0012]/40 bg-[#8a0012]/10 backdrop-blur-sm">
           <span className="text-[#ff3d4d] text-[9px] font-black tracking-[0.4em] uppercase font-['Space_Grotesk',sans-serif]">Don Prueba // Portafolio Empresarial</span>
         </div>
         <h1 className="text-[14vw] sm:text-[11vw] leading-[0.85] font-black uppercase tracking-tighter mb-8 bg-gradient-to-b from-white via-white to-[#a1a1aa] bg-clip-text text-transparent select-none font-['Space_Grotesk',sans-serif]">
@@ -24,7 +24,7 @@ export function Hero() {
           </p>
           <div className="flex justify-center gap-4 pt-2">
             <span className="h-[1px] w-10 bg-[#8a0012] self-center"></span>
-            <span className="font-['JetBrains_Mono',monospace] text-[#ff3d4d] text-[10px] uppercase tracking-widest">Est. 2024 / Portafolio Activo</span>
+            <span className="font-['JetBrains_Mono',monospace] text-[#ff3d4d] text-[10px] uppercase tracking-widest">Est. 2026 / Portafolio Activo</span>
             <span className="h-[1px] w-10 bg-[#8a0012] self-center"></span>
           </div>
         </div>

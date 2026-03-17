@@ -8,6 +8,7 @@ export default [
   route("handmade-wool", "routes/handmade-wool.jsx"),
   route("tattoo-artist", "routes/tattoo-artist.jsx"),
   route("shoekos", "routes/shoekos.jsx"),
-  route("tattoo2", "routes/tattoo2.jsx"),
+  route("code", "routes/code.jsx"),
+  route("tattoo2", "components/welcome/codetattoo2.jsx"),
   route("*", "routes/notfound.jsx"),
 ];

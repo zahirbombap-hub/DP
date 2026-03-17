@@ -31,8 +31,8 @@ export function Cases() {
   }, []);
 
   return (
-    <section className="py-2 sm:py-3 border-y border-[#8a0012]/30 bg-[#121212]/50 reveal" id="cases-section">
-      <div className="px-4 sm:px-6 mb-10 sm:mb-12 flex flex-col md:flex-row md:items-end justify-between max-w-screen-2xl mx-auto gap-6">
+    <section className="py-2 sm:py-3 mt-4 sm:mt-10 mb-6 sm:mb-10 border-y border-[#8a0012]/30 bg-[#121212]/50 reveal" id="cases-section">
+      <div className="px-4 sm:px-6 mb-6 sm:mb-8 flex flex-col md:flex-row md:items-end justify-between max-w-screen-2xl mx-auto gap-6">
         <div className="max-w-xl">
           <span className="text-[#8a0012] text-[10px] font-black tracking-[0.3em] uppercase mb-3 block font-['Space_Grotesk',sans-serif]">Archivo 02 / Clientes Seleccionados</span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter uppercase italic leading-none text-white font-['Space_Grotesk',sans-serif]">Páginas para Empresas</h2>
@@ -49,17 +49,17 @@ export function Cases() {
       <div ref={containerRef} id="portfolio-container" className="flex overflow-x-auto gap-8 px-4 sm:px-6 pb-8 snap-x no-scrollbar">
         {[
           {
+            href: "/cuerna",
+            img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9j28O2DzwEWotdJPcOKU5HAQTB8r_jbfJJhPPclHbqTPhklnlSNunlzETDP_PKhnjCvgo3nITrjFDDg24KXGUoHwtQjcswV5cHsX33U-SWKOdbkGTupbAJ7vSBxFM2s9BaVjw_qM2sKV117BHOLWRLcNhZQ1xL0WIE22inEalXbM8blcz6_zV8N6XulMl8oereXLqs9R6JOQCEsxAKgcx-xc41FYMVwacr4tQfaJE4wFcKFkmFS0YJNHHt94pprt3ybe0EfEYHuQ",
+            subtitle: "Cuerna // Gastrobar en Bogotá",
+            title: "Gastrobar",
+            extraImgClass: "contrast-125 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+          },
+          {
             href: "/tattoo-artist",
             img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9j28O2DzwEWotdJPcOKU5HAQTB8r_jbfJJhPPclHbqTPhklnlSNunlzETDP_PKhnjCvgo3nITrjFDDg24KXGUoHwtQjcswV5cHsX33U-SWKOdbkGTupbAJ7vSBxFM2s9BaVjw_qM2sKV117BHOLWRLcNhZQ1xL0WIE22inEalXbM8blcz6_zV8N6XulMl8oereXLqs9R6JOQCEsxAKgcx-xc41FYMVwacr4tQfaJE4wFcKFkmFS0YJNHHt94pprt3ybe0EfEYHuQ",
             subtitle: "Tatuador // Estilo Puntillismo",
             title: "Zona 7 Art Studio",
-            extraImgClass: "contrast-125 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
-          },
-          {
-            href: "/tattoo2",
-            img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9j28O2DzwEWotdJPcOKU5HAQTB8r_jbfJJhPPclHbqTPhklnlSNunlzETDP_PKhnjCvgo3nITrjFDDg24KXGUoHwtQjcswV5cHsX33U-SWKOdbkGTupbAJ7vSBxFM2s9BaVjw_qM2sKV117BHOLWRLcNhZQ1xL0WIE22inEalXbM8blcz6_zV8N6XulMl8oereXLqs9R6JOQCEsxAKgcx-xc41FYMVwacr4tQfaJE4wFcKFkmFS0YJNHHt94pprt3ybe0EfEYHuQ",
-            subtitle: "Tatuador",
-            title: "Etudio de tatuaje alternativo en Bogotá",
             extraImgClass: "contrast-125 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
           },
           {
@@ -97,7 +97,12 @@ export function Cases() {
             extraImgClass: "saturate-150 brightness-75 group-hover:brightness-100"
           },
         ].map((item, index) => (
-          <Link key={index} to={item.href} className="min-w-[300px] md:min-w-[540px] snap-center group">
+          <Link
+            key={index}
+            to={item.href}
+            onClick={() => { if (typeof window !== 'undefined') window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); }}
+            className="min-w-[300px] md:min-w-[540px] snap-center group"
+          >
             <div className="relative aspect-[16/10] overflow-hidden brutal-border neon-glow bg-[#121212]">
               <img alt={`${item.title} - ${item.subtitle}`} className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-1000 ${item.extraImgClass || 'grayscale opacity-60 group-hover:opacity-100'}`} src={item.img} />
               <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>

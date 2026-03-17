@@ -48,7 +48,7 @@ export function PricingSection() {
   ];
 
   return (
-    <section className="py-3 sm:py-3 px-4 sm:px-6 max-w-screen-2xl mx-auto reveal" id="pricing-section">
+    <section className="py-3 sm:py-3 px-4 sm:px-6 mb-6 sm:mb-16 max-w-screen-2xl mx-auto reveal" id="pricing-section">
       <div className="max-w-3xl mx-auto text-center">
         <span className="text-[#ff3d4d] text-[10px] font-black tracking-[0.4em] uppercase mb-4 block font-['Space_Grotesk',sans-serif]">
           Precios

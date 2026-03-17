@@ -1,0 +1,246 @@
+.wool-page {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.wool-heading {
+  color: var(--color-heading);
+}
+
+.wool-text {
+  color: var(--color-text);
+}
+
+.wool-muted {
+  color: #7b5a45;
+}
+
+html.dark .wool-muted {
+  color: #c6b29b;
+}
+
+.wool-accent {
+  color: var(--color-accent);
+}
+
+.wool-surface {
+  background: var(--color-surface);
+}
+
+.wool-texture {
+  background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAX_04dxUFna21e7wajkiuwBbPXVt2G16Pkay-8ZBcDLgwV1H4msb7TnKifS85dyGCbjaVw_VPqlZod2VqvGntNwkKG3tDPm41DtYxDK267uQHgyztn9iWGUIfjv_maVcz7d4FBTS3cPMoOC7R-2SI5G58vseX0Xy4q6l8hJSGBd-JIOXL2nm3-hA9pmo9x_uDDOXKKPRx0xCfrxXfMU888FoMcvQpVSVsbL2AFVEcIG9JUD4t5jYCc7xKOdiWU04a_5BtSTxuGXHI);
+  background-size: cover;
+  background-position: center;
+}
+
+body.wool-body {
+  --color-bg: #e8e3da;
+  --color-surface: #f4efe6;
+  --color-text: #4a3326;
+  --color-heading: #2b1e16;
+  --color-accent: #a54616;
+
+  animation: none;
+  background-color: var(--color-bg);
+  background-image: none;
+}
+
+html.dark body.wool-body {
+  --color-bg: #211811;
+  --color-surface: #2c2118;
+  --color-text: #e1d2c0;
+  --color-heading: #f4e8d8;
+  --color-accent: #c7642a;
+
+  background-color: var(--color-bg);
+}
+
+.wool-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.wool-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 25% 30%, rgba(165, 70, 22, 0.18), transparent 55%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wool-hero-image {
+  transform: scale(1.02);
+  animation: woolSlowZoom 16s ease-in-out infinite alternate;
+  background-color: #1a120d;
+  filter: saturate(0.92) brightness(0.85);
+}
+
+.wool-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 14, 10, 0.72) 0%,
+    rgba(20, 14, 10, 0.58) 45%,
+    rgba(20, 14, 10, 0.22) 100%
+  );
+}
+
+.wool-hero-title {
+  text-shadow: 0 10px 30px rgba(20, 14, 10, 0.45);
+}
+
+.wool-underline-accent {
+  position: relative;
+}
+
+.wool-underline-accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.12em;
+  width: 100%;
+  height: 0.14em;
+  background: var(--color-accent);
+  opacity: 0.9;
+}
+.wool-fade-up {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: woolFadeUp 0.9s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.wool-float {
+  animation: woolFloat 6s ease-in-out infinite;
+}
+
+.wool-btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 14px 36px rgba(165, 70, 22, 0.2);
+}
+
+.wool-btn::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -60%;
+  width: 50%;
+  height: 120%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: skewX(-20deg);
+  opacity: 0.2;
+  transition: left 0.6s ease;
+}
+
+.wool-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(165, 70, 22, 0.3);
+}
+
+.wool-btn:hover::after {
+  left: 120%;
+}
+
+.wool-link {
+  position: relative;
+}
+
+.wool-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+
+.wool-link:hover::after {
+  width: 100%;
+}
+
+.wool-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.wool-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 60px rgba(58, 91, 58, 0.15);
+}
+
+.wool-card-image {
+  transition: transform 0.7s ease;
+}
+
+.wool-card:hover .wool-card-image {
+  transform: scale(1.05);
+}
+
+.wool-input {
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.wool-input:focus {
+  box-shadow: 0 0 0 4px rgba(165, 70, 22, 0.18);
+  border-color: rgba(165, 70, 22, 0.5);
+}
+
+.wool-btn:focus-visible,
+.wool-link:focus-visible,
+.wool-input:focus-visible {
+  outline: 2px solid rgba(165, 70, 22, 0.65);
+  outline-offset: 3px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    background-color: #fffdd0;
+  }
+  100% {
+    opacity: 1;
+    background-color: transparent;
+  }
+}
+
+@keyframes blurFocus {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes woolFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes woolFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes woolSlowZoom {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}

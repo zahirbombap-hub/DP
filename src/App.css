@@ -9,3 +9,23 @@ html, body {
 @media (prefers-color-scheme: dark) {
   :root { color-scheme: dark; }
 }
+
+/* Hero welcome overlay (no movement on the video itself) */
+.hero-welcome-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.72) 30%, rgba(0,0,0,0.0) 100%);
+  opacity: 1;
+  transition: opacity 700ms ease-out;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+/* Small helpers for staggered entrance if needed */
+.hero-stagger {
+  transition: transform 900ms cubic-bezier(.16,.84,.44,1), opacity 900ms ease-out;
+}
+
+/* Ensure smooth nav transitions on browsers that don't support tailwind backdrop utilities */
+nav#navbar {
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}

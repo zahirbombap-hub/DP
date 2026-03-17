@@ -1,3 +1,4 @@
+import "../components/shoekos/shoekos.css";
 import { Benefits } from "../components/shoekos/Benefits.jsx";
 import { Breadcrumbs } from "../components/shoekos/Breadcrumbs.jsx";
 import { PopularProducts } from "../components/shoekos/PopularProducts.jsx";
@@ -58,7 +59,7 @@ const BOGOTA_PRODUCTS = [
 
 export default function ShoekosLanding() {
   return (
-    <div className="font-sans text-gray-900 bg-white">
+    <div className="font-sans text-gray-900 bg-white shoekos-page">
       <ShoekosHero />
       <Breadcrumbs />
       <Benefits />

@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 
 export function Breadcrumbs() {
   return (
-    <nav className="flex py-4 px-6 text-sm text-gray-500 bg-gray-50 border-b border-gray-200" aria-label="Breadcrumb">
+    <nav
+      className="flex py-4 px-6 text-sm text-gray-500 bg-gray-50 border-b border-gray-200 shoekos-fade-up"
+      style={{ "--delay": "0.1s" }}
+      aria-label="Breadcrumb"
+    >
       <div className="max-w-7xl mx-auto w-full">
         <ol className="inline-flex items-center space-x-1 md:space-x-3">
           <li className="inline-flex items-center">

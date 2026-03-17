@@ -11,7 +11,11 @@ export function Benefits() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {benefits.map((item, index) => (
-            <div key={index} className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-gray-50 transition-colors">
+            <div
+              key={index}
+              className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-gray-50 transition-colors shoekos-fade-up shoekos-benefit"
+              style={{ "--delay": `${0.15 + index * 0.08}s` }}
+            >
               <div className="p-3 bg-blue-50 rounded-full text-blue-600 mb-4">
                 <span className="material-symbols-outlined text-3xl">{item.icon}</span>
               </div>

@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 
-export function ProductCard({ product }) {
+export function ProductCard({ product, delay }) {
+  const animationStyle = delay ? { "--delay": delay } : undefined;
   return (
-    <Link to={`/shoekos/producto/${product.id}`} className="group flex flex-col">
+    <Link
+      to={`/shoekos/producto/${product.id}`}
+      className="group flex flex-col shoekos-card shoekos-fade-up"
+      style={animationStyle}
+    >
       <div className="relative aspect-square rounded-xl bg-gray-100 mb-4 overflow-hidden">
         {product.isNew && (
           <div className="absolute top-3 left-3 z-10 bg-black text-white text-[10px] uppercase font-bold px-2 py-1 rounded">
@@ -13,7 +18,7 @@ export function ProductCard({ product }) {
           src={product.image} 
           alt={product.name}
           loading="lazy" 
-          className="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500 shoekos-card-image"
         />
       </div>
       <div className="flex flex-col flex-grow">
