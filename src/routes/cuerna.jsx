@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Navbar } from "../components/cuerna/Navbar.jsx";
 import { Hero } from "../components/cuerna/Hero.jsx";
 import { TempleSection } from "../components/cuerna/TempleSection.jsx";
@@ -7,6 +7,8 @@ import { ArsenalSection } from "../components/cuerna/ArsenalSection.jsx";
 import { Footer } from "../components/cuerna/Footer.jsx";
 
 export default function Cuerna() {
+  const [loading, setLoading] = useState(true);
+  const [preloaderFading, setPreloaderFading] = useState(false);
   useEffect(() => {
     document.title = "CUERNA | El Templo del Desmadre - Bogotá";
     document.documentElement.lang = "es";
@@ -31,6 +33,87 @@ export default function Cuerna() {
     };
   }, []);
 
+  // Preloader: preload key images, show spinner between 500ms and max 1500ms
+  useEffect(() => {
+    const MIN = 500;
+    const images = [
+      "/multimedia/cuerna/logo cuerna.png",
+      "/multimedia/cuerna/cuerna cuerna.png",
+      "/multimedia/cuerna/Tablazo aereo.jpg",
+      "/multimedia/cuerna/Cuerna Ajedrez.png",
+      "/multimedia/cuerna/tusa.png",
+      "/multimedia/cuerna/beso.png",
+      "/multimedia/cuerna/tablazo.png",
+      "/multimedia/dp-logo-2.png",
+    ];
+
+    // Detect network and device capability
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {};
+    const effectiveType = connection.effectiveType || "";
+    const downlink = connection.downlink || 10; // Mbps (fallback)
+    const deviceMemory = navigator.deviceMemory || 4; // GB (fallback)
+    const cores = navigator.hardwareConcurrency || 4;
+
+    const isFastConnection = downlink >= 5 && !/(2g|slow-2g|3g)/i.test(effectiveType);
+    const isHighEndDevice = deviceMemory >= 4 || cores >= 4;
+    const includeVideo = isFastConnection && isHighEndDevice;
+
+    const MAX = includeVideo ? 2500 : 1500;
+
+    const start = Date.now();
+    const loaders = images.map((src) =>
+      new Promise((res) => {
+        const img = new Image();
+        img.onload = img.onerror = () => res();
+        img.src = src;
+      })
+    );
+
+    // If network/device is fast, try to preload video enough for smooth playback
+    if (includeVideo) {
+      const VIDEO_TIMEOUT = 1800;
+      const videoPromise = new Promise((res) => {
+        try {
+          const vid = document.createElement("video");
+          vid.preload = "auto";
+          vid.muted = true;
+          vid.src = "/multimedia/cuerna/fondo.mp4";
+          const done = () => {
+            vid.pause();
+            vid.src = "";
+            res();
+          };
+          vid.addEventListener("canplaythrough", done, { once: true });
+          vid.addEventListener("loadeddata", done, { once: true });
+          vid.addEventListener("error", done, { once: true });
+          setTimeout(done, VIDEO_TIMEOUT);
+        } catch (e) {
+          res();
+        }
+      });
+      loaders.push(videoPromise);
+    }
+
+    Promise.race([Promise.all(loaders), new Promise((r) => setTimeout(r, MAX))]).then(() => {
+      const elapsed = Date.now() - start;
+      const wait = Math.max(0, MIN - elapsed);
+      const FADE_MS = 380;
+      setTimeout(() => {
+        setPreloaderFading(true);
+        setTimeout(() => setLoading(false), FADE_MS);
+      }, wait);
+    });
+  }, []);
+
+  // prevent scroll while loading
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [loading]);
+
   const year = "2026";
 
   return (
@@ -48,6 +131,26 @@ export default function Cuerna() {
       />
 
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-50 mix-blend-overlay noise-overlay"></div>
+      {loading && (
+        <div
+          className={`fixed inset-0 z-60 bg-black text-white preloader-overlay ${
+            preloaderFading ? "preloader-fade" : ""
+          }`}
+        >
+          <div className="absolute top-20 left-0 right-0 pointer-events-none">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                <div className="flex flex-col items-start gap-2 z-70">
+                  <div className="text-sm text-gray-300 opacity-90">Cargando elementos...</div>
+                  <img
+                    src="/multimedia/cuerna/logo cuerna.png"
+                    alt="Cuerna logo"
+                    className="w-12 h-12 sm:w-12 sm:h-12 preloader-logo"
+                  />
+                </div>
+              </div>
+            </div>
+        </div>
+      )}
 
       <Navbar />
       <Hero />
@@ -104,6 +207,24 @@ export default function Cuerna() {
         }
         .cuerna-root {
           min-height: max(884px, 100dvh);
+        }
+        /* Preloader styles */
+        .preloader-overlay {
+          background: #000;
+          opacity: 1;
+          transition: opacity 380ms ease-out, visibility 380ms ease-out;
+        }
+        .preloader-overlay.preloader-fade {
+          opacity: 0;
+          visibility: hidden;
+        }
+        .preloader-logo {
+          animation: preloader-spin 900ms linear infinite;
+          filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6));
+        }
+        @keyframes preloader-spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
       `}</style>
     </div>
