@@ -69,12 +69,12 @@ export function Portfolio() {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-slate-50 dark:bg-black overflow-hidden relative transition-colors duration-300">
+    <section id="work" className="py-12 sm:py-16 md:py-20 bg-slate-50 dark:bg-black overflow-hidden relative transition-colors duration-300 scroll-mt-[80px]">
       <div className="absolute inset-0 mandala-texture z-0"></div>
-      <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-12 relative z-10">
-        <div id="work" className="flex flex-col gap-2 border-l-4 border-[#0077BE] dark:border-[#8a0012] pl-4 scroll-mt-24 transition-colors duration-300">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tighter uppercase italic leading-none text-slate-900 dark:text-white">PORTAFOLIO DE CLIENTES</h2>
-          <p className="text-[#0077BE] dark:text-[#8a0012] font-mono text-[9px] uppercase tracking-[0.2em] font-bold transition-colors duration-300">ZONA 7 ART / PUNTILLISMO RADICAL</p>
+      <div id="paginas" className="max-w-7xl mx-auto px-4 sm:px-6 mb-6 sm:mb-8 md:mb-12 relative z-10">
+        <div className="flex flex-col gap-1 sm:gap-2 border-l-4 border-[#0077BE] dark:border-[#8a0012] pl-3 sm:pl-4 transition-colors duration-300">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter uppercase italic leading-none text-slate-900 dark:text-white">PORTAFOLIO DE CLIENTES</h2>
+          <p className="text-[#0077BE] dark:text-[#8a0012] font-mono text-[7px] sm:text-[9px] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-bold transition-colors duration-300">ZONA 7 ART / PUNTILLISMO RADICAL</p>
         </div>
       </div>
       <div className="carousel-container relative z-10 w-full">

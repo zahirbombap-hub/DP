@@ -22,7 +22,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
         <div className="flex items-center gap-3">
           <a
-            className="hidden flex items-center justify-center transition-transform duration-200 hover:scale-[1.03] transform-gpu"
+            className="flex items-center justify-center transition-transform duration-200 hover:scale-[1.03] transform-gpu"
             href="/"
             aria-label="Don Prueba"
           >

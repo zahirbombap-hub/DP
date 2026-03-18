@@ -1,38 +1,27 @@
 export function Location() {
   return (
-    <section className="py-24 px-6 relative z-10" id="location">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative z-10" id="location">
       <div className="max-w-4xl mx-auto relative">
-        <h2 className="text-3xl md:text-6xl font-black uppercase italic tracking-tighter mb-8 md:mb-12 text-white">ESTUDIO BOSA / <span className="text-[#0077BE] dark:text-[#8a0012] transition-colors duration-300">LA INDEPENDENCIA</span></h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="map-container group relative aspect-square bg-zinc-950 border-4 border-white/10 shadow-[0px_0px_50px_rgba(0,119,190,0.3)] dark:shadow-[0px_0px_50px_rgba(138,0,18,0.3)] overflow-hidden map-grid cursor-pointer transition-all duration-300">
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-              <div className="relative w-full h-full flex items-center justify-center">
-                <div className="absolute w-[120%] h-[1px] bg-white/5 rotate-45"></div>
-                <div className="absolute w-[120%] h-[1px] bg-white/5 -rotate-45"></div>
-                <div className="relative flex flex-col items-center">
-                  <span className="material-symbols-outlined text-[#0077BE] dark:text-[#8a0012] text-9xl drop-shadow-[0_0_30px_rgba(0,119,190,0.9)] dark:drop-shadow-[0_0_30px_rgba(138,0,18,0.9)] high-fidelity-pin animate-bounce transition-all duration-300">location_on</span>
-                  <div className="bg-[#0077BE] dark:bg-[#8a0012] text-white font-black text-[11px] px-4 py-1.5 mt-4 uppercase tracking-widest border border-white/20 shadow-2xl transition-colors duration-300">
-                    BARRIO LA INDEPENDENCIA
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="map-interact-layer absolute inset-0 z-30 flex flex-col items-center justify-center bg-black/70 group-hover:bg-black/30 transition-all duration-700">
-              <div className="mt-48 w-full text-center">
-                <div className="animate-pulse-slow">
-                  <p className="font-display text-[12px] font-black tracking-[0.4em] text-white bg-[#0077BE]/95 dark:bg-[#8a0012]/95 inline-block px-6 py-3 uppercase border-2 border-white/10 shadow-2xl transition-colors duration-300">
-                    TOCA PARA VER EL MAPA
-                  </p>
-                </div>
-              </div>
-            </div>
-            <a className="absolute inset-0 z-40 opacity-0" href="https://maps.google.com" target="_blank" rel="noreferrer">Ver ubicación</a>
+        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase italic tracking-tighter mb-6 sm:mb-8 md:mb-12 text-white leading-tight">ESTUDIO BOSA / <span className="text-[#0077BE] dark:text-[#8a0012] transition-colors duration-300">LA INDEPENDENCIA</span></h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start md:items-center">
+          <div className="map-container group relative aspect-square bg-gray-900 border border-gray-800 overflow-hidden transition-all duration-300">
+            <iframe
+              allowFullScreen
+              height="100%"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.156!2d-74.2!3d4.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f0000000000001%3A0x0!2zNzMgU3VyIDczIFR2LiA4OGIsIEJvc2HDoSwgQm9nb3TDoQ!5e0!3m2!1sen!2sco!4v1708801234567"
+              style={{ border: 0, filter: "grayscale(1) invert(1) contrast(1.2) brightness(0.8)" }}
+              width="100%"
+              title="Ubicación Estudio Bosa"
+            ></iframe>
+            <div className="absolute inset-0 pointer-events-none border-4 border-[#0077BE]/20 dark:border-[#8a0012]/20"></div>
           </div>
-          <div className="flex flex-col gap-8">
-            <div className="bg-black/40 backdrop-blur-md p-8 border-l-8 border-[#0077BE] dark:border-[#8a0012] shadow-xl transition-colors duration-300">
-              <h3 className="font-black text-3xl uppercase mb-4 text-white">COORDENADAS</h3>
-              <p className="text-slate-200 text-xl leading-relaxed">
-                Bosa, Bogotá. Sector La Independencia. Agenda tu visita para coordenadas exactas del estudio privado.
+          <div className="flex flex-col gap-5 sm:gap-8">
+            <div className="bg-black/40 backdrop-blur-md p-5 sm:p-8 border-l-8 border-[#0077BE] dark:border-[#8a0012] shadow-xl transition-colors duration-300">
+              <h3 className="font-black text-xl sm:text-2xl md:text-3xl uppercase mb-3 sm:mb-4 text-white">COORDENADAS</h3>
+              <p className="text-slate-200 text-base sm:text-lg md:text-xl leading-relaxed">
+                73 Sur73 Tv. 88b, Bosa. Bogotá. Agenda tu visita para más detalles del estudio.
               </p>
             </div>
           </div>

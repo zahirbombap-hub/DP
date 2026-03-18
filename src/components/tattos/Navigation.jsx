@@ -12,7 +12,7 @@ export function Navigation() {
           DP
         </a>
         <div className="flex gap-2">
-          <a className="bg-[#8a0012] text-white px-3 py-1.5 font-black border-2 border-black text-xs uppercase shadow-[2px_2px_0px_black] hover:translate-y-0.5 transition-all" href="#work">PORTAFOLIO</a>
+          <a className="bg-[#8a0012] text-white px-3 py-1.5 font-black border-2 border-black text-xs uppercase shadow-[2px_2px_0px_black] hover:translate-y-0.5 transition-all" href="#paginas">PORTAFOLIO</a>
           <a className="bg-white text-black px-3 py-1.5 font-black border-2 border-black text-xs uppercase shadow-[2px_2px_0px_#8a0012] hover:translate-y-0.5 transition-all" href="#booking">AGENDAR</a>
         </div>
       </div>

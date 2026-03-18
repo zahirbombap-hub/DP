@@ -1,6 +1,84 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
+function CaseCard({ item }) {
+  const videoRef = useRef(null);
+  const isPlayingRef = useRef(false);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current && item.video) {
+      // Resetear al inicio para reproducción desde el comienzo
+      videoRef.current.currentTime = 0;
+      isPlayingRef.current = true;
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current && item.video) {
+      // Solo pausar si el video sigue reproduciéndose
+      if (!videoRef.current.ended) {
+        isPlayingRef.current = false;
+        videoRef.current.pause();
+        videoRef.current.currentTime = videoRef.current.duration;
+      }
+    }
+  };
+
+  const handleVideoLoadedMetadata = () => {
+    if (videoRef.current && item.video) {
+      // Inicialmente ir al último frame
+      videoRef.current.currentTime = videoRef.current.duration;
+    }
+  };
+
+  return (
+    <Link
+      to={item.href}
+      onClick={() => { if (typeof window !== 'undefined') window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); }}
+      className="min-w-[300px] md:min-w-[540px] snap-center group"
+    >
+      <div 
+        className="relative aspect-[16/10] overflow-hidden brutal-border neon-glow bg-[#121212]"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {item.video ? (
+          <video
+            ref={videoRef}
+            className="w-full h-full object-cover"
+            muted
+            preload="auto"
+            onLoadedMetadata={handleVideoLoadedMetadata}
+            onEnded={() => {
+              if (videoRef.current) {
+                isPlayingRef.current = false;
+                videoRef.current.currentTime = videoRef.current.duration;
+              }
+            }}
+          >
+            <source src={item.video} type="video/mp4" />
+          </video>
+        ) : (
+          <img 
+            alt={`${item.title} - ${item.subtitle}`} 
+            className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-1000 ${item.extraImgClass || 'grayscale opacity-60 group-hover:opacity-100'}`} 
+            src={item.img} 
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
+        <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+          <div>
+            <p className="text-[#8a0012] text-[9px] font-black tracking-[0.2em] mb-2 uppercase font-['Space_Grotesk',sans-serif]">{item.subtitle}</p>
+            <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter font-['Space_Grotesk',sans-serif]">{item.title}</h3>
+          </div>
+          <span className="material-symbols-outlined text-[#ff3d4d] text-3xl group-hover:translate-x-2 transition-transform">trending_flat</span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
 export function Cases() {
   const containerRef = useRef(null);
   const prevBtnRef = useRef(null);
@@ -50,9 +128,10 @@ export function Cases() {
         {[
           {
             href: "/cuerna",
-            img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9j28O2DzwEWotdJPcOKU5HAQTB8r_jbfJJhPPclHbqTPhklnlSNunlzETDP_PKhnjCvgo3nITrjFDDg24KXGUoHwtQjcswV5cHsX33U-SWKOdbkGTupbAJ7vSBxFM2s9BaVjw_qM2sKV117BHOLWRLcNhZQ1xL0WIE22inEalXbM8blcz6_zV8N6XulMl8oereXLqs9R6JOQCEsxAKgcx-xc41FYMVwacr4tQfaJE4wFcKFkmFS0YJNHHt94pprt3ybe0EfEYHuQ",
+            img: "",
             subtitle: "Cuerna // Gastrobar en Bogotá",
             title: "Gastrobar",
+            video: "/multimedia/cuerna/previsualizerCuerna.mp4",
             extraImgClass: "contrast-125 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
           },
           {
@@ -97,24 +176,7 @@ export function Cases() {
             extraImgClass: "saturate-150 brightness-75 group-hover:brightness-100"
           },
         ].map((item, index) => (
-          <Link
-            key={index}
-            to={item.href}
-            onClick={() => { if (typeof window !== 'undefined') window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); }}
-            className="min-w-[300px] md:min-w-[540px] snap-center group"
-          >
-            <div className="relative aspect-[16/10] overflow-hidden brutal-border neon-glow bg-[#121212]">
-              <img alt={`${item.title} - ${item.subtitle}`} className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-1000 ${item.extraImgClass || 'grayscale opacity-60 group-hover:opacity-100'}`} src={item.img} />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                <div>
-                  <p className="text-[#8a0012] text-[9px] font-black tracking-[0.2em] mb-2 uppercase font-['Space_Grotesk',sans-serif]">{item.subtitle}</p>
-                  <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter font-['Space_Grotesk',sans-serif]">{item.title}</h3>
-                </div>
-                <span className="material-symbols-outlined text-[#ff3d4d] text-3xl group-hover:translate-x-2 transition-transform">trending_flat</span>
-              </div>
-            </div>
-          </Link>
+          <CaseCard key={index} item={item} />
         ))}
       </div>
     </section>
