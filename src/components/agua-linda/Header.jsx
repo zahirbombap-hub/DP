@@ -1,3 +1,5 @@
+import { Icon } from "../Icon.jsx";
+
 // use public asset
 
 export function Header() {
@@ -20,7 +22,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-white/10 dark:hover:bg-slate-800 transition-colors text-white dark:text-slate-200">
-            <span className="material-symbols-outlined text-xl">dark_mode</span>
+            <Icon name="dark_mode" className="text-xl" />
           </button>
           <a className="bg-white text-[#0B5ED7] dark:bg-[#0077BE] dark:text-white hover:bg-slate-100 dark:hover:bg-blue-600 px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-black/10 dark:shadow-[#0077BE]/20 hover:scale-105" href="#top">
             Pide Ahora

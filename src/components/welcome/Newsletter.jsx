@@ -1,8 +1,10 @@
+import { Icon } from "../Icon.jsx";
+
 export function Newsletter() {
   return (
     <section className="py-24 bg-[#FFFDD0] dark:bg-white/5 border-y border-[#d2691e]/10">
       <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
-        <span className="material-symbols-outlined text-[#d2691e] text-5xl">mail</span>
+        <Icon name="mail" className="text-[#d2691e] text-5xl mx-auto" />
         <div className="space-y-4">
           <h2 className="text-4xl font-['Playfair_Display',serif] font-medium">Únete a nuestro Círculo de Lana</h2>
           <p className="text-slate-600 dark:text-slate-400">Recibe historias de nuestro taller, acceso a nuevos volúmenes del catálogo y consejos para el cuidado de la lana.</p>

@@ -37,7 +37,13 @@ export function Hero() {
             className={`max-w-[90%] md:max-w-[600px] h-auto object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] transform transition-all duration-1000 ease-out ${
               mounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-95"
             }`}
+            decoding="async"
+            fetchPriority="high"
+            height="538"
+            loading="eager"
             src="/multimedia/cuerna/cuerna cuerna.png"
+            sizes="(max-width: 768px) 90vw, 600px"
+            width="1280"
             data-purpose="hero-logo"
           />
         </div>

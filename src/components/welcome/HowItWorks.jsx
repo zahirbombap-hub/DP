@@ -1,3 +1,5 @@
+import { Icon } from "../Icon.jsx";
+
 export function HowItWorks() {
   return (
     <section className="py-3 sm:py-3 px-4 sm:px-6 max-w-screen-2xl mx-auto reveal" id="how-it-works">
@@ -20,18 +22,18 @@ export function HowItWorks() {
           {
             title: "Diseño estratégico",
             text: "Prototipos visuales y estilos personalizados alineados con la identidad del negocio. Interfaces impactantes diseñadas para captar atención y generar confianza.",
-            icon: "auto_awesome"
+            icon: "auto_awesome",
           },
           {
             title: "Desarrollo profesional",
             text: "Código limpio, estructuras escalables y buenas prácticas de ingeniería. Control de versiones con Git y arquitecturas pensadas para crecer con tu negocio.",
-            icon: "code"
+            icon: "code",
           },
           {
             title: "Lanzamiento optimizado",
             text: "Despliegue seguro, optimización de rendimiento y monitoreo inicial para asegurar que tu producto funcione rápido, estable y listo para atraer clientes.",
-            icon: "rocket_launch"
-          }
+            icon: "rocket_launch",
+          },
         ].map((step, index) => (
           <div
             key={index}
@@ -39,7 +41,7 @@ export function HowItWorks() {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="size-11 rounded-full bg-[#8a0012]/15 border border-[#8a0012]/40 flex items-center justify-center">
-                <span className="material-symbols-outlined text-[#ff3d4d] text-xl">{step.icon}</span>
+                <Icon name={step.icon} className="text-[#ff3d4d] text-xl" />
               </div>
               <h3 className="text-xl font-black uppercase tracking-tight text-white font-['Space_Grotesk',sans-serif]">
                 {step.title}

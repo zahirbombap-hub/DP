@@ -28,9 +28,13 @@ html.dark .wool-muted {
 }
 
 .wool-texture {
-  background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAX_04dxUFna21e7wajkiuwBbPXVt2G16Pkay-8ZBcDLgwV1H4msb7TnKifS85dyGCbjaVw_VPqlZod2VqvGntNwkKG3tDPm41DtYxDK267uQHgyztn9iWGUIfjv_maVcz7d4FBTS3cPMoOC7R-2SI5G58vseX0Xy4q6l8hJSGBd-JIOXL2nm3-hA9pmo9x_uDDOXKKPRx0xCfrxXfMU888FoMcvQpVSVsbL2AFVEcIG9JUD4t5jYCc7xKOdiWU04a_5BtSTxuGXHI);
-  background-size: cover;
-  background-position: center;
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255, 255, 255, 0.12) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(0, 0, 0, 0.06) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(0, 0, 0, 0.05) 25%, rgba(0, 0, 0, 0.06) 25%);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0;
 }
 
 body.wool-body {
@@ -73,7 +77,12 @@ html.dark body.wool-body {
   transform: scale(1.02);
   animation: woolSlowZoom 16s ease-in-out infinite alternate;
   background-color: #1a120d;
-  filter: saturate(0.92) brightness(0.85);
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 72% 18%, rgba(165, 70, 22, 0.26), transparent 32%),
+    radial-gradient(circle at 50% 72%, rgba(255, 255, 255, 0.1), transparent 34%),
+    linear-gradient(135deg, #352519 0%, #1a120d 52%, #120b08 100%);
+  filter: saturate(0.92) brightness(0.9);
 }
 
 .wool-hero-overlay {

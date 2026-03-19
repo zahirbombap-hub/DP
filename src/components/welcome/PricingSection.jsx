@@ -1,3 +1,5 @@
+import { Icon } from "../Icon.jsx";
+
 export function PricingSection() {
   const plans = [
     {
@@ -9,11 +11,11 @@ export function PricingSection() {
         "Animaciones y transiciones visuales",
         "Diseño responsive para celulares",
         "Formulario de contacto",
-        "Optimización básica de rendimiento"
+        "Optimización básica de rendimiento",
       ],
       cta: "Empezar proyecto",
       icon: "bolt",
-      highlight: false
+      highlight: false,
     },
     {
       name: "Negocio",
@@ -24,11 +26,11 @@ export function PricingSection() {
         "Sistema de login o registro",
         "Panel administrativo básico",
         "Catálogo de productos o servicios",
-        "Integraciones iniciales"
+        "Integraciones iniciales",
       ],
       cta: "Elegir plan",
       icon: "workspace_premium",
-      highlight: true
+      highlight: true,
     },
     {
       name: "Tienda",
@@ -39,12 +41,12 @@ export function PricingSection() {
         "Carrito de compras",
         "Integración de pagos",
         "Panel de gestión de ventas",
-        "Arquitectura escalable"
+        "Arquitectura escalable",
       ],
       cta: "Solicitar cotización",
       icon: "shopping_cart",
-      highlight: false
-    }
+      highlight: false,
+    },
   ];
 
   return (
@@ -72,10 +74,12 @@ export function PricingSection() {
             }`}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className={`size-11 rounded-full border flex items-center justify-center ${
-                plan.highlight ? "border-[#ff3d4d]/60 bg-[#ff3d4d]/10" : "border-[#8a0012]/40 bg-[#8a0012]/15"
-              }`}>
-                <span className="material-symbols-outlined text-[#ff3d4d] text-xl">{plan.icon}</span>
+              <div
+                className={`size-11 rounded-full border flex items-center justify-center ${
+                  plan.highlight ? "border-[#ff3d4d]/60 bg-[#ff3d4d]/10" : "border-[#8a0012]/40 bg-[#8a0012]/15"
+                }`}
+              >
+                <Icon name={plan.icon} className="text-[#ff3d4d] text-xl" />
               </div>
               <h3 className="text-xl font-black uppercase tracking-tight text-white font-['Space_Grotesk',sans-serif]">
                 Plan {plan.name}
@@ -90,7 +94,7 @@ export function PricingSection() {
             <ul className="mt-5 space-y-2 text-sm text-[#a1a1aa] font-['Space_Grotesk',sans-serif]">
               {plan.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2">
-                  <span className="material-symbols-outlined text-[#ff3d4d] text-base">check_circle</span>
+                  <Icon name="check_circle" className="text-[#ff3d4d] text-base mt-0.5" />
                   <span>{feature}</span>
                 </li>
               ))}
@@ -98,9 +102,7 @@ export function PricingSection() {
 
             <button
               className={`mt-6 w-full py-3 text-[10px] font-black uppercase tracking-widest transition-all ${
-                plan.highlight
-                  ? "cta-button text-white"
-                  : "border border-[#8a0012]/50 text-white hover:border-[#ff3d4d]"
+                plan.highlight ? "cta-button text-white" : "border border-[#8a0012]/50 text-white hover:border-[#ff3d4d]"
               }`}
               type="button"
             >

@@ -1,17 +1,19 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback } from "react";
+import { Icon } from "../Icon.jsx";
+
 export function Portfolio() {
   const images = [
-    '/multimedia/FotosTattosLopez/IMG_0001.jpeg',
-    '/multimedia/FotosTattosLopez/IMG_0002.jpeg',
-    '/multimedia/FotosTattosLopez/IMG_0003.jpeg',
-    '/multimedia/FotosTattosLopez/IMG_0004.jpeg',
-    '/multimedia/FotosTattosLopez/IMG_0005.jpeg',
-    '/multimedia/FotosTattosLopez/IMG_0006.jpeg',
-    '/multimedia/FotosTattosLopez/IMG_0007.jpeg',
-    '/multimedia/FotosTattosLopez/IMG_0009.jpeg',
-    '/multimedia/FotosTattosLopez/IMG_0010.jpeg',
-    '/multimedia/FotosTattosLopez/IMG_0011.jpeg',
-    '/multimedia/FotosTattosLopez/IMG_0008.png',
+    "/multimedia/FotosTattosLopez/IMG_0001.jpeg",
+    "/multimedia/FotosTattosLopez/IMG_0002.jpeg",
+    "/multimedia/FotosTattosLopez/IMG_0003.jpeg",
+    "/multimedia/FotosTattosLopez/IMG_0004.jpeg",
+    "/multimedia/FotosTattosLopez/IMG_0005.jpeg",
+    "/multimedia/FotosTattosLopez/IMG_0006.jpeg",
+    "/multimedia/FotosTattosLopez/IMG_0007.jpeg",
+    "/multimedia/FotosTattosLopez/IMG_0009.jpeg",
+    "/multimedia/FotosTattosLopez/IMG_0010.jpeg",
+    "/multimedia/FotosTattosLopez/IMG_0011.jpeg",
+    "/multimedia/FotosTattosLopez/IMG_0008.png",
   ];
 
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -21,7 +23,7 @@ export function Portfolio() {
   const openLightbox = (index) => {
     setLightboxIndex(index);
     setIsClosing(false);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = useCallback(() => {
@@ -29,7 +31,7 @@ export function Portfolio() {
     setTimeout(() => {
       setLightboxIndex(null);
       setIsClosing(false);
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }, 300);
   }, []);
 
@@ -51,13 +53,12 @@ export function Portfolio() {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     setHoveredCard(index);
 
-    // Parallax effect optimizado
     const rotateX = (y - rect.height / 2) / 15;
     const rotateY = (x - rect.width / 2) / -15;
-    
+
     const el = e.currentTarget;
     el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
   };
@@ -65,7 +66,7 @@ export function Portfolio() {
   const handleMouseLeave = (e) => {
     setHoveredCard(null);
     const el = e.currentTarget;
-    el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+    el.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
   };
 
   return (
@@ -78,95 +79,86 @@ export function Portfolio() {
         </div>
       </div>
       <div className="carousel-container relative z-10 w-full">
-          <div className="carousel-track animate-scroll-left-slow">
-            <div className="flex">
-              {images.map((src, i) => (
-                <div 
-                  key={`l-${i}`} 
-                  className="gallery-card sawtooth-edge gallery-card-interactive"
-                  onClick={() => openLightbox(i)}
-                  onMouseMove={(e) => handleMouseMove(e, i)}
-                  onMouseLeave={handleMouseLeave}
-                  style={{ transition: hoveredCard === i ? 'none' : 'transform 0.3s ease-out' }}
-                >
-                  <img className="w-full h-full object-cover" src={src} alt="Tattoo work" loading="lazy" decoding="async" />
-                </div>
-              ))}
-              {images.map((src, i) => (
-                <div 
-                  key={`l-dup-${i}`} 
-                  className="gallery-card sawtooth-edge gallery-card-interactive"
-                  onClick={() => openLightbox(i)}
-                  onMouseMove={(e) => handleMouseMove(e, i + images.length)}
-                  onMouseLeave={handleMouseLeave}
-                  style={{ transition: hoveredCard === i + images.length ? 'none' : 'transform 0.3s ease-out' }}
-                >
-                  <img className="w-full h-full object-cover" src={src} alt="Tattoo work" loading="lazy" decoding="async" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="carousel-track animate-scroll-right-slow">
-            <div className="flex">
-              {images.map((src, i) => (
-                <div 
-                  key={`r-${i}`} 
-                  className="gallery-card sawtooth-edge gallery-card-interactive"
-                  onClick={() => openLightbox(i)}
-                  onMouseMove={(e) => handleMouseMove(e, i + 100)}
-                  onMouseLeave={handleMouseLeave}
-                  style={{ transition: hoveredCard === i + 100 ? 'none' : 'transform 0.3s ease-out' }}
-                >
-                  <img className="w-full h-full object-cover" src={src} alt="Tattoo work" loading="lazy" decoding="async" />
-                </div>
-              ))}
-              {images.map((src, i) => (
-                <div 
-                  key={`r-dup-${i}`} 
-                  className="gallery-card sawtooth-edge gallery-card-interactive"
-                  onClick={() => openLightbox(i)}
-                  onMouseMove={(e) => handleMouseMove(e, i + 100 + images.length)}
-                  onMouseLeave={handleMouseLeave}
-                  style={{ transition: hoveredCard === i + 100 + images.length ? 'none' : 'transform 0.3s ease-out' }}
-                >
-                  <img className="w-full h-full object-cover" src={src} alt="Tattoo work" loading="lazy" decoding="async" />
-                </div>
-              ))}
-            </div>
+        <div className="carousel-track animate-scroll-left-slow">
+          <div className="flex">
+            {images.map((src, i) => (
+              <div
+                key={`l-${i}`}
+                className="gallery-card sawtooth-edge gallery-card-interactive"
+                onClick={() => openLightbox(i)}
+                onMouseMove={(e) => handleMouseMove(e, i)}
+                onMouseLeave={handleMouseLeave}
+                style={{ transition: hoveredCard === i ? "none" : "transform 0.3s ease-out" }}
+              >
+                <img className="w-full h-full object-cover" src={src} alt="Tattoo work" loading="lazy" decoding="async" />
+              </div>
+            ))}
+            {images.map((src, i) => (
+              <div
+                key={`l-dup-${i}`}
+                className="gallery-card sawtooth-edge gallery-card-interactive"
+                onClick={() => openLightbox(i)}
+                onMouseMove={(e) => handleMouseMove(e, i + images.length)}
+                onMouseLeave={handleMouseLeave}
+                style={{ transition: hoveredCard === i + images.length ? "none" : "transform 0.3s ease-out" }}
+              >
+                <img className="w-full h-full object-cover" src={src} alt="Tattoo work" loading="lazy" decoding="async" />
+              </div>
+            ))}
           </div>
         </div>
-      
+        <div className="carousel-track animate-scroll-right-slow">
+          <div className="flex">
+            {images.map((src, i) => (
+              <div
+                key={`r-${i}`}
+                className="gallery-card sawtooth-edge gallery-card-interactive"
+                onClick={() => openLightbox(i)}
+                onMouseMove={(e) => handleMouseMove(e, i + 100)}
+                onMouseLeave={handleMouseLeave}
+                style={{ transition: hoveredCard === i + 100 ? "none" : "transform 0.3s ease-out" }}
+              >
+                <img className="w-full h-full object-cover" src={src} alt="Tattoo work" loading="lazy" decoding="async" />
+              </div>
+            ))}
+            {images.map((src, i) => (
+              <div
+                key={`r-dup-${i}`}
+                className="gallery-card sawtooth-edge gallery-card-interactive"
+                onClick={() => openLightbox(i)}
+                onMouseMove={(e) => handleMouseMove(e, i + 100 + images.length)}
+                onMouseLeave={handleMouseLeave}
+                style={{ transition: hoveredCard === i + 100 + images.length ? "none" : "transform 0.3s ease-out" }}
+              >
+                <img className="w-full h-full object-cover" src={src} alt="Tattoo work" loading="lazy" decoding="async" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {lightboxIndex !== null && (
-        <div 
-          className={`fixed inset-0 z-[10000] bg-black/95 flex items-center justify-center transition-opacity duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'}`}
+        <div
+          className={`fixed inset-0 z-[10000] bg-black/95 flex items-center justify-center transition-opacity duration-300 ${isClosing ? "opacity-0" : "opacity-100"}`}
           onClick={closeLightbox}
         >
-          <button 
-            className="absolute top-6 right-6 text-white hover:text-[#8a0012] transition-colors z-50"
-            onClick={closeLightbox}
-          >
-            <span className="material-symbols-outlined text-4xl">close</span>
+          <button className="absolute top-6 right-6 text-white hover:text-[#8a0012] transition-colors z-50" onClick={closeLightbox}>
+            <Icon name="close" className="text-4xl" />
           </button>
 
-          <button 
-            className="absolute left-4 md:left-8 text-white hover:text-[#8a0012] transition-colors z-50 p-4"
-            onClick={prevImage}
-          >
-            <span className="material-symbols-outlined text-4xl md:text-6xl">chevron_left</span>
+          <button className="absolute left-4 md:left-8 text-white hover:text-[#8a0012] transition-colors z-50 p-4" onClick={prevImage}>
+            <Icon name="chevron_left" className="text-4xl md:text-6xl" />
           </button>
 
-          <img 
-            src={images[lightboxIndex]} 
-            alt="Tattoo detail" 
+          <img
+            src={images[lightboxIndex]}
+            alt="Tattoo detail"
             className="max-h-[90vh] max-w-[90vw] object-contain shadow-2xl shadow-black"
             onClick={(e) => e.stopPropagation()}
           />
 
-          <button 
-            className="absolute right-4 md:right-8 text-white hover:text-[#8a0012] transition-colors z-50 p-4"
-            onClick={nextImage}
-          >
-            <span className="material-symbols-outlined text-4xl md:text-6xl">chevron_right</span>
+          <button className="absolute right-4 md:right-8 text-white hover:text-[#8a0012] transition-colors z-50 p-4" onClick={nextImage}>
+            <Icon name="chevron_right" className="text-4xl md:text-6xl" />
           </button>
         </div>
       )}

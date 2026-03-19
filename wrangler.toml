@@ -1,6 +1,7 @@
 name = "don-prueba"
-compatibility_date = "2026-03-13"
+compatibility_date = "2026-03-19"
 
 [assets]
 directory = "./build"
+binding = "ASSETS"
 not_found_handling = "single-page-application"

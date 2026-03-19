@@ -13,9 +13,9 @@ module.exports = {
         brandwhite: '#ffffff',
       },
       fontFamily: {
-        header: ['"IFC Insane Rodeo"', 'cursive'],
-        sub: ['Oswald', 'sans-serif'],
-        body: ['Montserrat', 'sans-serif'],
+        header: ['Impact', 'Haettenschweiler', 'Arial Black', 'sans-serif'],
+        sub: ['"Arial Narrow"', 'Arial', 'sans-serif'],
+        body: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
       },
     },
   },

@@ -121,18 +121,6 @@ export default function Cuerna() {
 
   return (
     <div className="cuerna-root bg-brandBg text-white selection:bg-brandRed selection:text-white font-body overflow-x-hidden">
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&display=swap"
-        rel="stylesheet"
-      />
-      <link href="https://fonts.cdnfonts.com/css/ifc-insane-rodeo" rel="stylesheet" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet"
-      />
-
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-50 mix-blend-overlay noise-overlay"></div>
       {loading && (
         <div className={`fixed inset-0 z-[100] bg-black text-white preloader-overlay ${preloaderFading ? "preloader-fade" : ""}`}>
@@ -177,6 +165,11 @@ export default function Cuerna() {
             0 0 5px rgba(255, 255, 255, 0.3),
             0 0 10px rgba(255, 255, 255, 0.1);
           letter-spacing: 0.05em;
+        }
+        .cuerna-root .font-sub {
+          font-family: 'Oswald', sans-serif !important;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
         }
         .text-brandRed.font-header, .font-header .text-brandRed {
           text-shadow: 
