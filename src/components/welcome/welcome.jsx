@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { Header } from "./Header.jsx";
 import { Hero } from "./Hero.jsx";
+import { AutomationShowcase } from "./AutomationShowcase.jsx";
+import { AppsShowcase } from "./AppsShowcase.jsx";
 import { Cases } from "./Cases.jsx";
-import { HowItWorks } from "./HowItWorks.jsx";
-import { PricingSection } from "./PricingSection.jsx";
+import { SEOContent } from "./SEOContent.jsx";
 import { Contact } from "./Contact.jsx";
 import { Footer } from "./Footer.jsx";
 // landing.css moved to global import in src/index.js
@@ -36,14 +37,15 @@ export function Welcome() {
   }, []);
 
   return (
-    <div className="font-['Space_Grotesk',sans-serif] text-white selection:bg-[#ff3d4d] selection:text-white antialiased bg-[#050505]">
+    <div className="welcome-page font-['Space_Grotesk',sans-serif] text-white selection:bg-[#ff3d4d] selection:text-white antialiased bg-[#050505]">
       <a href="#main-content" className="skip-link">Saltar al contenido</a>
       <Header />
       <main id="main-content" role="main" className="cinematic-load">
         <Hero />
         <Cases />
-        <HowItWorks />
-        <PricingSection />
+        <AutomationShowcase />
+        <AppsShowcase />
+        <SEOContent />
         <Contact />
       </main>
       <Footer />

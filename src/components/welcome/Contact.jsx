@@ -18,7 +18,7 @@ export function Contact() {
       return;
     }
 
-    const phone = '573228988201';
+    const phone = '573228083337';
     const template = `Hola Don Prueba, Soy ${name} mi correo es ${email} y mi proyecto es ${desc || '[descripción del proyecto]'}.`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(template)}`;
     window.open(url, '_blank', 'noopener,noreferrer');

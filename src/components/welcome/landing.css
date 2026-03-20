@@ -120,6 +120,78 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.welcome-hero .hero-title {
+  font-family: "ElanorFreePersonalUse-ExBdIt", sans-serif !important;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.welcome-page h2 {
+  font-family: "ElanorFreePersonalUse-ExBdIt", serif !important;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.03em;
+}
+
+.welcome-page .welcome-brand,
+.welcome-page .welcome-brand * {
+  font-family: "ElanorFreePersonalUse-ExBdIt", serif !important;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.03em;
+}
+
+.welcome-hero .section-title {
+  position: relative;
+  width: 100%;
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+  display: block;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.welcome-hero .marquee-container {
+  width: 100%;
+  height: 105px;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 105px;
+  position: relative;
+}
+
+.welcome-hero .marquee {
+  display: inline-flex;
+  width: max-content;
+  will-change: transform;
+  animation: welcome-marquee 12s linear infinite;
+}
+
+.welcome-hero .marquee > span {
+  flex: 0 0 auto;
+  padding-right: 2.5rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1rem, 2.1vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #fff8ed;
+  opacity: 0.82;
+}
+
+@keyframes welcome-marquee {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .sr-only {
   position: absolute !important;
   width: 1px !important;
