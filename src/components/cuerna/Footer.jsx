@@ -54,7 +54,7 @@ export function Footer({ year }) {
               className="inline-flex items-center gap-4 px-6 sm:px-8 md:px-10 py-4 sm:py-5 bg-[#25D366] text-black font-bold hover:scale-105 transition-transform rounded-sm uppercase tracking-widest font-sub text-base sm:text-lg md:text-xl"
               href="https://wa.me/573000000000"
             >
-              RESERVAR POR WHATSAPP
+              RESERVAR EVENTO - WHATSAPP
             </a>
           </div>
           <div className="h-[320px] sm:h-[400px] md:h-[450px] w-full bg-gray-900 border border-gray-800 relative group overflow-hidden">

@@ -4,6 +4,8 @@ import AguaLinda from "./routes/agua-linda.jsx";
 import HandmadeWool from "./routes/handmade-wool.jsx";
 import TattooArtist from "./routes/tattoo-artist.jsx";
 import Cuerna from "./routes/cuerna.jsx";
+import Articulos from "./routes/articulos.jsx";
+import Paginas from "./routes/paginas.jsx";
 import NotFound from "./routes/notfound.jsx";
 import { ScrollToTop } from "./components/ScrollToTop.jsx";
 
@@ -24,6 +26,8 @@ export default function Home() {
         <Route path="/handmade-wool" element={<HandmadeWool />} />
         <Route path="/tattoo-artist" element={<TattooArtist />} />
         <Route path="/cuerna" element={<Cuerna />} />
+        <Route path="/articulos" element={<Articulos />} />
+        <Route path="/paginas" element={<Paginas />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   // Disable native scroll restoration so browser doesn't restore position on navigation
   useEffect(() => {
@@ -35,6 +35,17 @@ export function ScrollToTop() {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     } catch (e) {}
 
+    const scrollToHash = () => {
+      if (!hash) {
+        return;
+      }
+
+      const target = document.querySelector(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: "instant", block: "start" });
+      }
+    };
+
     // Restore overflow on next animation frames so the user doesn't see the scroll
     const raf1 = requestAnimationFrame(() => {
       const raf2 = requestAnimationFrame(() => {
@@ -42,6 +53,7 @@ export function ScrollToTop() {
           body.style.overflow = prevOverflow || '';
           doc.style.scrollBehavior = prevScrollBehavior || '';
         } catch (e) {}
+        scrollToHash();
       });
       // store raf id to allow potential cleanup, though unlikely needed
       // eslint-disable-next-line no-undef
@@ -57,7 +69,7 @@ export function ScrollToTop() {
         doc.style.scrollBehavior = prevScrollBehavior || '';
       } catch (e) {}
     };
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 }

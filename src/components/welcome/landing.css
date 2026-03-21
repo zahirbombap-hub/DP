@@ -138,10 +138,20 @@ body {
 
 .welcome-page .welcome-brand,
 .welcome-page .welcome-brand * {
-  font-family: "ElanorFreePersonalUse-ExBdIt", serif !important;
+  font-family: "Frick03 Regular", serif !important;
   font-weight: 800;
   font-style: italic;
   letter-spacing: -0.03em;
+}
+
+.welcome-page .welcome-brand .welcome-brand-mark,
+.welcome-page .welcome-brand .welcome-brand-mark * {
+  font-style: normal !important;
+}
+
+.welcome-page .welcome-brand .welcome-brand-text,
+.welcome-page .welcome-brand .welcome-brand-text * {
+  font-style: italic !important;
 }
 
 .welcome-hero .section-title {

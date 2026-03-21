@@ -48,7 +48,7 @@ export function Navbar() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span className="block skew-x-[10deg] font-sub tracking-widest">RESERVAR</span>
+          <span className="block skew-x-[10deg] font-sub tracking-widest">RESERVAR EVENTO</span>
         </a>
       </div>
     </nav>

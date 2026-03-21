@@ -59,7 +59,7 @@ export function Footer() {
           </div>
         </div>
         <div className="pt-8 border-t border-white/10 dark:border-slate-800 text-center text-sm text-white/50 dark:text-slate-400">
-          <p>Â© 2026 Agua Linda. Desarrollado por la agencia DP.</p>
+          <p>Â© 2026 Agua Linda. Desarrollado por DonPrueba.</p>
         </div>
       </div>
     </footer>

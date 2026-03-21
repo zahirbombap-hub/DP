@@ -1,56 +1,189 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-export function Header() {
+const defaultDesktopNavItems = [
+  { label: "Inicio", type: "anchor", to: "#inicio" },
+  { label: "Paginas", type: "link", to: "/paginas#inicio" },
+  { label: "Automatizaciones", type: "anchor", to: "#automatizaciones" },
+  { label: "Apps", type: "anchor", to: "#apps-showcase" },
+  { label: "Articulos", type: "link", to: "/articulos#articulos" },
+  { label: "Contacto", type: "anchor", to: "#contact-footer" },
+];
+
+const defaultCompactNavItems = [
+  { label: "Paginas", type: "link", to: "/paginas#inicio" },
+  { label: "Automatizaciones", type: "anchor", to: "#automatizaciones" },
+  { label: "Apps", type: "anchor", to: "#apps-showcase" },
+  { label: "Articulos", type: "link", to: "/articulos#articulos" },
+  { label: "Contacto", type: "anchor", to: "#contact-footer" },
+];
+
+function NavItem({ item, className, onClick }) {
+  const sharedProps = {
+    className,
+    onClick,
+  };
+
+  if (item.type === "link") {
+    return (
+      <Link to={item.to} {...sharedProps}>
+        {item.label}
+      </Link>
+    );
+  }
+
+  return <Link to={`/${item.to}`} {...sharedProps}>{item.label}</Link>;
+}
+
+export function Header({
+  desktopNavItems = defaultDesktopNavItems,
+  compactNavItems = defaultCompactNavItems,
+}) {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const mediaQuery = window.matchMedia("(min-width: 970px)");
+    const closeCompactMenu = () => {
+      if (mediaQuery.matches) {
+        setOpen(false);
+      }
+    };
+
+    closeCompactMenu();
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", closeCompactMenu);
+      return () => mediaQuery.removeEventListener("change", closeCompactMenu);
+    }
+
+    mediaQuery.addListener(closeCompactMenu);
+    return () => mediaQuery.removeListener(closeCompactMenu);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 py-3 sm:py-4 border-b border-[#8a0012]/30 bg-[#050505]/90 backdrop-blur-xl cinematic-load">
-      <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
-        <a aria-label="Don Prueba Inicio" className="welcome-brand flex items-center gap-4 group" href="/" onClick={() => window.location.reload()}>
-          <div className="relative flex items-center justify-center size-9 bg-[#8a0012] text-white font-['JetBrains_Mono',monospace] font-extrabold text-lg dp-logo-mark transition-transform group-hover:bg-[#ff3d4d] group-hover:skew-x-[-10deg]">
-            DP
+    <header className="fixed top-0 left-0 z-50 w-full border-b border-[#8a0012]/30 bg-[#050505]/90 px-4 py-3 backdrop-blur-xl sm:px-6 sm:py-4 cinematic-load">
+      <style>{`
+        @font-face {
+          font-family: "Frick03 Regular";
+          src: url("/fuentes/Frick03-Regular.otf") format("opentype");
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+        }
+
+        @media (min-width: 970px) {
+          .welcome-home-link {
+            display: none !important;
+          }
+
+          .welcome-desktop-nav {
+            display: flex !important;
+          }
+
+          .welcome-compact-nav {
+            display: none !important;
+          }
+        }
+
+        @media (max-width: 969.98px) {
+          .welcome-desktop-nav {
+            display: none !important;
+          }
+
+          .welcome-home-link {
+            display: inline-flex !important;
+          }
+
+          .welcome-compact-nav {
+            display: flex !important;
+          }
+        }
+      `}</style>
+
+      <div className="mx-auto grid max-w-screen-2xl grid-cols-[auto_1fr_auto] items-center gap-4">
+        <Link
+          aria-label="Don Prueba Inicio"
+          className="welcome-brand flex items-center gap-4 group"
+          to="/"
+        >
+          <div className="welcome-brand-mark dp-logo-mark relative flex size-11 items-center justify-center overflow-hidden bg-transparent transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-[1.06] group-hover:rotate-[-3deg] sm:size-12">
+            <img
+              alt="DP"
+              className="h-[86%] w-[86%] object-contain transition-transform duration-300 ease-out group-hover:scale-105 group-hover:rotate-[2deg]"
+              decoding="async"
+              draggable="false"
+              src="/multimedia/logoDP.png"
+            />
           </div>
-          <span className="font-['JetBrains_Mono',monospace] text-lg font-extrabold tracking-tighter uppercase text-white">
+          <span className="welcome-brand-text font-['JetBrains_Mono',monospace] text-lg font-extrabold tracking-tighter uppercase text-white">
             Don <span className="text-[#ff3d4d]">Prueba</span>
           </span>
-        </a>
+        </Link>
 
-        <nav aria-label="Navegación Principal" className="flex items-center gap-8 max-[750px]:hidden">
-          <a className="nav-link text-[10px] font-bold transition-colors uppercase tracking-[0.2em] text-[#a1a1aa]" href="#inicio">Inicio</a>
-          <a className="nav-link text-[10px] font-bold transition-colors uppercase tracking-[0.2em] text-[#a1a1aa]" href="#cases-section">Páginas</a>
-          <a className="nav-link text-[10px] font-bold transition-colors uppercase tracking-[0.2em] text-[#a1a1aa]" href="#automatizaciones">Automatizaciones</a>
-          <a className="nav-link text-[10px] font-bold transition-colors uppercase tracking-[0.2em] text-[#a1a1aa]" href="#apps-showcase">Apps</a>
-          <a className="nav-link text-[10px] font-bold transition-colors uppercase tracking-[0.2em] text-[#a1a1aa]" href="#articulos">Articulos</a>
-          <a className="nav-link text-[10px] font-bold transition-colors uppercase tracking-[0.2em] text-[#a1a1aa]" href="#contact-footer">Contacto</a>
-        </nav>
+        <div className="flex min-w-0 justify-center">
+          <nav aria-label="Navegacion Principal" className="welcome-desktop-nav hidden items-center gap-8">
+            {desktopNavItems.map((item) => (
+              <NavItem
+                key={`${item.to}-${item.label}`}
+                item={item}
+                className="nav-link text-[10px] font-bold uppercase tracking-[0.2em] text-[#a1a1aa] transition-colors hover:text-[#ff3d4d]"
+              />
+            ))}
+          </nav>
+        </div>
 
-        <div className="flex items-center gap-3 sm:gap-6">
-          <div className="hidden max-[750px]:block relative">
+        <div className="flex items-center justify-end gap-3 sm:gap-6">
+          <Link
+            className="welcome-home-link shrink-0 text-[10px] font-bold uppercase tracking-[0.2em] text-[#a1a1aa] transition-colors hover:text-[#ff3d4d]"
+            to="/#inicio"
+          >
+            Inicio
+          </Link>
+
+          <div className="welcome-compact-nav relative hidden items-center">
             <button
-              aria-label={open ? "Cerrar menú" : "Abrir menú"}
-              aria-expanded={open}
               aria-controls="mobile-menu"
+              aria-expanded={open}
+              aria-label={open ? "Cerrar menu" : "Abrir menu"}
+              className="group flex items-center gap-2 rounded-full border border-[#8a0012]/20 bg-white/[0.03] px-3 py-2 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]"
               onClick={() => setOpen(!open)}
-              className="p-2 rounded-md bg-transparent text-white hover:bg-white/5 transition-colors"
             >
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <span className="text-[9px] font-black uppercase tracking-[0.22em] text-[#a1a1aa] transition-colors group-hover:text-white">
+                Menu
+              </span>
+              <svg
+                className={`h-5 w-5 transition-transform duration-300 ${open ? "rotate-90" : "rotate-0"}`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M3 6h18M3 12h18M3 18h18" />
               </svg>
             </button>
 
             <div
               id="mobile-menu"
-              className="origin-top-right right-0 mt-2 w-44 bg-[#050505]/95 border border-[#8a0012]/20 rounded-md overflow-hidden transition-all duration-300 ease-in-out lg:hidden absolute z-50"
+              className="absolute right-0 top-full z-50 mt-2 w-48 origin-top-right overflow-hidden rounded-md border border-[#8a0012]/20 bg-[#050505]/95 transition-all duration-300 ease-in-out"
               style={{ maxHeight: open ? "320px" : "0px", opacity: open ? 1 : 0 }}
               aria-hidden={!open}
             >
               <nav className="flex flex-col text-sm">
-                <a href="#inicio" title="Ir a Inicio" className="px-4 py-3 hover:bg-white/3" onClick={() => setOpen(false)}>Inicio</a>
-                <a href="#cases-section" title="Ir a Páginas" className="px-4 py-3 hover:bg-white/3" onClick={() => setOpen(false)}>Páginas</a>
-                <a href="#automatizaciones" title="Ir a Automatizaciones" className="px-4 py-3 hover:bg-white/3" onClick={() => setOpen(false)}>Automatizaciones</a>
-                <a href="#apps-showcase" title="Ir a Apps" className="px-4 py-3 hover:bg-white/3" onClick={() => setOpen(false)}>Apps</a>
-                <a href="#articulos" title="Ir a Articulos" className="px-4 py-3 hover:bg-white/3" onClick={() => setOpen(false)}>Articulos</a>
-                <a href="#contact-footer" title="Ir a Contacto" className="px-4 py-3 hover:bg-white/3" onClick={() => setOpen(false)}>Contacto</a>
+                {compactNavItems.map((item) => (
+                  <NavItem
+                    key={`${item.to}-${item.label}`}
+                    item={item}
+                    className="px-4 py-3 text-[#a1a1aa] transition-colors hover:bg-white/3 hover:text-white"
+                    onClick={() => setOpen(false)}
+                  />
+                ))}
               </nav>
             </div>
           </div>
@@ -66,7 +199,7 @@ export function Header() {
             }}
             aria-label="Ir al formulario de contacto"
             title="Ir al formulario de contacto"
-            className="cta-button text-white px-3 sm:px-5 py-2 text-[9px] sm:text-[10px] font-black uppercase tracking-widest active:scale-95"
+            className="cta-button text-white px-3 py-2 text-[9px] font-black uppercase tracking-widest active:scale-95 sm:px-5 sm:text-[10px]"
           >
             Iniciar Proyecto
           </button>
