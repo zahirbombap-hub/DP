@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const defaultDesktopNavItems = [
-  { label: "Inicio", type: "anchor", to: "#inicio" },
+  { label: "Inicio", type: "link", to: "/" },
   { label: "Paginas", type: "link", to: "/paginas#inicio" },
-  { label: "Automatizaciones", type: "anchor", to: "#automatizaciones" },
+  { label: "Automatizaciones", type: "link", to: "/automatizaciones#inicio" },
   { label: "Apps", type: "anchor", to: "#apps-showcase" },
   { label: "Articulos", type: "link", to: "/articulos#articulos" },
   { label: "Contacto", type: "anchor", to: "#contact-footer" },
@@ -12,7 +12,7 @@ const defaultDesktopNavItems = [
 
 const defaultCompactNavItems = [
   { label: "Paginas", type: "link", to: "/paginas#inicio" },
-  { label: "Automatizaciones", type: "anchor", to: "#automatizaciones" },
+  { label: "Automatizaciones", type: "link", to: "/automatizaciones#inicio" },
   { label: "Apps", type: "anchor", to: "#apps-showcase" },
   { label: "Articulos", type: "link", to: "/articulos#articulos" },
   { label: "Contacto", type: "anchor", to: "#contact-footer" },
@@ -40,6 +40,7 @@ export function Header({
   compactNavItems = defaultCompactNavItems,
 }) {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -139,7 +140,7 @@ export function Header({
         <div className="flex items-center justify-end gap-3 sm:gap-6">
           <Link
             className="welcome-home-link shrink-0 text-[10px] font-bold uppercase tracking-[0.2em] text-[#a1a1aa] transition-colors hover:text-[#ff3d4d]"
-            to="/#inicio"
+            to="/"
           >
             Inicio
           </Link>
@@ -195,7 +196,10 @@ export function Header({
                 target.scrollIntoView({ behavior: "smooth", block: "start" });
                 const firstInput = document.getElementById("company-name");
                 setTimeout(() => firstInput?.focus(), 500);
+                return;
               }
+
+              navigate("/#contact-footer");
             }}
             aria-label="Ir al formulario de contacto"
             title="Ir al formulario de contacto"

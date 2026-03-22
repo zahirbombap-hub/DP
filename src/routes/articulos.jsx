@@ -16,7 +16,7 @@ function ArchiveSection() {
     {
       title: "Automatizaciones",
       description: "Casos y flujos para reducir trabajo manual con sistemas conectados.",
-      href: "/#automatizaciones",
+      href: "/automatizaciones#inicio",
     },
     {
       title: "Apps",

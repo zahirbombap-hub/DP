@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const automations = [
@@ -317,12 +318,20 @@ export function AutomationShowcase() {
               </p>
             </div>
 
-            <a
-              href="#contact-footer"
-              className="cta-button inline-flex items-center justify-center rounded-xl px-5 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white transition-transform hover:scale-[1.02] sm:px-7"
-            >
-              Automatiza tu flujo
-            </a>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/automatizaciones#inicio"
+                className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] sm:px-7"
+              >
+                Ver subpagina
+              </Link>
+              <a
+                href="#contact-footer"
+                className="cta-button inline-flex items-center justify-center rounded-xl px-5 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white transition-transform hover:scale-[1.02] sm:px-7"
+              >
+                Automatiza tu flujo
+              </a>
+            </div>
           </div>
         </div>
       </section>

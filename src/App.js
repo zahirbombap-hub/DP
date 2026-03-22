@@ -6,6 +6,7 @@ import TattooArtist from "./routes/tattoo-artist.jsx";
 import Cuerna from "./routes/cuerna.jsx";
 import Articulos from "./routes/articulos.jsx";
 import Paginas from "./routes/paginas.jsx";
+import Automatizaciones from "./routes/automatizaciones.jsx";
 import NotFound from "./routes/notfound.jsx";
 import { ScrollToTop } from "./components/ScrollToTop.jsx";
 
@@ -28,6 +29,7 @@ export default function Home() {
         <Route path="/cuerna" element={<Cuerna />} />
         <Route path="/articulos" element={<Articulos />} />
         <Route path="/paginas" element={<Paginas />} />
+        <Route path="/automatizaciones" element={<Automatizaciones />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
