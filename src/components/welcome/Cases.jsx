@@ -5,6 +5,20 @@ import { Icon } from "../Icon.jsx";
 function CaseCard({ item }) {
   const videoRef = useRef(null);
 
+  const seekVideoToEndSafely = () => {
+    const video = videoRef.current;
+
+    if (!video || !item.video) {
+      return;
+    }
+
+    const { duration } = video;
+
+    if (Number.isFinite(duration) && duration > 0) {
+      video.currentTime = duration;
+    }
+  };
+
   const handleMouseEnter = () => {
     if (videoRef.current && item.video) {
       videoRef.current.currentTime = 0;
@@ -14,17 +28,13 @@ function CaseCard({ item }) {
 
   const handleMouseLeave = () => {
     if (videoRef.current && item.video) {
-      if (!videoRef.current.ended) {
-        videoRef.current.pause();
-        videoRef.current.currentTime = videoRef.current.duration;
-      }
+      videoRef.current.pause();
+      seekVideoToEndSafely();
     }
   };
 
   const handleVideoLoadedMetadata = () => {
-    if (videoRef.current && item.video) {
-      videoRef.current.currentTime = videoRef.current.duration;
-    }
+    seekVideoToEndSafely();
   };
 
   return (
@@ -50,9 +60,7 @@ function CaseCard({ item }) {
             preload="auto"
             onLoadedMetadata={handleVideoLoadedMetadata}
             onEnded={() => {
-              if (videoRef.current) {
-                videoRef.current.currentTime = videoRef.current.duration;
-              }
+              seekVideoToEndSafely();
             }}
           >
             <source src={item.video} type="video/mp4" />
