@@ -19,8 +19,6 @@ export default function HandmadeWool() {
         <div className="font-['Manrope',sans-serif] transition-colors duration-300 animate-[fadeIn_2s_ease-out_forwards] wool-page">
             <Header />
 
-            <style>{`.wool-page > header { border-bottom-color: rgb(210, 105, 30) !important; }`}</style>
-
             <main>
                 <Hero />
                 <Collection />

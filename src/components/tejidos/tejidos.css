@@ -123,6 +123,12 @@ html.dark body.wool-body {
   animation: woolFloat 6s ease-in-out infinite;
 }
 
+.wool-logo-float {
+  animation: woolLogoFloat 7s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
 .wool-btn {
   position: relative;
   overflow: hidden;
@@ -245,11 +251,27 @@ html.dark body.wool-body {
   }
 }
 
+@keyframes woolLogoFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.015);
+  }
+}
+
 @keyframes woolSlowZoom {
   from {
     transform: scale(1.02);
   }
   to {
     transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wool-logo-float {
+    animation: none;
   }
 }
