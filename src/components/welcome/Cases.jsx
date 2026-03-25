@@ -176,14 +176,14 @@ export function Cases() {
           },
           {
             href: "/tattoo-artist",
-            img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9j28O2DzwEWotdJPcOKU5HAQTB8r_jbfJJhPPclHbqTPhklnlSNunlzETDP_PKhnjCvgo3nITrjFDDg24KXGUoHwtQjcswV5cHsX33U-SWKOdbkGTupbAJ7vSBxFM2s9BaVjw_qM2sKV117BHOLWRLcNhZQ1xL0WIE22inEalXbM8blcz6_zV8N6XulMl8oereXLqs9R6JOQCEsxAKgcx-xc41FYMVwacr4tQfaJE4wFcKFkmFS0YJNHHt94pprt3ybe0EfEYHuQ",
+            img: "/multimedia/FotosTattosLopez/pre-tattos.png",
             subtitle: "Tatuador // Estilo Puntillismo",
             title: "Zona 7 Art Studio",
             extraImgClass: "contrast-125 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100",
           },
           {
             href: "/agua-linda",
-            img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9j28O2DzwEWotdJPcOKU5HAQTB8r_jbfJJhPPclHbqTPhklnlSNunlzETDP_PKhnjCvgo3nITrjFDDg24KXGUoHwtQjcswV5cHsX33U-SWKOdbkGTupbAJ7vSBxFM2s9BaVjw_qM2sKV117BHOLWRLcNhZQ1xL0WIE22inEalXbM8blcz6_zV8N6XulMl8oereXLqs9R6JOQCEsxAKgcx-xc41FYMVwacr4tQfaJE4wFcKFkmFS0YJNHHt94pprt3ybe0EfEYHuQ",
+            img: "/multimedia/AguaLinda/pre-agua-linda.png",
             subtitle: "Distribuidora Agua Linda",
             title: "Agua Linda Villa de Leyva y Sutamarchán",
             extraImgClass: "contrast-125 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100",
