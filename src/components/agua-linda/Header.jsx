@@ -1,4 +1,3 @@
-import { Icon } from "../Icon.jsx";
 import { AGUA_LINDA_HOME_HREF, AGUA_LINDA_WHATSAPP_HREF } from "./constants.js";
 
 const defaultNavItems = [
@@ -14,10 +13,6 @@ export function Header({
   ctaHref = AGUA_LINDA_WHATSAPP_HREF,
   ctaLabel = "Pide Ahora",
 }) {
-  const toggleDarkMode = () => {
-    document.documentElement.classList.toggle("dark");
-  };
-
   return (
     <>
       <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-[#0B5ED7]/90 dark:bg-[#0F172A]/70 border-b border-white/10 dark:border-slate-800/50 transition-colors duration-300">
