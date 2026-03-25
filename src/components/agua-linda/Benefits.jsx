@@ -10,16 +10,16 @@ export function Benefits() {
               <Icon name="biotech" className="text-3xl" />
             </div>
             <h4 className="font-['Outfit',sans-serif] text-xl font-bold mb-3 text-white dark:text-white">Pureza Certificada</h4>
-            <p className="text-white/80 dark:text-slate-400">Procesos de ultrafiltración y ozonificación que garantizan un agua 100% segura para toda tu familia.</p>
+            <p className="text-white/80 dark:text-slate-400">Procesos de ultrafiltración y ozonización que garantizan agua 100% segura para toda tu familia.</p>
           </div>
-          <div className="reveal text-center" style={{ transitionDelay: '200ms' }}>
+          <div className="reveal text-center" style={{ transitionDelay: "200ms" }}>
             <div className="w-16 h-16 bg-white dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <Icon name="eco" className="text-3xl" />
             </div>
             <h4 className="font-['Outfit',sans-serif] text-xl font-bold mb-3 text-white dark:text-white">Compromiso Local</h4>
-            <p className="text-white/80 dark:text-slate-400">Nacemos y crecemos en Villa de Leyva, apoyando la economía de nuestra región y cuidando el entorno.</p>
+            <p className="text-white/80 dark:text-slate-400">Nacemos y crecemos en Sutamarchán, apoyando la economía de nuestra región y cuidando el entorno.</p>
           </div>
-          <div className="reveal text-center" style={{ transitionDelay: '400ms' }}>
+          <div className="reveal text-center" style={{ transitionDelay: "400ms" }}>
             <div className="w-16 h-16 bg-white dark:bg-orange-900/30 text-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <Icon name="bolt" className="text-3xl" />
             </div>

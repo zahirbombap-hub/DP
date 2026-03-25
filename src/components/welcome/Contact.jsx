@@ -8,24 +8,6 @@ const initialFormState = {
 
 const whatsappPhone = "573228083337";
 
-function WhatsAppIcon({ className = "" }) {
-  return (
-    <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 24 24">
-      <path
-        d="M12 3.75a8.25 8.25 0 0 0-7.1 12.5L4 20l3.9-1a8.25 8.25 0 1 0 4.1-15.25Z"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.8"
-      />
-      <path
-        d="M9.1 8.75c.2-.45.4-.5.74-.5h.6c.2 0 .46-.08.72.5.27.6 1 1.95 1.08 2.09.1.14.16.3.04.52-.12.23-.18.37-.34.58-.17.2-.35.44-.5.59-.17.16-.35.34-.15.69.2.35.88 1.45 1.89 2.35 1.3 1.16 2.4 1.52 2.75 1.7.35.18.55.15.76-.09.2-.23.85-.99 1.08-1.33.23-.34.46-.28.78-.16.31.12 1.98.93 2.32 1.1.34.16.56.24.64.38.08.14.08.8-.18 1.58-.27.78-1.6 1.53-2.2 1.61-.6.08-1.18.1-2-.12-.8-.21-2.03-.76-3.56-1.73-1.67-1.06-2.83-2.78-3.06-3.08-.23-.3-1.05-1.27-1.05-2.42 0-1.14.6-1.7.82-1.94.2-.22.44-.29.58-.29h.2Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
 function MailIcon({ className = "" }) {
   return (
     <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 24 24">
@@ -152,12 +134,17 @@ export function Contact() {
 
               <button
                 aria-label="Abrir WhatsApp"
-                className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] hover:shadow-[0_10px_24px_rgba(255,255,255,0.08)]"
+                className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#25D366]/30 bg-[#25D366] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#25D366]/40 hover:bg-[#2bd86f] hover:shadow-[0_10px_24px_rgba(37,211,102,0.24)]"
                 onClick={() => sendWhatsApp(!hasCompleteForm)}
                 type="button"
                 title="WhatsApp"
               >
-                <WhatsAppIcon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg]" />
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  className="h-5 w-5 invert brightness-200 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg]"
+                  src="/multimedia/whatssapp.svg"
+                />
               </button>
 
               <button

@@ -15,15 +15,14 @@ export function ProductShowcase() {
             <div className="text-center lg:text-left">
               <h2 className="font-['Outfit',sans-serif] text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-white">El Rey de la Casa</h2>
               <p className="text-slate-200 max-w-xl mx-auto lg:mx-0 bg-black/30 backdrop-blur-sm p-4 rounded-xl">
-                Nuestro botellÃ³n de 20L es la opciÃ³n favorita de las familias en la regiÃ³n. Elige tu opciÃ³n y comprueba
-                nuestra calidad.
+                Nuestro botellón de 20L es la opción favorita de las familias de la región. Elige entre compra nueva o recarga y recibe la misma calidad de siempre.
               </p>
             </div>
             <div className="relative group flex justify-center">
               <div className="absolute inset-0 bg-[#0077BE]/10 rounded-full blur-3xl group-hover:bg-[#0077BE]/20 transition-all"></div>
               <div className="relative transition-all duration-700 transform group-hover:scale-105">
                 <img
-                  alt="BotellÃ³n Agua Linda 20L"
+                  alt="Botellón Agua Linda de 20L"
                   className="h-[220px] sm:h-[320px] lg:h-[480px] w-auto drop-shadow-2xl object-contain brightness-95 contrast-105 mx-auto"
                   decoding="async"
                   fetchPriority="high"
@@ -35,7 +34,7 @@ export function ProductShowcase() {
                 >
                   <div className="bg-green-500 text-white p-3 md:p-4 rounded-full shadow-xl border-4 border-white dark:border-slate-900 flex flex-col items-center justify-center text-center w-24 h-24 md:w-32 md:h-32">
                     <Icon name="verified" className="text-3xl" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest leading-none mt-1">GarantÃ­a de Calidad</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest leading-none mt-1">Garantía de calidad</span>
                   </div>
                 </div>
               </div>
@@ -44,21 +43,21 @@ export function ProductShowcase() {
           <div className="flex flex-col gap-8">
             <div className="backdrop-blur-md bg-white/70 dark:bg-[#0F172A]/70 p-5 md:p-8 rounded-3xl shadow-xl border border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
               <div className="flex items-center justify-between mb-5 md:mb-8">
-                <span className="font-['Outfit',sans-serif] text-xl md:text-2xl font-bold text-slate-800 dark:text-white">BotellÃ³n 20L</span>
-                <div className="bg-[#0077BE]/10 text-[#0077BE] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">MÃ¡s Vendido</div>
+                <span className="font-['Outfit',sans-serif] text-xl md:text-2xl font-bold text-slate-800 dark:text-white">Botellón 20L</span>
+                <div className="bg-[#0077BE]/10 text-[#0077BE] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Más Vendido</div>
               </div>
               <div className="flex bg-slate-100 dark:bg-black/40 p-1.5 rounded-2xl mb-5 md:mb-8 transition-colors duration-300">
                 <button
                   className={`flex-1 py-3 px-6 rounded-xl text-sm font-bold transition-all ${!isRefill ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"}`}
                   onClick={() => setIsRefill(false)}
                 >
-                  Nuevo BotellÃ³n
+                  Nuevo botellón
                 </button>
                 <button
                   className={`flex-1 py-3 px-6 rounded-xl text-sm font-bold transition-all ${isRefill ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"}`}
                   onClick={() => setIsRefill(true)}
                 >
-                  Recarga (Refill)
+                  Recarga
                 </button>
               </div>
               <div className="mb-6 md:mb-10">
@@ -69,10 +68,10 @@ export function ProductShowcase() {
                   </span>
                   <span className="text-slate-500 dark:text-slate-300 font-medium">COP</span>
                 </div>
-                <p className="text-sm text-slate-400 mt-2">EnvÃ­o incluido en Villa de Leyva y SutamarchÃ¡n.</p>
+                <p className="text-sm text-slate-400 mt-2">Envío incluido en Villa de Leyva y Sutamarchán.</p>
               </div>
               <ul className="space-y-2 md:space-y-4 mb-6 md:mb-10">
-                {["PurificaciÃ³n por Osmosis Inversa", "pH Balanceado (7.2)", "Registro INVIMA Vigente"].map((item, i) => (
+                {["Purificación por ósmosis inversa", "pH balanceado (7.2)", "Registro INVIMA vigente"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm md:text-base text-slate-600 dark:text-slate-200">
                     <Icon name="check_circle" className="text-green-500" />
                     {item}
@@ -80,7 +79,7 @@ export function ProductShowcase() {
                 ))}
               </ul>
               <button className="w-full bg-[#0077BE] py-4 rounded-2xl text-white font-bold text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-[#0077BE]/20">
-                AÃ±adir al Carrito
+                Añadir al carrito
               </button>
             </div>
           </div>

@@ -4,21 +4,21 @@ export function ProductCatalog() {
   const products = [
     {
       title: "Pack 600ml",
-      desc: "Ideal para eventos y deportistas. MÃ¡xima frescura portÃ¡til.",
+      desc: "Ideal para eventos y actividad física. Frescura práctica para llevar contigo.",
       price: "$12.000",
       tag: "Pack x 6",
       img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAmaaEVFdfurdVfNo3XZqbYClrF6QKrA1tqiBOigAWgKLtSrZ0T4f0RQnxm_vgY4cVVLf2Uv0XlQE3qW1jXTNLkVJO7CDchnejDXdjJLCUFcfssdBf09Kk1qpsVrTNpq-AqK3jltq5NN1JfrMlet4TPd_Ep_FZqYi7I1T1PdHI-P45Eh1-kwAwcH5-9arVfYEmmtjTj9dA1pyFoc5vjhRxjLdnnnQ6NxtdKsIETbs3yqsV6Mx0MD16N_uLqVF0va_P4RuESFgrOvnc",
     },
     {
       title: "Bolsa 300ml",
-      desc: "La opciÃ³n mÃ¡s econÃ³mica y tradicional para el dÃ­a a dÃ­a.",
+      desc: "La opción más económica y tradicional para el día a día.",
       price: "$8.500",
-      tag: "Paca x 20",
+      tag: "Pack x 20",
       img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCBY08cnI2l6pUcnCbiUdQ0SnNDMyVVbwN-mn6bvcyfiBZSX1VK-L7TIuNswEZDpbb2OOX_iAPsVg08Ydy8THqvAbxvU7lxdzlIUlAu_jONDCpyNdH3XU0VGKCdjI--fPHTBWJUP6q5eL1srAz0Bqp-XuebF4FDxrnuggG9T0iImOAKVzdrxDDyzO2rLNb02bbJoYSRwKDTSK-gLq091mel6Bp_j7MZ3cgQWzI5hAprV_e6XQ-VrvQEIBtwUuZkT1EMTVFRXDz0c8A",
     },
     {
       title: "Garrafa 5L",
-      desc: "Perfecta para oficinas y hogares pequeÃ±os. FÃ¡cil manejo.",
+      desc: "Perfecta para oficinas y hogares pequeños. Fácil de manejar.",
       price: "$6.000",
       img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0VT21Uf7YhTwEmlwQW_bmeqymoe2IBoLJ7H30eFg0H9mG31ZNPKzqJFgaWX85-TOxPWaKBz-H5rl4NAo_1i-vebCCQrxRZjacJEohl00pdalpNttVIRsBij3dxN6DRAYUqpMpNHcQKp3OceCC3Ibp0CRmWpdJlqLjYnTCIMcYWmn6DcZiNQW9dtGXWgozaxx7RAXMO_feSBfI-gMXl6CR32eT_Ul0W_BDWE8EmB2pP5rAm_WGIo4MYACooKGQt-qfsIC5nZR_C-U",
     },
@@ -29,8 +29,8 @@ export function ProductCatalog() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
-            <h2 className="font-['Outfit',sans-serif] text-4xl font-bold mb-4 text-white dark:text-white">CatÃ¡logo de Productos</h2>
-            <p className="text-white/80 dark:text-slate-400">Variedad de presentaciones para cada necesidad.</p>
+            <h2 className="font-['Outfit',sans-serif] text-4xl font-bold mb-4 text-white dark:text-white">Catálogo de productos</h2>
+            <p className="text-white/80 dark:text-slate-400">Presentaciones pensadas para cada necesidad y momento de consumo.</p>
           </div>
         </div>
         <div className="grid md:grid-cols-3 gap-8">

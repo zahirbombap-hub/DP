@@ -3,7 +3,7 @@ export function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden text-white pt-20" id="hero">
       <div className="absolute inset-0 overflow-hidden">
         <img
-          alt="Paisaje Villa de Leyva"
+          alt="Paisaje de Villa de Leyva"
           className="parallax-bg absolute inset-0 h-full w-full object-cover blur-[3px] scale-105 will-change-transform"
           decoding="async"
           fetchPriority="high"
@@ -20,7 +20,7 @@ export function Hero() {
           Pureza Natural de <br /> <span className="text-[#0077BE] italic">Villa de Leyva</span>
         </h1>
         <p className="text-lg md:text-xl text-slate-100 mb-10 max-w-2xl mx-auto reveal" style={{ transitionDelay: "200ms" }}>
-          Desde las montaÃ±as de BoyacÃ¡ hasta tu mesa. Agua Linda es la esencia de SutamarchÃ¡n y la pureza del altiplano.
+          Desde las montañas de Boyacá hasta tu mesa, Agua Linda lleva la pureza de Sutamarchán y la frescura del altiplano a cada hogar.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center reveal" style={{ transitionDelay: "400ms" }}>
           <a className="bg-[#0077BE] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-600 transition-all flex items-center justify-center gap-2" href="#el-rey">
@@ -31,8 +31,8 @@ export function Hero() {
             </span>
             Ver Productos
           </a>
-          <a className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all" href="#top">
-            Nuestra Historia
+          <a className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all" href="#beneficios">
+            Ver Beneficios
           </a>
         </div>
       </div>

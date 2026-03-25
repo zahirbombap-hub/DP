@@ -10,7 +10,7 @@ import { WhatsAppButton } from "../components/agua-linda/WhatsAppButton.jsx";
 export const meta = () => {
   return [
     { title: "Agua Linda | Autoridad Natural en Villa de Leyva" },
-    { name: "description", content: "Pureza Natural de Villa de Leyva. Agua Linda es la esencia de SutamarchÃ¡n y la pureza del altiplano." },
+    { name: "description", content: "Pureza natural de Villa de Leyva. Agua Linda es la esencia de Sutamarchán y la pureza del altiplano." },
   ];
 };
 
@@ -66,7 +66,10 @@ export default function AguaLinda() {
   }, []);
 
   return (
-    <div className="bg-[#0B5ED7] dark:bg-[#0B1120] text-white dark:text-slate-200 font-['Inter',sans-serif] transition-colors duration-300 scroll-smooth snap-y snap-proximity scroll-pt-20">
+    <div
+      id="top"
+      className="bg-[#0B5ED7] dark:bg-[#0B1120] text-white dark:text-slate-200 font-['Inter',sans-serif] transition-colors duration-300 scroll-smooth snap-y snap-proximity scroll-pt-20"
+    >
       <Header />
       <Hero />
       <ProductShowcase />

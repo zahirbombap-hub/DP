@@ -91,7 +91,7 @@ function StackCard({ item, index, total, progress, reducedMotion }) {
   return (
     <div className="sticky top-24 sm:top-28">
       <article
-        className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#0b0b0b]/95 backdrop-blur-xl transition-[transform,opacity,box-shadow,filter] duration-500 ease-out"
+        className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#0b0b0b]/95 transition-[transform,opacity,box-shadow,filter] duration-500 ease-out"
         style={{
           zIndex,
           transform: `translate3d(0, ${translateY}px, 0) scale(${scale}) rotate(${rotate}deg)`,

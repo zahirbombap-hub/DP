@@ -105,27 +105,6 @@ export default function TattooArtist() {
           box-shadow: 3px 3px 0 black;
           font-family: "Space Grotesk", sans-serif;
         }
-        .carousel-container {
-          width: 100%;
-          overflow: hidden;
-          position: relative;
-        }
-        .carousel-track {
-          display: flex;
-          width: max-content;
-          will-change: transform;
-        }
-        .gallery-card {
-          width: 180px;
-          height: 180px;
-          flex-shrink: 0;
-          position: relative;
-          overflow: hidden;
-          filter: grayscale(100%);
-          background: #0a0a0a;
-          margin: 0 4px;
-          transition: filter 0.5s ease;
-        }
         .halftone-bg {
           background-image: radial-gradient(circle, #333 1px, transparent 1px);
           background-size: 4px 4px;
@@ -144,14 +123,6 @@ export default function TattooArtist() {
           0% { transform: translateY(50px); opacity: 0; }
           100% { transform: translateY(0); opacity: 1; }
         }
-        @keyframes scrollLeft {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        @keyframes scrollRight {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
-        }
         @keyframes flashEffect {
           0%, 80% { filter: brightness(1) grayscale(100%); z-index: 10; }
           85% { filter: brightness(4) grayscale(0%); z-index: 20; }
@@ -164,12 +135,6 @@ export default function TattooArtist() {
         }
         .animate-slide-up-hero {
           animation: slideUpHero 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        }
-        .animate-scroll-left-slow {
-          animation: scrollLeft 80s linear infinite;
-        }
-        .animate-scroll-right-slow {
-          animation: scrollRight 90s linear infinite;
         }
         .animate-flash-random-1 {
           animation: flashEffect 4s infinite 0s;

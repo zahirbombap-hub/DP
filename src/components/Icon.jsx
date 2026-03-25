@@ -42,6 +42,7 @@ const iconMap = {
   code: (props) => <path d="M10 7 5 12l5 5M14 7l5 5-5 5" {...props} />,
   dark_mode: (props) => <path d="M16.7 14.7a7 7 0 1 1-7.4-10.9 8.5 8.5 0 0 0 9.8 11.2c-.7 0-1.7-.1-2.4-.3Z" {...props} />,
   east: (props) => <path d="M5 12h14m-4-4 4 4-4 4" {...props} />,
+  facebook: () => <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.5-1.5h1.4V4.9c-.7-.1-1.6-.2-2.5-.2-2.5 0-4.3 1.5-4.3 4.4V11H8v3h2.3v7h3.2Z" fill="currentColor" stroke="none" />,
   eco: (props) => <path d="M18 4c-7.7.5-12 4.8-12 10.5A5.5 5.5 0 0 0 11.5 20C17.2 20 21.5 15.7 22 8c-2.3 0-4.3.2-6 1-2.6 1.1-4.8 3.3-6 6 1-4 3.8-6.8 8-11Z" {...props} />,
   expand_more: (props) => <path d="m6 9 6 6 6-6" {...props} />,
   filter_vintage: (props) => (
