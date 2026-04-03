@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "../components/tejidos/tejidos.css";
 import { Header } from "../components/tejidos/Header.jsx";
-import { Hero } from "../components/tejidos/Hero.jsx";
-import { Collection } from "../components/tejidos/Collection.jsx";
-import { Philosophy } from "../components/tejidos/Philosophy.jsx";
-import { Newsletter } from "../components/tejidos/Newsletter.jsx";
+import { CatalogoDigital } from "../components/tejidos/CatalogoDigital.jsx";
 import { Footer } from "../components/tejidos/Footer.jsx";
 import { CATALOG_URL } from "../components/tejidos/catalog.constants.js";
 
-export default function HandmadeWool() {
-  const navigate = useNavigate();
+function getSelectedFile(search) {
+  const params = new URLSearchParams(search || "");
+  const file = params.get("file");
+  return file ? String(file) : null;
+}
+
+export default function HandmadeWoolCatalogo() {
+  const location = useLocation();
   const [catalogItems, setCatalogItems] = useState([]);
   const [catalogError, setCatalogError] = useState(null);
   const [catalogLoading, setCatalogLoading] = useState(true);
+  const [selectedCatalogFile, setSelectedCatalogFile] = useState(() =>
+    getSelectedFile(location.search)
+  );
 
   useEffect(() => {
     document.body.classList.add("wool-body");
@@ -54,9 +60,18 @@ export default function HandmadeWool() {
     };
   }, []);
 
+  useEffect(() => {
+    const next = getSelectedFile(location.search);
+    if (next) setSelectedCatalogFile(next);
+  }, [location.search]);
+
   function commitCatalogItem(item) {
     if (!item?.file) return;
-    navigate(`/handmade-wool/catalogo?file=${encodeURIComponent(item.file)}#catalogo`);
+    setSelectedCatalogFile(item.file);
+    document.getElementById("catalogo")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
 
   return (
@@ -72,10 +87,13 @@ export default function HandmadeWool() {
       />
 
       <main>
-        <Hero />
-        <Collection />
-        <Philosophy />
-        <Newsletter />
+        <CatalogoDigital
+          items={catalogItems}
+          loading={catalogLoading}
+          error={catalogError}
+          selectedFile={selectedCatalogFile}
+          onSelectedFileChange={setSelectedCatalogFile}
+        />
       </main>
 
       <Footer />

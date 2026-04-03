@@ -34,7 +34,7 @@ export function ProductShowcase() {
                 >
                   <div className="bg-green-500 text-white p-3 md:p-4 rounded-full shadow-xl border-4 border-white dark:border-slate-900 flex flex-col items-center justify-center text-center w-24 h-24 md:w-32 md:h-32">
                     <Icon name="verified" className="text-3xl" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest leading-none mt-1">Garantía de calidad</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest leading-none mt-1">Pagas solo por el agua</span>
                   </div>
                 </div>
               </div>
@@ -61,12 +61,11 @@ export function ProductShowcase() {
                 </button>
               </div>
               <div className="mb-6 md:mb-10">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-slate-500 dark:text-slate-300 text-lg">$</span>
-                  <span className="text-4xl md:text-5xl font-black transition-all text-slate-800 dark:text-white">
-                    {isRefill ? "9.000" : "15.000"}
-                  </span>
-                  <span className="text-slate-500 dark:text-slate-300 font-medium">COP</span>
+                <p className="text-slate-500 dark:text-slate-300 text-sm uppercase tracking-widest font-semibold">
+                  {isRefill ? "Recarga" : "Nuevo botellón"}
+                </p>
+                <div className="mt-2 text-3xl md:text-4xl font-black transition-all text-slate-800 dark:text-white leading-tight max-w-md">
+                  {isRefill ? "Tengo mi repuesto." : "No tengo mi repuesto."}
                 </div>
                 <p className="text-sm text-slate-400 mt-2">Envío incluido en Villa de Leyva y Sutamarchán.</p>
               </div>

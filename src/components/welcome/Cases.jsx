@@ -183,10 +183,10 @@ export function Cases() {
           },
           {
             href: "/agua-linda",
-            img: "/multimedia/AguaLinda/pre-agua-linda.png",
+            img: "/multimedia/agua-linda/pre-agualinda.png",
             subtitle: "Distribuidora Agua Linda",
             title: "Agua Linda Villa de Leyva y Sutamarchán",
-            extraImgClass: "contrast-125 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100",
+            extraImgClass: "contrast-125 opacity-100",
           },
           {
             href: "/handmade-wool",

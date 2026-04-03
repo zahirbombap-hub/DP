@@ -3,6 +3,7 @@ import { Welcome } from "./components/welcome/welcome.jsx";
 import AguaLinda from "./routes/agua-linda.jsx";
 import AguaLindaEmpres from "./routes/agua-linda-empres.jsx";
 import HandmadeWool from "./routes/handmade-wool.jsx";
+import HandmadeWoolCatalogo from "./routes/handmade-wool-catalogo.jsx";
 import TattooArtist from "./routes/tattoo-artist.jsx";
 import Cuerna from "./routes/cuerna.jsx";
 import Articulos from "./routes/articulos.jsx";
@@ -27,6 +28,10 @@ export default function Home() {
         <Route path="/agua-linda" element={<AguaLinda />} />
         <Route path="/agua-linda/empres" element={<AguaLindaEmpres />} />
         <Route path="/handmade-wool" element={<HandmadeWool />} />
+        <Route
+          path="/handmade-wool/catalogo"
+          element={<HandmadeWoolCatalogo />}
+        />
         <Route path="/tattoo-artist" element={<TattooArtist />} />
         <Route path="/cuerna" element={<Cuerna />} />
         <Route path="/articulos" element={<Articulos />} />

@@ -2,7 +2,10 @@ import { Icon } from "../Icon.jsx";
 
 export function Footer() {
   return (
-    <footer className="bg-[color:var(--color-bg)] pt-20 pb-10 border-t border-[#a54616]/10">
+    <footer
+      id="contacto"
+      className="bg-[color:var(--color-bg)] pt-20 pb-10 border-t border-[#a54616]/10 scroll-mt-24"
+    >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 wool-fade-up" style={{ "--delay": "0.1s" }}>
         <div className="space-y-6">
           <div className="flex items-center gap-2">

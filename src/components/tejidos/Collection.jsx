@@ -2,7 +2,10 @@ import { Icon } from "../Icon.jsx";
 
 export function Collection() {
   return (
-    <section className="py-24 bg-[color:var(--color-surface)]">
+    <section
+      id="materiales"
+      className="py-24 bg-[color:var(--color-surface)] scroll-mt-24"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="space-y-4">
