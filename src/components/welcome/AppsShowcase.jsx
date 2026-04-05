@@ -80,7 +80,11 @@ function AppsCtaButton({ href, children }) {
 
 function PreviewShell({ compact, children }) {
   return (
-    <div className={`relative overflow-hidden rounded-[24px] border border-white/10 bg-black/45 p-4 sm:p-5 ${compact ? "min-h-[220px]" : "min-h-[280px]"}`}>
+    <div
+      className={`relative overflow-hidden rounded-[24px] border border-white/10 bg-black/45 ${
+        compact ? "min-h-[160px] p-3 sm:p-4" : "min-h-[280px] p-4 sm:p-5"
+      }`}
+    >
       <div
         className="absolute inset-0 pointer-events-none opacity-70"
         style={{
@@ -96,13 +100,13 @@ function PreviewShell({ compact, children }) {
 function LearningPreview({ preview, compact, theme }) {
   return (
     <PreviewShell compact={compact}>
-      <div className="space-y-4">
+      <div className="space-y-3">
         <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.35em] text-white/45">
           <span>Daily flow</span>
           <span>{preview.metric}</span>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3">
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-2.5">
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className={`font-bold text-white ${compact ? "text-[12px]" : "text-sm"}`}>{preview.lesson}</p>
@@ -117,10 +121,10 @@ function LearningPreview({ preview, compact, theme }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-1.5">
           {preview.checklist.map((step, index) => (
-            <div key={step} className="rounded-2xl border border-white/10 bg-black/35 p-2.5">
-              <div className={`mb-2 h-2 w-2 rounded-full ${theme.dot}`} />
+            <div key={step} className="rounded-2xl border border-white/10 bg-black/35 p-2">
+              <div className={`mb-1.5 h-2 w-2 rounded-full ${theme.dot}`} />
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/80">{index + 1}. {step}</p>
             </div>
           ))}
@@ -133,23 +137,23 @@ function LearningPreview({ preview, compact, theme }) {
 function CookingPreview({ preview, compact, theme }) {
   return (
     <PreviewShell compact={compact}>
-      <div className="grid gap-4 sm:grid-cols-[0.95fr_1.05fr]">
-        <div className="flex flex-col items-center justify-center rounded-[22px] border border-white/10 bg-white/[0.03] p-4">
-          <div className="flex h-24 w-24 items-center justify-center rounded-full border border-white/15 bg-black/55 sm:h-28 sm:w-28">
+      <div className="grid gap-3 sm:grid-cols-[0.95fr_1.05fr]">
+        <div className="flex flex-col items-center justify-center rounded-[22px] border border-white/10 bg-white/[0.03] p-3">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full border border-white/15 bg-black/55 sm:h-24 sm:w-24">
             <div className="text-center">
               <p className="text-[10px] uppercase tracking-[0.3em] text-white/45">Timer</p>
-              <p className="mt-1 text-2xl font-black text-white sm:text-3xl">{preview.timer}</p>
+              <p className="mt-1 text-xl font-black text-white sm:text-2xl">{preview.timer}</p>
             </div>
           </div>
-          <div className="mt-4 text-center">
+          <div className="mt-3 text-center">
             <p className="text-[10px] uppercase tracking-[0.3em] text-white/45">Heat</p>
             <p className="mt-1 text-sm font-bold text-white">{preview.heat}</p>
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           {preview.checklist.map((step, index) => (
-            <div key={step} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/35 px-3 py-3">
+            <div key={step} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/35 px-3 py-2">
               <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/10 text-[10px] font-black ${theme.label}`}>
                 {index + 1}
               </span>
@@ -168,8 +172,8 @@ function CookingPreview({ preview, compact, theme }) {
 function FocusPreview({ preview, compact, theme }) {
   return (
     <PreviewShell compact={compact}>
-      <div className="space-y-4">
-        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-4">
+      <div className="space-y-3">
+        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-3">
           <div className="flex items-end justify-between gap-3">
             <div>
               <p className="text-[10px] uppercase tracking-[0.35em] text-white/45">Session</p>
@@ -185,9 +189,9 @@ function FocusPreview({ preview, compact, theme }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-1.5">
           {preview.distractions.map((item) => (
-            <div key={item} className="rounded-2xl border border-white/10 bg-black/35 px-3 py-3 text-center">
+            <div key={item} className="rounded-2xl border border-white/10 bg-black/35 px-2.5 py-2 text-center">
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/70">{item}</p>
             </div>
           ))}
@@ -200,16 +204,16 @@ function FocusPreview({ preview, compact, theme }) {
 function TasksPreview({ preview, compact, theme }) {
   return (
     <PreviewShell compact={compact}>
-      <div className="grid h-full gap-2 sm:grid-cols-3">
+      <div className="grid h-full gap-1.5 sm:grid-cols-3">
         {preview.columns.map((column) => (
-          <div key={column.label} className="rounded-[20px] border border-white/10 bg-white/[0.03] p-3">
+          <div key={column.label} className="rounded-[20px] border border-white/10 bg-white/[0.03] p-2.5">
             <div className="flex items-center justify-between">
               <p className={`text-[10px] font-bold uppercase tracking-[0.35em] ${theme.label}`}>{column.label}</p>
               <span className="text-[10px] text-white/45">{column.items.length}</span>
             </div>
-            <div className="mt-3 space-y-2">
+            <div className="mt-2.5 space-y-1.5">
               {column.items.map((item) => (
-                <div key={item} className="rounded-xl border border-white/10 bg-black/35 px-3 py-2">
+                <div key={item} className="rounded-xl border border-white/10 bg-black/35 px-2.5 py-1.5">
                   <div className="flex items-start gap-2">
                     <span className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full ${theme.dot} text-black`}>
                       <CheckIcon />
@@ -229,8 +233,8 @@ function TasksPreview({ preview, compact, theme }) {
 function HabitsPreview({ preview, compact, theme }) {
   return (
     <PreviewShell compact={compact}>
-      <div className="space-y-4">
-        <div className="flex items-center justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-4">
+      <div className="space-y-3">
+        <div className="flex items-center justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-3">
           <div>
             <p className="text-[10px] uppercase tracking-[0.35em] text-white/45">Streak</p>
             <p className="mt-1 text-3xl font-black text-white sm:text-4xl">{preview.streak}</p>
@@ -244,7 +248,7 @@ function HabitsPreview({ preview, compact, theme }) {
           <div className={`h-full rounded-full bg-gradient-to-r ${theme.bar}`} style={{ width: `${preview.progress}%` }} />
         </div>
 
-        <div className="grid grid-cols-5 gap-2">
+        <div className="grid grid-cols-5 gap-1.5">
           {preview.heatmap.map((cell, index) => (
             <div
               key={`${preview.streak}-${index}`}
@@ -261,7 +265,7 @@ function HabitsPreview({ preview, compact, theme }) {
 
         <div className="flex flex-wrap gap-2">
           {preview.habits.map((habit) => (
-            <span key={habit} className="rounded-full border border-white/10 bg-black/35 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-white/80">
+            <span key={habit} className="rounded-full border border-white/10 bg-black/35 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-white/80">
               {habit}
             </span>
           ))}
@@ -295,28 +299,28 @@ function AppCard({ app, onOpen }) {
   const theme = themeStyles[app.theme];
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] p-5 shadow-[0_18px_60px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06]">
       <div className="flex items-start justify-between gap-3">
         <div className="space-y-2">
           <p className={`text-[10px] font-bold uppercase tracking-[0.35em] ${theme.label}`}>{app.category}</p>
-          <h3 className="text-2xl font-black uppercase leading-[0.95] text-white">{app.title}</h3>
+          <h3 className="text-xl font-black uppercase leading-[0.95] text-white sm:text-2xl">{app.title}</h3>
         </div>
         <span className={`rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] ${theme.chip}`}>
           {app.benefit}
         </span>
       </div>
 
-      <p className="mt-3 text-sm leading-relaxed text-gray-300">{app.problem}</p>
+      <p className="mt-2.5 text-[13px] leading-relaxed text-gray-300 sm:text-sm">{app.problem}</p>
 
-      <div className="mt-5 transition-transform duration-300 group-hover:scale-[1.015]">
+      <div className="mt-4 transition-transform duration-300 group-hover:scale-[1.01]">
         <AppPreview app={app} compact />
       </div>
 
-      <div className="mt-auto border-t border-white/10 pt-4">
+      <div className="mt-auto border-t border-white/10 pt-3">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {app.tags.map((tag) => (
-              <span key={tag} className="rounded-full border border-white/10 bg-black/25 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-gray-200">
+              <span key={tag} className="rounded-full border border-white/10 bg-black/25 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-gray-200">
                 {tag}
               </span>
             ))}
@@ -332,7 +336,7 @@ function AppCard({ app, onOpen }) {
           </button>
         </div>
 
-        <p className="mt-3 text-[10px] uppercase tracking-[0.25em] text-white/50">
+        <p className="mt-2.5 text-[10px] uppercase tracking-[0.25em] text-white/50">
           Stack: <span className="text-white/80">{app.stack.join(" Ã‚Â· ")}</span>
         </p>
       </div>
@@ -483,8 +487,8 @@ export function AppsShowcase() {
             </p>
           </div>
 
-          <div className="mt-10 overflow-x-auto pb-2 no-scrollbar sm:mt-14">
-            <div className="flex flex-nowrap items-stretch gap-5 sm:gap-6 snap-x snap-mandatory">
+          <div className="mt-8 overflow-x-auto pb-2 no-scrollbar sm:mt-12">
+            <div className="flex flex-nowrap items-stretch gap-4 sm:gap-5 snap-x snap-mandatory">
               {appsData.map((app) => (
                 <div
                   key={app.id}
@@ -497,7 +501,7 @@ export function AppsShowcase() {
           </div>
 
           <div
-            className="mt-8 flex flex-col gap-5 rounded-[28px] border border-white/10 bg-white/[0.03] px-6 py-5 sm:mt-10 sm:flex-row sm:items-center sm:justify-between sm:px-8"
+            className="mt-6 flex flex-col gap-5 rounded-[28px] border border-white/10 bg-white/[0.03] px-6 py-5 sm:mt-8 sm:flex-row sm:items-center sm:justify-between sm:px-8"
             style={{ borderColor: "var(--apps-border)" }}
           >
             <div className="max-w-2xl">
