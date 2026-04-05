@@ -63,6 +63,21 @@ function CheckIcon() {
   );
 }
 
+function AppsCtaButton({ href, children }) {
+  return (
+    <a
+      href={href}
+      className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl border border-[#8a0012]/60 bg-[linear-gradient(135deg,#ff3d4d_0%,#ff7a00_38%,#ffcc00_72%,#ff4dc7_100%)] px-5 py-3 text-[10px] font-black uppercase tracking-[0.3em] text-white shadow-[0_18px_36px_rgba(255,61,77,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_48px_rgba(255,61,77,0.38)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandYellow/70"
+    >
+      <span className="absolute inset-0 bg-[linear-gradient(110deg,transparent_20%,rgba(255,255,255,0.35)_50%,transparent_80%)] -translate-x-[120%] transition-transform duration-700 group-hover:translate-x-[120%]" />
+      <span className="relative inline-flex items-center gap-2">
+        {children}
+        <ArrowIcon />
+      </span>
+    </a>
+  );
+}
+
 function PreviewShell({ compact, children }) {
   return (
     <div className={`relative overflow-hidden rounded-[24px] border border-white/10 bg-black/45 p-4 sm:p-5 ${compact ? "min-h-[220px]" : "min-h-[280px]"}`}>
@@ -297,26 +312,29 @@ function AppCard({ app, onOpen }) {
         <AppPreview app={app} compact />
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
-        {app.tags.map((tag) => (
-          <span key={tag} className="rounded-full border border-white/10 bg-black/25 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-gray-200">
-            {tag}
-          </span>
-        ))}
-      </div>
+      <div className="mt-auto border-t border-white/10 pt-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap gap-2">
+            {app.tags.map((tag) => (
+              <span key={tag} className="rounded-full border border-white/10 bg-black/25 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-gray-200">
+                {tag}
+              </span>
+            ))}
+          </div>
 
-      <div className="mt-5 flex flex-col gap-3 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-[10px] uppercase tracking-[0.25em] text-white/50">
-          Stack: <span className="text-white/80">{app.stack.join(" · ")}</span>
+          <button
+            type="button"
+            onClick={onOpen}
+            className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.28em] text-white transition-colors hover:text-brandYellow"
+          >
+            <span>Ver preview</span>
+            <ArrowIcon />
+          </button>
+        </div>
+
+        <p className="mt-3 text-[10px] uppercase tracking-[0.25em] text-white/50">
+          Stack: <span className="text-white/80">{app.stack.join(" Ã‚Â· ")}</span>
         </p>
-        <button
-          type="button"
-          onClick={onOpen}
-          className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.28em] text-white transition-colors hover:text-brandYellow"
-        >
-          <span>Ver preview</span>
-          <ArrowIcon />
-        </button>
       </div>
     </article>
   );
@@ -465,33 +483,35 @@ export function AppsShowcase() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {appsData.map((app) => (
-              <AppCard key={app.id} app={app} onOpen={() => setSelected(app)} />
-            ))}
+          <div className="mt-10 overflow-x-auto pb-2 no-scrollbar sm:mt-14">
+            <div className="flex flex-nowrap items-stretch gap-5 sm:gap-6 snap-x snap-mandatory">
+              {appsData.map((app) => (
+                <div
+                  key={app.id}
+                  className="h-full w-[86vw] shrink-0 snap-start sm:w-[340px] lg:w-[360px] xl:w-[380px]"
+                >
+                  <AppCard app={app} onOpen={() => setSelected(app)} />
+                </div>
+              ))}
+            </div>
           </div>
 
           <div
-            className="mt-12 flex flex-col gap-6 rounded-[32px] border px-6 py-6 sm:mt-16 sm:flex-row sm:items-center sm:justify-between sm:px-8"
+            className="mt-8 flex flex-col gap-5 rounded-[28px] border border-white/10 bg-white/[0.03] px-6 py-5 sm:mt-10 sm:flex-row sm:items-center sm:justify-between sm:px-8"
             style={{ borderColor: "var(--apps-border)" }}
           >
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gray-400">CTA final</p>
+            <div className="max-w-2xl">
+              <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gray-400">CTA de apps</p>
               <h3 className="mt-2 text-2xl font-black uppercase text-white sm:text-3xl">
-                Soluciones simples para problemas reales
+                &iquest;Quieres una app asi?
               </h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-gray-400">
-                Apps pensadas para dar una experiencia clara, util y facil de usar desde el primer vistazo.
+              <p className="mt-2 text-sm leading-relaxed text-gray-400">
+                La fila queda compacta para que veas mas rapido el conjunto. Si buscas una app a medida, hablemos y la
+                construimos juntos.
               </p>
             </div>
 
-            <a
-              href="#contact-footer"
-              className="cta-button inline-flex items-center justify-center rounded-xl px-5 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white transition-transform hover:scale-[1.02] sm:px-7"
-              style={{ backgroundColor: "var(--apps-accent)" }}
-            >
-              Descubrir mas
-            </a>
+            <AppsCtaButton href="#contact-footer">Solicitar una app</AppsCtaButton>
           </div>
         </div>
       </section>

@@ -191,14 +191,16 @@ function ArticleCard({ article, onOpen }) {
         <ArticlePreview article={article} compact />
       </div>
 
-      <button
-        type="button"
-        onClick={onOpen}
-        className="mt-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.28em] text-white transition-colors hover:text-brandYellow"
-      >
-        <span>Leer idea</span>
-        <ArrowIcon />
-      </button>
+      <div className="mt-auto pt-5">
+        <button
+          type="button"
+          onClick={onOpen}
+          className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.28em] text-white transition-colors hover:text-brandYellow"
+        >
+          <span>Leer idea</span>
+          <ArrowIcon />
+        </button>
+      </div>
     </article>
   );
 }

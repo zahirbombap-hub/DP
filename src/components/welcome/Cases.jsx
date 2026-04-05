@@ -179,14 +179,14 @@ export function Cases() {
             img: "/multimedia/FotosTattosLopez/pre-tattos.png",
             subtitle: "Tatuador // Estilo Puntillismo",
             title: "Zona 7 Art Studio",
-            extraImgClass: "contrast-125 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100",
+            extraImgClass: "sepia-[0.3] brightness-75 group-hover:sepia-0 group-hover:brightness-100",
           },
           {
             href: "/agua-linda",
             img: "/multimedia/agua-linda/pre-agualinda.png",
             subtitle: "Distribuidora Agua Linda",
             title: "Agua Linda Villa de Leyva y Sutamarchán",
-            extraImgClass: "contrast-125 opacity-100",
+            extraImgClass: "sepia-[0.3] brightness-75 group-hover:sepia-0 group-hover:brightness-100",
           },
           {
             href: "/handmade-wool",

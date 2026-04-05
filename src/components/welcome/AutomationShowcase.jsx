@@ -127,6 +127,116 @@ function CloseIcon() {
   );
 }
 
+function AppsButton({ to, children }) {
+  return (
+    <Link
+      to={to}
+      className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl border border-[#8a0012]/60 bg-[linear-gradient(135deg,#ff3d4d_0%,#ff7a00_38%,#ffcc00_72%,#ff4dc7_100%)] px-5 py-3 text-[10px] font-black uppercase tracking-[0.3em] text-white shadow-[0_18px_36px_rgba(255,61,77,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_48px_rgba(255,61,77,0.38)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandYellow/70"
+    >
+      <span className="absolute inset-0 bg-[linear-gradient(110deg,transparent_20%,rgba(255,255,255,0.35)_50%,transparent_80%)] -translate-x-[120%] transition-transform duration-700 group-hover:translate-x-[120%]" />
+      <span className="relative inline-flex items-center gap-2">
+        {children}
+        <ArrowIcon />
+      </span>
+    </Link>
+  );
+}
+
+function SoftButton({ to, children }) {
+  return (
+    <Link
+      to={to}
+      className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-3 text-[10px] font-black uppercase tracking-[0.3em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-brandRed/40 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandRed/40"
+    >
+      <span className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,61,77,0.18),rgba(255,204,0,0.06),transparent_72%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <span className="relative inline-flex items-center gap-2">{children}</span>
+    </Link>
+  );
+}
+
+function getProcessStage(index, total) {
+  if (index === 0) {
+    return {
+      label: "Entrada",
+      symbol: "○",
+    };
+  }
+
+  if (index === total - 1) {
+    return {
+      label: "Salida",
+      symbol: "✓",
+    };
+  }
+
+  if (index === 1) {
+    return {
+      label: "Filtro",
+      symbol: "↻",
+    };
+  }
+
+  return {
+    label: "Acción",
+    symbol: "⚙",
+  };
+}
+
+function AutomationDashboard({ item, theme }) {
+  return (
+    <div className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-black/35">
+      <div className={`h-1 w-full bg-gradient-to-r ${theme.modalBar}`} />
+
+      <div className="p-4">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-white/45">Secuencia</p>
+            <p className={`mt-1 text-[10px] font-bold uppercase tracking-[0.28em] ${theme.label}`}>{item.nodes.length} símbolos</p>
+          </div>
+
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-white/60">
+            <span className={`h-2 w-2 rounded-full ${theme.dot}`} />
+            Compacto
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.02] px-3 py-3 sm:px-4">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[9px] font-bold uppercase tracking-[0.24em] text-white/35">
+            {item.nodes.map((_, index) => {
+              const stage = getProcessStage(index, item.nodes.length);
+
+              return (
+                <span key={`legend-${item.id}-${index}`} className="inline-flex items-center gap-1.5">
+                  <span className={theme.label}>{stage.symbol}</span>
+                  {stage.label}
+                </span>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 flex items-start gap-2 overflow-x-auto no-scrollbar sm:overflow-visible">
+            {item.nodes.map((node, index) => {
+              const stage = getProcessStage(index, item.nodes.length);
+
+              return (
+                <div key={`${item.id}-${node}-${index}`} className="flex min-w-[92px] shrink-0 flex-1 flex-col items-center text-center sm:min-w-0">
+                  <span
+                    className={`flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/55 text-xl font-black ${theme.label}`}
+                  >
+                    {stage.symbol}
+                  </span>
+                  <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.24em] text-white/40">{stage.label}</p>
+                  <p className="mt-1 text-[11px] font-semibold leading-snug text-white">{node}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function AutomationCard({ item, onOpen }) {
   const theme = themeStyles[item.theme];
 
@@ -142,19 +252,7 @@ function AutomationCard({ item, onOpen }) {
       <h3 className="mt-4 text-2xl font-black uppercase leading-[0.95] text-white">{item.title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-gray-300">{item.summary}</p>
 
-      <div className="mt-5 rounded-2xl border border-white/10 bg-black/35 p-4">
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-          {item.nodes.map((node, index) => (
-            <div key={node} className="relative rounded-xl border border-white/10 bg-white/[0.04] p-3">
-              <span className={`mb-3 block h-2.5 w-2.5 rounded-full ${theme.dot}`} />
-              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/85">{node}</p>
-              {index < item.nodes.length - 1 ? (
-                <span className="absolute -right-1 top-1/2 hidden h-px w-2 bg-gradient-to-r from-white/30 to-transparent sm:block" />
-              ) : null}
-            </div>
-          ))}
-        </div>
-      </div>
+      <AutomationDashboard item={item} theme={theme} />
 
       <div className="mt-5 flex flex-wrap gap-2">
         {item.tech.map((tech) => (
@@ -279,6 +377,8 @@ function AutomationModal({ item, onClose }) {
   );
 }
 
+const featuredAutomations = automations.slice(0, 3);
+
 export function AutomationShowcase() {
   const [selected, setSelected] = useState(null);
 
@@ -303,34 +403,26 @@ export function AutomationShowcase() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {automations.map((item) => (
+          <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {featuredAutomations.map((item) => (
               <AutomationCard key={item.id} item={item} onOpen={() => setSelected(item)} />
             ))}
           </div>
 
           <div className="mt-12 flex flex-col gap-6 rounded-[32px] border border-white/10 bg-white/[0.03] px-6 py-6 sm:mt-16 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-            <div>
+            <div className="max-w-2xl">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gray-400">Bonus</p>
-              <h3 className="mt-2 text-2xl font-black uppercase text-white sm:text-3xl">Automatiza tu flujo</h3>
+              <h3 className="mt-2 text-2xl font-black uppercase text-white sm:text-3xl">
+                Solo mostramos 3 automatizaciones destacadas
+              </h3>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-gray-400">
                 Diseñamos sistemas que capturan, clasifican, notifican y ordenan sin añadir fricción al equipo.
               </p>
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Link
-                to="/automatizaciones#inicio"
-                className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] sm:px-7"
-              >
-                Ver subpagina
-              </Link>
-              <a
-                href="#contact-footer"
-                className="cta-button inline-flex items-center justify-center rounded-xl px-5 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white transition-transform hover:scale-[1.02] sm:px-7"
-              >
-                Automatiza tu flujo
-              </a>
+              <AppsButton to="/#apps-showcase">Ver apps</AppsButton>
+              <SoftButton to="/#contact-footer">Hablar con DP</SoftButton>
             </div>
           </div>
         </div>
