@@ -141,7 +141,7 @@ function ScrollVelocityMarquee({ speed = 60 }) {
 
 export function Hero() {
   return (
-    <section id="inicio" className="welcome-hero scroll-mt-24 relative min-h-[70vh] sm:min-h-[80vh] flex flex-col items-center justify-center px-4 sm:px-6 pt-16 sm:pt-18 md:pt-20 overflow-hidden">
+    <section id="inicio" className="welcome-hero welcome-scroll-section relative min-h-[100svh] lg:min-h-[80vh] flex flex-col items-center justify-center px-4 sm:px-6 pt-16 sm:pt-18 md:pt-20 overflow-hidden">
       <style>{`
         @font-face {
           font-family: "DxRuiga SemiBold";

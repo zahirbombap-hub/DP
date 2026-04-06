@@ -103,7 +103,7 @@ export function Contact() {
 
   return (
     <section
-      className="reveal border-t border-[#8a0012]/30 bg-[#121212]/20 px-4 py-8 sm:px-6 sm:py-10"
+      className="reveal welcome-scroll-section border-t border-[#8a0012]/30 bg-[#121212]/20 px-4 py-8 sm:px-6 sm:py-10"
       id="contact-footer"
     >
       <div className="mx-auto max-w-screen-xl">

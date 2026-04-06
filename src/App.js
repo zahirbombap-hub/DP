@@ -7,6 +7,7 @@ import HandmadeWoolCatalogo from "./routes/handmade-wool-catalogo.jsx";
 import TattooArtist from "./routes/tattoo-artist.jsx";
 import Cuerna from "./routes/cuerna.jsx";
 import Articulos from "./routes/articulos.jsx";
+import Apps from "./routes/apps.jsx";
 import Paginas from "./routes/paginas.jsx";
 import Automatizaciones from "./routes/automatizaciones.jsx";
 import NotFound from "./routes/notfound.jsx";
@@ -35,6 +36,7 @@ export default function Home() {
         <Route path="/tattoo-artist" element={<TattooArtist />} />
         <Route path="/cuerna" element={<Cuerna />} />
         <Route path="/articulos" element={<Articulos />} />
+        <Route path="/apps" element={<Apps />} />
         <Route path="/paginas" element={<Paginas />} />
         <Route path="/automatizaciones" element={<Automatizaciones />} />
         <Route path="*" element={<NotFound />} />

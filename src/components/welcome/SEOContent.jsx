@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { modalOverlayStyle, modalPanelStyle } from "./modalLayout.js";
+import { ModalPortal } from "./ModalPortal.jsx";
 
 const articles = [
   {
@@ -225,30 +227,33 @@ function ArticleModal({ article, onClose }) {
   }, [onClose]);
 
   return (
-    <div
-      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-sm"
-      onClick={onClose}
-      role="presentation"
-    >
+    <ModalPortal>
       <div
-        className="relative w-full max-w-5xl overflow-hidden rounded-[32px] border border-white/10 bg-[#0b0b0b] shadow-[0_24px_80px_rgba(0,0,0,0.5)]"
-        onClick={(event) => event.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={`article-title-${article.id}`}
+        className="fixed inset-0 z-[80] flex items-center justify-center overflow-y-auto bg-black/80 px-4 backdrop-blur-sm sm:px-6"
+        style={modalOverlayStyle}
+        onClick={onClose}
+        role="presentation"
       >
+        <div
+          className="relative my-auto flex w-full max-w-5xl flex-col overflow-hidden rounded-[32px] border border-white/10 bg-[#0b0b0b] shadow-[0_24px_80px_rgba(0,0,0,0.5)]"
+          style={modalPanelStyle}
+          onClick={(event) => event.stopPropagation()}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={`article-title-${article.id}`}
+        >
         <div className={`h-1 w-full bg-gradient-to-r ${theme.modalBar}`} />
 
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 hover:text-brandYellow"
+          className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 hover:text-brandYellow"
           aria-label="Cerrar detalle"
         >
           <CloseIcon />
         </button>
 
-        <div className="grid gap-8 p-6 sm:p-8 md:grid-cols-[1.05fr_0.95fr] md:p-10">
+        <div className="grid flex-1 gap-8 overflow-y-auto overscroll-contain p-6 pr-16 sm:p-8 sm:pr-20 md:grid-cols-[1.05fr_0.95fr] md:p-10 md:pr-20">
           <div>
             <p className={`text-[10px] font-bold uppercase tracking-[0.35em] ${theme.label}`}>{article.category}</p>
             <h3 id={`article-title-${article.id}`} className="mt-3 text-3xl font-black uppercase leading-[0.95] text-white sm:text-4xl">
@@ -292,8 +297,9 @@ function ArticleModal({ article, onClose }) {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </ModalPortal>
   );
 }
 
@@ -304,7 +310,7 @@ export function SEOContent() {
     <>
       <section
         id="articulos"
-        className="reveal scroll-mt-24 relative overflow-hidden border-y border-white/5 bg-[#080808]"
+        className="reveal welcome-scroll-section relative overflow-hidden border-y border-white/5 bg-[#080808]"
       >
         <div
           className="absolute inset-0 pointer-events-none opacity-80"

@@ -19,7 +19,7 @@ const desktopNavItems = [
   { label: "Inicio", type: "link", to: "/" },
   { label: "Paginas", type: "link", to: "/paginas#inicio" },
   { label: "Automatizaciones", type: "link", to: "/automatizaciones#automatizaciones" },
-  { label: "Apps", type: "link", to: "/#apps-showcase" },
+  { label: "Apps", type: "link", to: "/apps#inicio" },
   { label: "Articulos", type: "link", to: "/articulos#articulos" },
   { label: "Contacto", type: "link", to: "/#contact-footer" },
 ];
@@ -28,7 +28,7 @@ const compactNavItems = [
   { label: "Inicio", type: "link", to: "/" },
   { label: "Paginas", type: "link", to: "/paginas#inicio" },
   { label: "Automatizaciones", type: "link", to: "/automatizaciones#automatizaciones" },
-  { label: "Apps", type: "link", to: "/#apps-showcase" },
+  { label: "Apps", type: "link", to: "/apps#inicio" },
   { label: "Articulos", type: "link", to: "/articulos#articulos" },
   { label: "Contacto", type: "link", to: "/#contact-footer" },
 ];

@@ -123,7 +123,7 @@ export function Cases() {
   }, []);
 
   return (
-    <section className="py-2 sm:py-3 mt-4 sm:mt-10 mb-6 sm:mb-10 border-y border-[#8a0012]/30 bg-[#121212]/50 reveal" id="cases-section">
+    <section className="welcome-scroll-section py-2 sm:py-3 mt-4 sm:mt-10 mb-6 sm:mb-10 border-y border-[#8a0012]/30 bg-[#121212]/50 reveal" id="cases-section">
       <div className="px-4 sm:px-6 mb-6 sm:mb-8 flex flex-col md:flex-row md:items-end justify-between max-w-screen-2xl mx-auto gap-6">
         <div className="max-w-xl">
           <span className="text-[#8a0012] text-[10px] font-black tracking-[0.3em] uppercase mb-3 block font-['Space_Grotesk',sans-serif]">

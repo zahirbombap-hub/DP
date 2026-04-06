@@ -1,11 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 const defaultDesktopNavItems = [
-  { label: "Inicio", type: "link", to: "/" },
+  { label: "Inicio", type: "link", to: "/#inicio" },
   { label: "Paginas", type: "link", to: "/paginas#inicio" },
   { label: "Automatizaciones", type: "link", to: "/automatizaciones#inicio" },
-  { label: "Apps", type: "anchor", to: "#apps-showcase" },
+  { label: "Apps", type: "link", to: "/apps#inicio" },
   { label: "Articulos", type: "link", to: "/articulos#articulos" },
   { label: "Contacto", type: "anchor", to: "#contact-footer" },
 ];
@@ -13,7 +13,7 @@ const defaultDesktopNavItems = [
 const defaultCompactNavItems = [
   { label: "Paginas", type: "link", to: "/paginas#inicio" },
   { label: "Automatizaciones", type: "link", to: "/automatizaciones#inicio" },
-  { label: "Apps", type: "anchor", to: "#apps-showcase" },
+  { label: "Apps", type: "link", to: "/apps#inicio" },
   { label: "Articulos", type: "link", to: "/articulos#articulos" },
   { label: "Contacto", type: "anchor", to: "#contact-footer" },
 ];
@@ -40,7 +40,22 @@ export function Header({
   compactNavItems = defaultCompactNavItems,
 }) {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
   const navigate = useNavigate();
+  const headerRef = useRef(null);
+
+  const handleHomeLinkClick = (event) => {
+    if (pathname !== "/") {
+      return;
+    }
+
+    event.preventDefault();
+    setOpen(false);
+    document.getElementById("inicio")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -65,8 +80,41 @@ export function Header({
     return () => mediaQuery.removeListener(closeCompactMenu);
   }, []);
 
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const header = headerRef.current;
+    if (!header) {
+      return undefined;
+    }
+
+    const root = document.documentElement;
+    const updateHeaderHeight = () => {
+      const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+      root.style.setProperty("--welcome-header-height", `${headerHeight}px`);
+    };
+
+    updateHeaderHeight();
+
+    const resizeObserver =
+      typeof ResizeObserver !== "undefined" ? new ResizeObserver(updateHeaderHeight) : null;
+
+    resizeObserver?.observe(header);
+    window.addEventListener("resize", updateHeaderHeight);
+
+    return () => {
+      resizeObserver?.disconnect();
+      window.removeEventListener("resize", updateHeaderHeight);
+    };
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 z-50 w-full border-b border-[#8a0012]/30 bg-[#050505]/90 px-4 py-3 backdrop-blur-xl sm:px-6 sm:py-4 cinematic-load">
+    <header
+      ref={headerRef}
+      className="welcome-fixed-header fixed top-0 left-0 z-50 w-full border-b border-[#8a0012]/30 bg-[#050505]/90 px-4 py-3 backdrop-blur-xl sm:px-6 sm:py-4 cinematic-load"
+    >
       <style>{`
         @font-face {
           font-family: "Frick03 Regular";
@@ -109,7 +157,8 @@ export function Header({
         <Link
           aria-label="Don Prueba Inicio"
           className="welcome-brand flex items-center gap-4 group"
-          to="/"
+          onClick={handleHomeLinkClick}
+          to="/#inicio"
         >
           <div className="welcome-brand-mark dp-logo-mark relative flex size-11 items-center justify-center overflow-hidden bg-transparent transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-[1.06] group-hover:rotate-[-3deg] sm:size-12">
             <img
@@ -140,7 +189,8 @@ export function Header({
         <div className="flex items-center justify-end gap-3 sm:gap-6">
           <Link
             className="welcome-home-link shrink-0 text-[10px] font-bold uppercase tracking-[0.2em] text-[#a1a1aa] transition-colors hover:text-[#ff3d4d]"
-            to="/"
+            onClick={handleHomeLinkClick}
+            to="/#inicio"
           >
             Inicio
           </Link>
@@ -153,9 +203,6 @@ export function Header({
               className="group flex items-center gap-2 rounded-full border border-[#8a0012]/20 bg-white/[0.03] px-3 py-2 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]"
               onClick={() => setOpen(!open)}
             >
-              <span className="text-[9px] font-black uppercase tracking-[0.22em] text-[#a1a1aa] transition-colors group-hover:text-white">
-                Menu
-              </span>
               <svg
                 className={`h-5 w-5 transition-transform duration-300 ${open ? "rotate-90" : "rotate-0"}`}
                 viewBox="0 0 24 24"

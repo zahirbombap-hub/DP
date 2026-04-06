@@ -2,6 +2,15 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 72px;
 }
+
+html.welcome-scroll-shell {
+  scroll-padding-top: 0;
+}
+
+.welcome-scroll-section {
+  scroll-margin-top: var(--welcome-header-offset, 88px);
+}
+
 /* Skip link: visually hidden but visible on keyboard focus */
 .skip-link {
   position: absolute;

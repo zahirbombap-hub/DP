@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { modalOverlayStyle, modalPanelStyle } from "./modalLayout.js";
+import { ModalPortal } from "./ModalPortal.jsx";
 
 const automations = [
   {
@@ -301,30 +303,33 @@ function AutomationModal({ item, onClose }) {
   }, [onClose]);
 
   return (
-    <div
-      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-sm"
-      onClick={onClose}
-      role="presentation"
-    >
+    <ModalPortal>
       <div
-        className="relative w-full max-w-5xl overflow-hidden rounded-[32px] border border-white/10 bg-[#0b0b0b] shadow-[0_24px_80px_rgba(0,0,0,0.5)]"
-        onClick={(event) => event.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={`automation-title-${item.id}`}
+        className="fixed inset-0 z-[80] flex items-center justify-center overflow-y-auto bg-black/80 px-4 backdrop-blur-sm sm:px-6"
+        style={modalOverlayStyle}
+        onClick={onClose}
+        role="presentation"
       >
+        <div
+          className="relative my-auto flex w-full max-w-5xl flex-col overflow-hidden rounded-[32px] border border-white/10 bg-[#0b0b0b] shadow-[0_24px_80px_rgba(0,0,0,0.5)]"
+          style={modalPanelStyle}
+          onClick={(event) => event.stopPropagation()}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={`automation-title-${item.id}`}
+        >
         <div className={`h-1 w-full bg-gradient-to-r ${theme.modalBar}`} />
 
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 hover:text-brandYellow"
+          className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 hover:text-brandYellow"
           aria-label="Cerrar detalle"
         >
           <CloseIcon />
         </button>
 
-        <div className="grid gap-8 p-6 sm:p-8 md:grid-cols-[1.1fr_0.9fr] md:p-10">
+        <div className="grid flex-1 gap-8 overflow-y-auto overscroll-contain p-6 pr-16 sm:p-8 sm:pr-20 md:grid-cols-[1.1fr_0.9fr] md:p-10 md:pr-20">
           <div>
             <p className={`text-[10px] font-bold uppercase tracking-[0.35em] ${theme.label}`}>{item.category}</p>
             <h3 id={`automation-title-${item.id}`} className="mt-3 text-3xl font-black uppercase leading-[0.95] text-white sm:text-4xl">
@@ -372,8 +377,9 @@ function AutomationModal({ item, onClose }) {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </ModalPortal>
   );
 }
 
@@ -386,7 +392,7 @@ export function AutomationShowcase() {
     <>
       <section
         id="automatizaciones"
-        className="reveal scroll-mt-24 relative overflow-hidden border-y border-white/5 bg-[#080808]"
+        className="reveal welcome-scroll-section relative overflow-hidden border-y border-white/5 bg-[#080808]"
       >
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(255,61,77,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,204,0,0.06),transparent_30%)]" />
 
@@ -403,17 +409,22 @@ export function AutomationShowcase() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {featuredAutomations.map((item) => (
-              <AutomationCard key={item.id} item={item} onOpen={() => setSelected(item)} />
+          <div className="mt-10 grid grid-cols-2 gap-5 sm:mt-14 sm:gap-6 lg:grid-cols-3">
+            {featuredAutomations.map((item, index) => (
+              <div
+                key={item.id}
+                className={index === 2 ? "hidden lg:block" : ""}
+              >
+                <AutomationCard item={item} onOpen={() => setSelected(item)} />
+              </div>
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col gap-6 rounded-[32px] border border-white/10 bg-white/[0.03] px-6 py-6 sm:mt-16 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <div className="mt-12 flex flex-col gap-6 rounded-[32px] border border-white/10 bg-white/[0.03] px-6 py-6 sm:mt-6 sm:flex-row sm:items-center sm:justify-between sm:px-8">
             <div className="max-w-2xl">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gray-400">Bonus</p>
               <h3 className="mt-2 text-2xl font-black uppercase text-white sm:text-3xl">
-                Solo mostramos 3 automatizaciones destacadas
+                Automatizaciones destacadas
               </h3>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-gray-400">
                 Diseñamos sistemas que capturan, clasifican, notifican y ordenan sin añadir fricción al equipo.
@@ -421,7 +432,7 @@ export function AutomationShowcase() {
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <AppsButton to="/#apps-showcase">Ver apps</AppsButton>
+              <AppsButton to="/automatizaciones#inicio">Ver más</AppsButton>
               <SoftButton to="/#contact-footer">Hablar con DP</SoftButton>
             </div>
           </div>

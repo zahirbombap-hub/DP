@@ -21,7 +21,7 @@ function ArchiveSection() {
     {
       title: "Apps",
       description: "Interfaces, productos y experiencias hechas para operar de forma clara.",
-      href: "/#apps-showcase",
+      href: "/apps#inicio",
     },
     {
       title: "Contacto",
