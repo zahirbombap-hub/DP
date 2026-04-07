@@ -56,7 +56,7 @@ export const paginasCases = [
     detail:
       "La dirección visual convierte la lana en una historia de oficio, paciencia y diseño atemporal que sí se percibe premium.",
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA5xTrwAtuZG2lOm5dcfET7_KLORiu5hikpGblOjcFob0QaJqpBs6wdJigKDH9plgb5EAEUCwQCqjQGjkXRQK_13hR7pJDvBBgXjA-YtoLA2mBtaPudaroBME9h2hCJQhvPWnLC-a2U8eF0VJZdTLQLG6ShjalY3Wb0B_Mc7p7Lnd1BYPOm0iOjxCyaGB4TlH1LFJbFtbiWEeRr_SI--gD7_6g-xUvenh57E8RnHAXlTHd-gZFgCQYFEkpTCyk56aoOWs-VcIrx6nY",
+      "/multimedia/Yuga/catalogo/unisex_yuga_red_knit_08.jpg",
     imageAlt: "Prenda de lana con estética artesanal y editorial",
     route: "/handmade-wool",
     reverse: false,

@@ -1,10 +1,90 @@
+import { useEffect, useRef } from "react";
 import { Icon } from "../Icon.jsx";
 
+const HERO_BACKGROUND_URL = `${
+  process.env.PUBLIC_URL || ""
+}/multimedia/Yuga/catalogo/unisex_yuga_red_knit_35.jpg`;
+
 export function Hero() {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const hero = heroRef.current;
+
+    if (!hero) {
+      return undefined;
+    }
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let reducedMotion = mediaQuery.matches;
+    let rafId = 0;
+
+    const updateParallax = () => {
+      if (reducedMotion) {
+        hero.style.setProperty("--wool-hero-parallax-y", "0px");
+        return;
+      }
+
+      const rect = hero.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || 1;
+      const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+      const clampedProgress = Math.min(Math.max(progress, 0), 1);
+      const offset = (clampedProgress - 0.5) * 34;
+
+      hero.style.setProperty("--wool-hero-parallax-y", `${offset.toFixed(2)}px`);
+    };
+
+    const requestParallaxUpdate = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(updateParallax);
+    };
+
+    const handleMotionChange = (event) => {
+      reducedMotion = event.matches;
+      requestParallaxUpdate();
+    };
+
+    requestParallaxUpdate();
+    window.addEventListener("scroll", requestParallaxUpdate, { passive: true });
+    window.addEventListener("resize", requestParallaxUpdate);
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", handleMotionChange);
+    } else {
+      mediaQuery.addListener(handleMotionChange);
+    }
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", requestParallaxUpdate);
+      window.removeEventListener("resize", requestParallaxUpdate);
+
+      if (typeof mediaQuery.removeEventListener === "function") {
+        mediaQuery.removeEventListener("change", handleMotionChange);
+      } else {
+        mediaQuery.removeListener(handleMotionChange);
+      }
+    };
+  }, []);
+
   return (
-    <section className="relative min-h-[100svh] flex items-center py-24 md:py-28 overflow-hidden wool-hero">
+    <section
+      ref={heroRef}
+      className="relative min-h-[100svh] flex items-center py-24 md:py-28 overflow-hidden wool-hero"
+    >
       <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-cover bg-center bg-fixed wool-hero-image" />
+        <div className="absolute inset-x-0 -top-[7%] bottom-[-7%] wool-hero-parallax">
+          <div
+            className="w-full h-full wool-hero-image"
+            style={{
+              backgroundImage: `linear-gradient(140deg, rgba(18, 12, 8, 0.18) 0%, rgba(18, 12, 8, 0.06) 42%, rgba(18, 12, 8, 0.3) 100%), url("${HERO_BACKGROUND_URL}")`,
+            }}
+          />
+        </div>
         <div className="absolute inset-0 wool-hero-overlay"></div>
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">

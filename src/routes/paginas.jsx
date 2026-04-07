@@ -12,7 +12,7 @@ export function meta() {
     {
       name: "description",
       content:
-        "Casos ampliados de Don Prueba: agua-linda, cuerna, tejidos y tattos, mostrados con una experiencia tipo scroll stack.",
+        "Casos ampliados de Don Prueba: agua-linda, cuerna, historias tejidas y tattos, mostrados con una experiencia tipo portafolio.",
     },
   ];
 }
@@ -50,7 +50,7 @@ export default function Paginas() {
     <div className="min-h-screen overflow-x-hidden bg-[#050505] text-white selection:bg-[#ff3d4d] selection:text-white">
       <Header />
 
-      <main className="pt-24 sm:pt-28">
+      <main className="pt-16 sm:pt-18">
         <section
           id="inicio"
           className="relative overflow-hidden border-b border-white/10 bg-[#050505]"
@@ -71,11 +71,11 @@ export default function Paginas() {
             }}
           />
 
-          <div className="relative mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+          <div className="relative mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 sm:py-20 lg:py-18">
             <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
               <div className="max-w-3xl space-y-6">
                 <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#ff3d4d]">
-                  Casos seleccionados
+                  Nuestros clientes
                 </p>
                 <h1 className="text-5xl font-black uppercase leading-[0.9] tracking-tighter text-white sm:text-6xl lg:text-8xl">
                   Paginas
@@ -84,8 +84,7 @@ export default function Paginas() {
                   Buscamos problemas, proponemos una solución y ejecutamos con enfoque estratégico.
                 </p>
                 <p className="max-w-2xl text-sm leading-relaxed text-white/62 sm:text-base">
-                  Cuatro casos con más contexto, decisiones visuales y lógica de negocio:
-                  agua-linda, cuerna, tejidos y tattos.
+                  A continuación, podras encontrar algunos de nuestros casos de clientes con más contexto, decisiones visuales y lógica de negocio.
                 </p>
 
                 <div className="flex flex-wrap gap-3 pt-2">
@@ -143,7 +142,6 @@ export default function Paginas() {
             <div className="mb-8 flex flex-col gap-3 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#ff3d4d]">
-                  Scroll Stack
                 </p>
                 <h2 className="mt-3 text-3xl font-black uppercase leading-[0.92] tracking-tighter text-white sm:text-4xl lg:text-5xl">
                   Casos en detalle

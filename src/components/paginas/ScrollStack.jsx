@@ -123,7 +123,7 @@ function StackCard({ item, index, total, progress, reducedMotion }) {
               <span className="rounded-full border border-white/15 bg-black/55 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-white/90">
                 Caso {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
               </span>
-              <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-white/80">
+              <span className="rounded-full border border-white/20 bg-black/65 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-white/95 shadow-[0_10px_30px_rgba(0,0,0,0.28)] backdrop-blur-sm">
                 {item.kicker}
               </span>
             </div>

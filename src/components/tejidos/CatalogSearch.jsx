@@ -215,10 +215,16 @@ export function CatalogSearch({
     setUncontrolledSelectedFile(nextFile);
   }
 
-  function addToken(token) {
+  function toggleToken(token) {
+    const normalizedToken = String(token || "").toLowerCase().trim();
+    if (!normalizedToken) return;
+
     const currentTokens = toTokens(query);
-    if (currentTokens.includes(token)) return;
-    updateQuery(`${query} ${token}`.trim());
+    const nextTokens = currentTokens.includes(normalizedToken)
+      ? currentTokens.filter((currentToken) => currentToken !== normalizedToken)
+      : [...currentTokens, normalizedToken];
+
+    updateQuery(nextTokens.join(" "));
     openList();
     setActiveIndex(0);
     inputRef.current?.focus();
@@ -368,12 +374,13 @@ export function CatalogSearch({
                         <button
                           key={tag}
                           type="button"
+                          aria-pressed={tokens.includes(tag)}
                           className={`rounded-full px-2.5 py-1 text-[11px] font-semibold transition-colors ${
                             tokens.includes(tag)
                               ? "bg-[#a54616] text-white"
                               : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                           }`}
-                          onClick={() => addToken(tag)}
+                          onClick={() => toggleToken(tag)}
                         >
                           {getTagLabel(tag)}
                         </button>

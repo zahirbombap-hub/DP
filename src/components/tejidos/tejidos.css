@@ -62,6 +62,7 @@ html.dark body.wool-body {
 .wool-hero {
   position: relative;
   isolation: isolate;
+  --wool-hero-parallax-y: 0px;
 }
 
 .wool-hero::after {
@@ -73,25 +74,36 @@ html.dark body.wool-body {
   z-index: 1;
 }
 
+.wool-hero-parallax {
+  transform: translate3d(0, var(--wool-hero-parallax-y), 0);
+  will-change: transform;
+}
+
 .wool-hero-image {
-  transform: scale(1.02);
+  transform: scale(1.04);
   animation: woolSlowZoom 16s ease-in-out infinite alternate;
   background-color: #1a120d;
-  background-image:
-    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.16), transparent 28%),
-    radial-gradient(circle at 72% 18%, rgba(165, 70, 22, 0.26), transparent 32%),
-    radial-gradient(circle at 50% 72%, rgba(255, 255, 255, 0.1), transparent 34%),
-    linear-gradient(135deg, #352519 0%, #1a120d 52%, #120b08 100%);
-  filter: saturate(0.92) brightness(0.9);
+  background-position: center 26%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: saturate(0.9) brightness(0.78) contrast(1.08);
 }
 
 .wool-hero-overlay {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 14, 10, 0.72) 0%,
-    rgba(20, 14, 10, 0.58) 45%,
-    rgba(20, 14, 10, 0.22) 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 14, 10, 0.8) 0%,
+      rgba(20, 14, 10, 0.66) 42%,
+      rgba(20, 14, 10, 0.34) 74%,
+      rgba(20, 14, 10, 0.46) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(12, 8, 6, 0.24) 0%,
+      rgba(12, 8, 6, 0.06) 34%,
+      rgba(12, 8, 6, 0.38) 100%
+    );
 }
 
 .wool-hero-title {
@@ -272,6 +284,14 @@ html.dark body.wool-body {
 
 @media (prefers-reduced-motion: reduce) {
   .wool-logo-float {
+    animation: none;
+  }
+
+  .wool-hero-parallax {
+    transform: none;
+  }
+
+  .wool-hero-image {
     animation: none;
   }
 }

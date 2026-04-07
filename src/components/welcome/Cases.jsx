@@ -127,7 +127,7 @@ export function Cases() {
       <div className="px-4 sm:px-6 mb-6 sm:mb-8 flex flex-col md:flex-row md:items-end justify-between max-w-screen-2xl mx-auto gap-6">
         <div className="max-w-xl">
           <span className="text-[#8a0012] text-[10px] font-black tracking-[0.3em] uppercase mb-3 block font-['Space_Grotesk',sans-serif]">
-            Archivo 02 / Clientes Seleccionados
+            Archivo 02 / Nuestros clientes
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter uppercase italic leading-none text-white font-['Space_Grotesk',sans-serif]">
             Páginas para Empresas
@@ -190,7 +190,7 @@ export function Cases() {
           },
           {
             href: "/handmade-wool",
-            img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCR0sv13QfjKVJn9zuRXvc1dMMjwHPpnO6U6i5LFH5LZgcIew6cvofMtZ01gSXprrLGGQSKYJxyU-4gmqmW_a0t8Ga_Xrho7UkdepwLVW2aVRWv2BFbo8SQjeQEIyyIn5BYmLO6dP5fAqfX8ylPRGfxCJAISuzWfpeo4fcSMR_Yc6A0gZbUk__vnLojBXB3y167WfvDSNZ6hFqlx8xOgUfOBwFg575sQAGVfopy6W3ksC5dkEZT9kjDbfhH_jhdkXzl7jpcv6hBMOI",
+            img: "/multimedia/Yuga/Previsualizer yuga.png",
             subtitle: "Diseño de Lana // Calidez Escandinava",
             title: "Historias Tejidas",
             extraImgClass: "sepia-[0.3] brightness-75 group-hover:sepia-0 group-hover:brightness-100",

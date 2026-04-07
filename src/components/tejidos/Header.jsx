@@ -129,8 +129,8 @@ export function Header({
           </nav>
         </div>
 
-        <div className="flex items-center gap-3 md:gap-4 justify-end min-w-0 md:justify-self-end">
-          <div className="flex-1 lg:flex-none min-w-[10rem]">
+        <div className="ml-auto flex w-full items-center justify-end gap-3 min-w-0 sm:w-auto md:w-auto md:gap-4 md:justify-self-end">
+          <div className="min-w-[10rem] flex-1 max-w-[22rem] lg:flex-none">
             <CatalogSearch
               items={catalogItems}
               closeToken={comboCloseToken}
@@ -178,17 +178,20 @@ export function Header({
       </div>
 
       <div
-        className={`fixed inset-0 z-[60] lg:hidden transition-opacity duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[120] isolate lg:hidden transition-opacity duration-300 ease-in-out ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!mobileMenuOpen}
       >
-        <div className="absolute inset-0 bg-black" onMouseDown={closeMobileMenu} />
+        <div
+          className="absolute inset-0 z-0 bg-[#120d0a]/72 backdrop-blur-xl"
+          onMouseDown={closeMobileMenu}
+        />
 
         <div
-          className={`absolute left-0 top-0 h-full w-80 max-w-[85%] bg-[#a54616] text-white border-r border-white/10 shadow-2xl transform transition-transform duration-300 ease-in-out ${
+          className={`absolute left-0 top-0 z-10 h-full w-80 max-w-[85%] border-r border-white/20 bg-[#8f3711] text-white shadow-[0_30px_80px_rgba(0,0,0,0.45)] transform transition-transform duration-300 ease-in-out ${
             mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
           onMouseDown={(e) => e.stopPropagation()}
@@ -196,8 +199,12 @@ export function Header({
           aria-modal="true"
           aria-label="Menú"
         >
-          <div className="h-full flex flex-col p-6 gap-6">
-            <div className="flex items-center justify-between">
+          <div className="relative h-full flex flex-col gap-6 overflow-hidden p-6">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-[#8f3711]"
+            />
+            <div className="relative z-10 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <span className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
                   <img
@@ -225,7 +232,7 @@ export function Header({
               </button>
             </div>
 
-            <nav className="flex flex-col gap-3">
+            <nav className="relative z-10 flex flex-col gap-3">
               <Link
                 className="rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-3 font-semibold transition-colors"
                 to={oficioTo}
@@ -256,7 +263,7 @@ export function Header({
               </Link>
             </nav>
 
-            <div className="mt-auto pt-6 border-t border-white/10">
+            <div className="relative z-10 mt-auto pt-6 border-t border-white/10">
               <Link
                 to="/"
                 className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
