@@ -409,7 +409,7 @@ export function AutomationShowcase() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 gap-5 sm:mt-14 sm:gap-6 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 min-[650px]:grid-cols-2 sm:mt-14 sm:gap-6 lg:grid-cols-3">
             {featuredAutomations.map((item, index) => (
               <div
                 key={item.id}

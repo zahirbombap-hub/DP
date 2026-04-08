@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import { Icon } from "../Icon.jsx";
 import { CatalogSearch } from "./CatalogSearch.jsx";
@@ -27,7 +28,7 @@ export function Header({
   const [comboCloseToken, setComboCloseToken] = useState(0);
 
   useEffect(() => {
-    if (!mobileMenuOpen) return;
+    if (!mobileMenuOpen) return undefined;
 
     function handleKeyDown(e) {
       if (e.key === "Escape") {
@@ -41,7 +42,8 @@ export function Header({
   }, [mobileMenuOpen]);
 
   useEffect(() => {
-    if (!mobileMenuOpen) return;
+    if (!mobileMenuOpen) return undefined;
+
     document.body.classList.add("overflow-hidden");
     return () => {
       document.body.classList.remove("overflow-hidden");
@@ -49,6 +51,10 @@ export function Header({
   }, [mobileMenuOpen]);
 
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
     const mq = window.matchMedia("(min-width: 1024px)");
 
     function handleChange(e) {
@@ -79,134 +85,39 @@ export function Header({
     setComboCloseToken((t) => t + 1);
   }
 
-  return (
-    <header className="sticky top-0 z-50 w-full bg-[#a54616] border-b border-white/15 wool-fade-up [--delay:0.05s]">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 min-h-20 py-3 md:py-0 md:h-20 flex flex-wrap items-center gap-3 md:grid md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-5 text-white">
-        <div className="flex items-center gap-3 md:gap-4 md:justify-self-start">
-          <Link
-            to="/"
-            className="group w-12 h-12 rounded-full bg-transparent border-0 flex items-center justify-center shadow-none hover:shadow-none transition-all md:w-14 md:h-14"
-            aria-label="Volver a Don Prueba"
-          >
-            <img
-              src="/multimedia/logoDP.png"
-              alt="Don Prueba"
-              className="w-7 h-7 object-contain transform transition-transform duration-200 ease-out group-hover:scale-105 md:w-8 md:h-8"
-            />
-          </Link>
-          <Link
-            className="flex items-center gap-3 group transform transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1"
-            to={topTo}
-          >
-            <span className="wool-logo-float flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#a54616] shadow-none md:h-16 md:w-16">
-              <img
-                src="/multimedia/Yuga/yuya_logoNB.webp"
-                alt="Yuga"
-                className="block h-full w-full object-contain p-1 md:p-1.5"
-              />
-            </span>
-            <h2 className="text-lg leading-none md:text-xl font-bold tracking-tight font-['Playfair_Display',serif] text-white transform transition-all duration-200 ease-out group-hover:-translate-y-1">
-              <span className="block">Tejidos</span>
-              <span className="block">Yuga</span>
-            </h2>
-          </Link>
-        </div>
-
-        <div className="hidden md:flex md:justify-self-center md:justify-center">
-          <nav className="flex items-center gap-6">
-            <Link
-              className="text-sm font-semibold text-white hover:text-[#fff3dd] transition-colors wool-link"
-              to={oficioTo}
-            >
-              El Oficio
-            </Link>
-            <Link
-              className="text-sm font-semibold text-white hover:text-[#fff3dd] transition-colors wool-link"
-              to={materialesTo}
-            >
-              Materiales
-            </Link>
-          </nav>
-        </div>
-
-        <div className="ml-auto flex w-full items-center justify-end gap-3 min-w-0 sm:w-auto md:w-auto md:gap-4 md:justify-self-end">
-          <div className="min-w-[10rem] flex-1 max-w-[22rem] lg:flex-none">
-            <CatalogSearch
-              items={catalogItems}
-              closeToken={comboCloseToken}
-              className="w-full lg:w-[22rem]"
-              disabled={catalogLoading || Boolean(catalogError)}
-              onCommitSelection={onCommitCatalogItem}
-              placeholder={
-                catalogLoading
-                  ? "Cargando catálogo..."
-                  : catalogError
-                    ? "Catálogo no disponible"
-                    : "Buscar pieza..."
-              }
-            />
-          </div>
-
-          <div className="hidden lg:flex items-center gap-4">
-            <Link
-              className="text-xs uppercase tracking-widest font-bold text-[#ffd18a] hover:text-[#ffe2b5] transition-colors border-b border-[#ffd18a]/40 pb-0.5 wool-link"
-              to={catalogoTo}
-            >
-              Catálogo Digital
-            </Link>
-            <Link
-              className="text-xs uppercase tracking-widest font-bold text-white hover:text-[#fff3dd] transition-colors wool-link"
-              to={contactoTo}
-            >
-              Contacto
-            </Link>
-          </div>
-
-          <button
-            type="button"
-            className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full bg-[#ffd18a] hover:bg-[#ffe2b5] transition-colors focus:outline-none"
-            aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
-            aria-expanded={mobileMenuOpen}
-            onClick={() => (mobileMenuOpen ? closeMobileMenu() : openMobileMenu())}
-          >
-            <Icon
-              name={mobileMenuOpen ? "close" : "menu"}
-              className="text-[#a54616] text-xl"
-            />
-          </button>
-        </div>
-      </div>
-
+  const mobileMenu = (
       <div
-        className={`fixed inset-0 z-[120] isolate lg:hidden transition-opacity duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[10010] isolate lg:hidden transition-opacity duration-300 ease-in-out ${
           mobileMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
         }`}
         aria-hidden={!mobileMenuOpen}
       >
         <div
-          className="absolute inset-0 z-0 bg-[#120d0a]/72 backdrop-blur-xl"
+          className="absolute inset-0 z-0 bg-transparent"
           onMouseDown={closeMobileMenu}
         />
 
-        <div
-          className={`absolute left-0 top-0 z-10 h-full w-80 max-w-[85%] border-r border-white/20 bg-[#8f3711] text-white shadow-[0_30px_80px_rgba(0,0,0,0.45)] transform transition-transform duration-300 ease-in-out ${
-            mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
-          onMouseDown={(e) => e.stopPropagation()}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Menú"
-        >
-          <div className="relative h-full flex flex-col gap-6 overflow-hidden p-6">
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 bg-[#8f3711]"
-            />
-            <div className="relative z-10 flex items-center justify-between">
+      <div
+        className={`absolute left-0 top-0 z-[10020] h-full w-80 max-w-[85%] border-r border-white/20 bg-[#8f3711]/34 text-white shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+        onMouseDown={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
+      >
+        <div className="relative h-full overflow-hidden bg-[linear-gradient(180deg,rgba(143,55,17,0.42),rgba(86,32,10,0.34))] p-6">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_34%),linear-gradient(180deg,rgba(20,8,4,0.08),rgba(20,8,4,0.18))]"
+          />
+
+          <div className="relative z-10 flex h-full flex-col gap-6">
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5">
                   <img
                     src="/multimedia/Yuga/yuya_logoNB.webp"
                     alt="Yuga"
@@ -222,40 +133,41 @@ export function Header({
                   </div>
                 </div>
               </div>
+
               <button
                 type="button"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/15 transition-colors"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/15"
                 onClick={closeMobileMenu}
-                aria-label="Cerrar menú"
+                aria-label="Cerrar menu"
               >
-                <Icon name="close" className="text-white text-xl" />
+                <Icon name="close" className="text-xl text-white" />
               </button>
             </div>
 
-            <nav className="relative z-10 flex flex-col gap-3">
+            <nav className="flex flex-col gap-3">
               <Link
-                className="rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-3 font-semibold transition-colors"
+                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-semibold transition-colors hover:bg-white/10"
                 to={oficioTo}
                 onClick={closeMobileMenu}
               >
                 El Oficio
               </Link>
               <Link
-                className="rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-3 font-semibold transition-colors"
+                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-semibold transition-colors hover:bg-white/10"
                 to={materialesTo}
                 onClick={closeMobileMenu}
               >
                 Materiales
               </Link>
               <Link
-                className="rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-3 font-semibold transition-colors"
+                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-semibold transition-colors hover:bg-white/10"
                 to={catalogoTo}
                 onClick={closeMobileMenu}
               >
-                Catálogo Digital
+                Catalogo Digital
               </Link>
               <Link
-                className="rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-3 font-semibold transition-colors"
+                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-semibold transition-colors hover:bg-white/10"
                 to={contactoTo}
                 onClick={closeMobileMenu}
               >
@@ -263,13 +175,13 @@ export function Header({
               </Link>
             </nav>
 
-            <div className="relative z-10 mt-auto pt-6 border-t border-white/10">
+            <div className="mt-auto border-t border-white/10 pt-6">
               <Link
                 to="/"
-                className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
+                className="flex items-center gap-3 text-white/90 transition-colors hover:text-white"
                 onClick={closeMobileMenu}
               >
-                <span className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
                   <img
                     src="/multimedia/logoDP.png"
                     alt="Don Prueba"
@@ -282,6 +194,113 @@ export function Header({
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  );
+
+  return (
+    <>
+      <header className="sticky top-0 z-50 w-full border-b border-white/15 bg-[#a54616] wool-fade-up [--delay:0.05s]">
+        <div className="mx-auto flex min-h-20 max-w-7xl flex-wrap items-center gap-3 px-4 py-3 text-white md:grid md:h-20 md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-5 md:px-6 md:py-0">
+          <div className="flex items-center gap-3 md:justify-self-start md:gap-4">
+            <Link
+              to="/"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border-0 bg-transparent shadow-none transition-all hover:shadow-none md:h-14 md:w-14"
+              aria-label="Volver a Don Prueba"
+            >
+              <img
+                src="/multimedia/logoDP.png"
+                alt="Don Prueba"
+                className="h-7 w-7 object-contain transition-transform duration-200 ease-out group-hover:scale-105 md:h-8 md:w-8"
+              />
+            </Link>
+
+            <Link
+              className="group flex items-center gap-3 transition-transform duration-200 ease-out hover:-translate-y-1 hover:scale-105"
+              to={topTo}
+            >
+              <span className="wool-logo-float flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#a54616] shadow-none md:h-16 md:w-16">
+                <img
+                  src="/multimedia/Yuga/yuya_logoNB.webp"
+                  alt="Yuga"
+                  className="block h-full w-full object-contain p-1 md:p-1.5"
+                />
+              </span>
+              <h2 className="font-['Playfair_Display',serif] text-lg font-bold leading-none tracking-tight text-white transition-all duration-200 ease-out group-hover:-translate-y-1 md:text-xl">
+                <span className="block">Tejidos</span>
+                <span className="block">Yuga</span>
+              </h2>
+            </Link>
+          </div>
+
+          <div className="hidden md:flex md:justify-center md:justify-self-center">
+            <nav className="flex items-center gap-6">
+              <Link
+                className="wool-link text-sm font-semibold text-white transition-colors hover:text-[#fff3dd]"
+                to={oficioTo}
+              >
+                El Oficio
+              </Link>
+              <Link
+                className="wool-link text-sm font-semibold text-white transition-colors hover:text-[#fff3dd]"
+                to={materialesTo}
+              >
+                Materiales
+              </Link>
+            </nav>
+          </div>
+
+          <div className="ml-auto flex w-full min-w-0 items-center justify-end gap-3 sm:w-auto md:w-auto md:justify-self-end md:gap-4">
+            <div className="min-w-[10rem] max-w-[22rem] flex-1 lg:flex-none">
+              <CatalogSearch
+                items={catalogItems}
+                closeToken={comboCloseToken}
+                className="w-full lg:w-[22rem]"
+                disabled={catalogLoading || Boolean(catalogError)}
+                onCommitSelection={onCommitCatalogItem}
+                placeholder={
+                  catalogLoading
+                    ? "Cargando catalogo..."
+                    : catalogError
+                      ? "Catalogo no disponible"
+                      : "Buscar pieza..."
+                }
+              />
+            </div>
+
+            <div className="hidden items-center gap-4 lg:flex">
+              <Link
+                className="wool-link border-b border-[#ffd18a]/40 pb-0.5 text-xs font-bold uppercase tracking-widest text-[#ffd18a] transition-colors hover:text-[#ffe2b5]"
+                to={catalogoTo}
+              >
+                Catalogo Digital
+              </Link>
+              <Link
+                className="wool-link text-xs font-bold uppercase tracking-widest text-white transition-colors hover:text-[#fff3dd]"
+                to={contactoTo}
+              >
+                Contacto
+              </Link>
+            </div>
+
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#ffd18a] transition-colors hover:bg-[#ffe2b5] focus:outline-none lg:hidden"
+              aria-label={mobileMenuOpen ? "Cerrar menu" : "Abrir menu"}
+              aria-expanded={mobileMenuOpen}
+              onClick={() => (mobileMenuOpen ? closeMobileMenu() : openMobileMenu())}
+            >
+              <Icon
+                name={mobileMenuOpen ? "close" : "menu"}
+                className="text-xl text-[#a54616]"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {typeof document !== "undefined"
+        ? createPortal(mobileMenu, document.body)
+        : mobileMenu}
+    </>
   );
 }
