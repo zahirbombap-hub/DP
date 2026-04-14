@@ -1,6 +1,6 @@
 const agendaItems = [
   {
-    img: "/multimedia/cuerna/tusa.png",
+    img: "/multimedia/cuerna/tusa.webp",
     alt: "Agropecuario",
     day: "MARTES Y MIÉRCOLES",
     title: "AGROPECUARIO",
@@ -8,7 +8,7 @@ const agendaItems = [
     accentClass: "text-brandYellow",
   },
   {
-    img: "/multimedia/cuerna/beso.png",
+    img: "/multimedia/cuerna/beso.webp",
     alt: "De Cuerna",
     day: "VIERNES",
     title: "DE CUERNA",
@@ -16,7 +16,7 @@ const agendaItems = [
     accentClass: "text-brandRed",
   },
   {
-    img: "/multimedia/cuerna/tablazo.png",
+    img: "/multimedia/cuerna/tablazo.webp",
     alt: "Desmadre Total",
     day: "FINES DE SEMANA",
     title: "DESMADRE TOTAL",

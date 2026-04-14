@@ -171,7 +171,7 @@ export function Cases() {
             img: "",
             subtitle: "Cuerna // Gastrobar en Bogotá",
             title: "Gastrobar",
-            video: "/multimedia/cuerna/previsualizerCuerna.mp4",
+            video: "/multimedia/cuerna/previsualizerCuerna.webm",
             extraImgClass: "contrast-125 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100",
           },
           {

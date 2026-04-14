@@ -68,7 +68,7 @@ export function ArsenalSection() {
               <img
                 alt="Tequila Arsenal"
                 className="w-full h-auto grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                src="/multimedia/cuerna/Tablazo aereo.jpg"
+                src="/multimedia/cuerna/Tablazo aereo.webp"
               />
             </div>
             <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-8 bg-black text-brandYellow px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 font-header text-xl sm:text-2xl md:text-3xl rotate-[-5deg] shadow-2xl border-2 border-brandYellow z-20">

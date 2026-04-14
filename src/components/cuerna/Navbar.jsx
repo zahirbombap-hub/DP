@@ -38,7 +38,7 @@ export function Navbar() {
               alt="Cuerna Logo Icon"
               className={`object-contain transition-all duration-300 ${scrolled ? "h-9" : "h-12"}`}
               data-purpose="navbar-logo-cuerna"
-              src="/multimedia/cuerna/logo cuerna.png"
+              src="/multimedia/cuerna/logo cuerna.webp"
             />
           </a>
         </div>

@@ -73,7 +73,7 @@ export function Footer({ year }) {
         </div>
         <div className="text-center pt-10 md:pt-12 border-t border-gray-900">
           <div className="mb-6">
-            <img alt="Cuerna" className="h-10 sm:h-12 mx-auto grayscale opacity-50" src="/multimedia/cuerna/logo cuerna.png" />
+            <img alt="Cuerna" className="h-10 sm:h-12 mx-auto grayscale opacity-50" src="/multimedia/cuerna/logo cuerna.webp" />
           </div>
           <p className="text-gray-600 text-xs font-bold tracking-[0.2em] uppercase font-body">
             © {year} CUERNA BOGOTÁ. EL EXCESO DE ALCOHOL ES PERJUDICIAL PARA LA SALUD. PROHÍBASE EL EXPENDIO DE BEBIDAS

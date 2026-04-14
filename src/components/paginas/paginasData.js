@@ -33,7 +33,7 @@ export const paginasCases = [
       "Creamos una dirección brutalista y cinematográfica que ordena el relato visual, refuerza la atmósfera y empuja la reserva.",
     detail:
       "Cada capa del diseño trabaja la tensión nocturna para que la marca se sienta viva, pesada y reconocible en segundos.",
-    image: "/multimedia/cuerna/Cuerna Ajedrez.png",
+    image: "/multimedia/cuerna/Cuerna Ajedrez.webp",
     imageAlt: "Cuerna con una imagen de alto contraste y estilo nocturno",
     route: "/cuerna",
     reverse: true,

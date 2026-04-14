@@ -6,7 +6,7 @@ export function TempleSection() {
           <img
             alt="Cuerna Chess"
             className="w-full h-auto max-h-[420px] sm:max-h-[520px] md:max-h-[640px] shadow-2xl scale-100 group-hover:scale-105 transition-transform duration-700 object-contain"
-            src="/multimedia/cuerna/Cuerna Ajedrez.png"
+            src="/multimedia/cuerna/Cuerna Ajedrez.webp"
           />
           <div className="absolute -bottom-4 -left-4 z-20 bg-brandBg border border-brandRed p-4 rotate-[-12deg] hidden md:block">
             <p className="font-sub text-brandRed text-xl font-bold">TEMPLO BÉLICO</p>

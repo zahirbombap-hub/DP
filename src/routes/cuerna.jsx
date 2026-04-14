@@ -38,13 +38,13 @@ export default function Cuerna() {
   useEffect(() => {
     const MIN = 500;
     const images = [
-      "/multimedia/cuerna/logo cuerna.png",
-      "/multimedia/cuerna/cuerna cuerna.png",
-      "/multimedia/cuerna/Tablazo aereo.jpg",
-      "/multimedia/cuerna/Cuerna Ajedrez.png",
-      "/multimedia/cuerna/tusa.png",
-      "/multimedia/cuerna/beso.png",
-      "/multimedia/cuerna/tablazo.png",
+      "/multimedia/cuerna/logo cuerna.webp",
+      "/multimedia/cuerna/cuerna cuerna.webp",
+      "/multimedia/cuerna/Tablazo aereo.webp",
+      "/multimedia/cuerna/Cuerna Ajedrez.webp",
+      "/multimedia/cuerna/tusa.webp",
+      "/multimedia/cuerna/beso.webp",
+      "/multimedia/cuerna/tablazo.webp",
       "/multimedia/dp-logo-2.png",
     ];
 
@@ -78,7 +78,7 @@ export default function Cuerna() {
           const vid = document.createElement("video");
           vid.preload = "auto";
           vid.muted = true;
-          vid.src = "/multimedia/cuerna/fondo.mp4";
+          vid.src = "/multimedia/cuerna/fondo.webm";
           const done = () => {
             vid.pause();
             vid.src = "";
@@ -126,14 +126,14 @@ export default function Cuerna() {
         <div className={`fixed inset-0 z-[100] bg-black text-white preloader-overlay ${preloaderFading ? "preloader-fade" : ""}`}>
           {/* full-screen background image with video-like effect */}
           <img
-            src="/multimedia/cuerna/Fondo.png"
+            src="/multimedia/cuerna/Fondo.webp"
             alt="Preloader background"
             className="preloader-bg pointer-events-none absolute inset-0 w-full h-full object-cover"
           />
 
           {/* bottom-right fixed calavera and loading text above it */}
           <img
-            src="/multimedia/cuerna/calaver-carga.png"
+            src="/multimedia/cuerna/calaver-carga.webp"
             alt="calavera carga"
             className="preloader-corner pointer-events-none absolute bottom-10 right-4 w-12 h-12 object-contain"
           />

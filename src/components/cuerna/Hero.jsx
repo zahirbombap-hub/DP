@@ -20,10 +20,10 @@ export function Hero() {
           loop
           playsInline
           preload="metadata"
-          poster="/multimedia/cuerna/Fondo.png"
+          poster="/multimedia/cuerna/Fondo.webp"
           className="w-full h-full object-cover opacity-60 scale-110 blur-[2px]"
         >
-          <source src="/multimedia/cuerna/fondo.mp4" type="video/mp4" />
+          <source src="/multimedia/cuerna/fondo.webm" type="video/mp4" />
         </video>
         <div className="absolute inset-0 hero-gradient"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-brandBg/80 via-transparent to-brandBg/80"></div>
@@ -41,7 +41,7 @@ export function Hero() {
             fetchPriority="high"
             height="538"
             loading="eager"
-            src="/multimedia/cuerna/cuerna cuerna.png"
+            src="/multimedia/cuerna/cuerna cuerna.webp"
             sizes="(max-width: 768px) 90vw, 600px"
             width="1280"
             data-purpose="hero-logo"
