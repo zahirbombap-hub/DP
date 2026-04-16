@@ -5,6 +5,7 @@ import { Footer } from "../components/welcome/Footer.jsx";
 import { Header } from "../components/welcome/Header.jsx";
 import { AppPreview } from "../components/welcome/AppsShowcase.jsx";
 import { appsData } from "../components/welcome/appsData.js";
+import { RouteSeo } from "../components/Seo.jsx";
 
 export function meta() {
   return [
@@ -169,7 +170,6 @@ function AppArticle({ app }) {
 
 export default function Apps() {
   useEffect(() => {
-    document.title = "Don Prueba | Apps";
     document.documentElement.lang = "es";
     document.documentElement.classList.add("scroll-smooth");
 
@@ -194,6 +194,7 @@ export default function Apps() {
 
   return (
     <div className="welcome-page min-h-screen overflow-x-hidden bg-[#050505] font-['Space_Grotesk',sans-serif] text-white antialiased selection:bg-[#ff3d4d] selection:text-white">
+      <RouteSeo routePath="/apps" />
       <Header desktopNavItems={desktopNavItems} compactNavItems={compactNavItems} />
 
       <main id="top" role="main" className="cinematic-load">

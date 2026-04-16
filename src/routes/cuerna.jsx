@@ -5,13 +5,13 @@ import { TempleSection } from "../components/cuerna/TempleSection.jsx";
 import { AgendaSection } from "../components/cuerna/AgendaSection.jsx";
 import { ArsenalSection } from "../components/cuerna/ArsenalSection.jsx";
 import { Footer } from "../components/cuerna/Footer.jsx";
+import { RouteSeo } from "../components/Seo.jsx";
 
 export default function Cuerna() {
   const [loading, setLoading] = useState(true);
   const [preloaderFading, setPreloaderFading] = useState(false);
   
   useEffect(() => {
-    document.title = "CUERNA | El Templo del Desmadre - Bogotá";
     document.documentElement.lang = "es";
     document.documentElement.classList.add("scroll-smooth");
 
@@ -121,6 +121,7 @@ export default function Cuerna() {
 
   return (
     <div className="cuerna-root bg-brandBg text-white selection:bg-brandRed selection:text-white font-body overflow-x-hidden">
+      <RouteSeo routePath="/cuerna" />
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-50 mix-blend-overlay noise-overlay"></div>
       {loading && (
         <div className={`fixed inset-0 z-[100] bg-black text-white preloader-overlay ${preloaderFading ? "preloader-fade" : ""}`}>

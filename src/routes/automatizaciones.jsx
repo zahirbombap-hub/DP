@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AutomationCatalog } from "../components/automatizaciones/AutomationCatalog.jsx";
 import { Footer } from "../components/welcome/Footer.jsx";
 import { Header } from "../components/welcome/Header.jsx";
+import { RouteSeo } from "../components/Seo.jsx";
 
 export function meta() {
   return [
@@ -45,7 +46,6 @@ function IntroMetric({ label, title, text }) {
 
 export default function Automatizaciones() {
   useEffect(() => {
-    document.title = "Don Prueba | Automatizaciones";
     document.documentElement.lang = "es";
     document.documentElement.classList.add("scroll-smooth");
 
@@ -70,6 +70,7 @@ export default function Automatizaciones() {
 
   return (
     <div className="welcome-page min-h-screen overflow-x-hidden bg-[#050505] font-['Space_Grotesk',sans-serif] text-white antialiased selection:bg-[#ff3d4d] selection:text-white">
+      <RouteSeo routePath="/automatizaciones" />
       <Header desktopNavItems={desktopNavItems} compactNavItems={compactNavItems} />
 
       <main id="top" role="main" className="cinematic-load">

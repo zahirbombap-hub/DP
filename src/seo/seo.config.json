@@ -1,0 +1,145 @@
+{
+  "siteName": "Don Prueba",
+  "siteUrl": "https://donprueba.com",
+  "locale": "es_CO",
+  "defaultTitle": "Don Prueba | Desarrollo web, automatizaciones y apps",
+  "defaultDescription": "Portafolio digital de Don Prueba con paginas web, automatizaciones, apps y casos de marca construidos con enfoque en negocio.",
+  "defaultImagePath": "/multimedia/dp-logo-3.png",
+  "routes": [
+    {
+      "path": "/",
+      "label": "Inicio",
+      "title": "Don Prueba | Desarrollo web, automatizaciones y apps",
+      "description": "Portafolio digital de Don Prueba con paginas web, automatizaciones, apps y casos de marca construidos con enfoque en negocio.",
+      "schemaType": "ProfessionalService",
+      "type": "website",
+      "priority": 1,
+      "changefreq": "weekly",
+      "imagePath": "/multimedia/dp-logo-3.png",
+      "indexable": true
+    },
+    {
+      "path": "/paginas",
+      "label": "Paginas",
+      "title": "Paginas web para marcas y negocios | Don Prueba",
+      "description": "Casos y paginas web desarrolladas por Don Prueba con criterio visual, narrativa clara y enfoque comercial.",
+      "schemaType": "CollectionPage",
+      "type": "website",
+      "priority": 0.9,
+      "changefreq": "weekly",
+      "imagePath": "/multimedia/dp-logo-3.png",
+      "indexable": true
+    },
+    {
+      "path": "/automatizaciones",
+      "label": "Automatizaciones",
+      "title": "Automatizaciones para negocios | Don Prueba",
+      "description": "Automatizaciones personalizadas para ahorrar tiempo, reducir errores y ordenar operaciones reales con menos friccion.",
+      "schemaType": "CollectionPage",
+      "type": "website",
+      "priority": 0.9,
+      "changefreq": "weekly",
+      "imagePath": "/multimedia/dp-logo-3.png",
+      "indexable": true
+    },
+    {
+      "path": "/apps",
+      "label": "Apps",
+      "title": "Apps y prototipos de producto | Don Prueba",
+      "description": "Catalogo de apps pensadas para aprendizaje, foco, habitos y operacion con menos friccion y mas claridad.",
+      "schemaType": "CollectionPage",
+      "type": "website",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "imagePath": "/multimedia/dp-logo-3.png",
+      "indexable": true
+    },
+    {
+      "path": "/articulos",
+      "label": "Articulos",
+      "title": "Articulos sobre producto, foco y automatizacion | Don Prueba",
+      "description": "Notas cortas de Don Prueba sobre producto digital, automatizacion, trabajo enfocado y decisiones practicas.",
+      "schemaType": "CollectionPage",
+      "type": "website",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "imagePath": "/multimedia/dp-logo-3.png",
+      "indexable": true
+    },
+    {
+      "path": "/agua-linda",
+      "label": "Agua Linda",
+      "title": "Agua Linda | Distribucion de agua en Villa de Leyva y Sutamarchan",
+      "description": "Landing de Agua Linda con productos, beneficios y contacto para pedidos de agua en Villa de Leyva y Sutamarchan.",
+      "schemaType": "WebPage",
+      "type": "website",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "imagePath": "/multimedia/agua-linda/pre-agualinda.png",
+      "indexable": true
+    },
+    {
+      "path": "/agua-linda/empresa",
+      "label": "Agua Linda Empresa",
+      "title": "Agua Linda Empresa | Operacion local en Sutamarchan",
+      "description": "Conoce la operacion local de Agua Linda, su cobertura en Villa de Leyva y Sutamarchan y la ubicacion de su planta.",
+      "schemaType": "WebPage",
+      "type": "website",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "imagePath": "/multimedia/agua-linda/pre-agualinda.png",
+      "aliases": [
+        "/agua-linda/empres"
+      ],
+      "indexable": true
+    },
+    {
+      "path": "/handmade-wool",
+      "label": "Yuga Handmade Wool",
+      "title": "Yuga Handmade Wool | Tejidos hechos a mano",
+      "description": "Pagina de Yuga Handmade Wool con coleccion, filosofia de marca y acceso al catalogo digital de tejidos.",
+      "schemaType": "WebPage",
+      "type": "website",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "imagePath": "/multimedia/Yuga/Previsualizer yuga.png",
+      "indexable": true
+    },
+    {
+      "path": "/handmade-wool/catalogo",
+      "label": "Catalogo Yuga",
+      "title": "Catalogo digital de Yuga Handmade Wool",
+      "description": "Explora el catalogo digital de Yuga Handmade Wool y revisa las referencias disponibles de la coleccion.",
+      "schemaType": "CollectionPage",
+      "type": "website",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "imagePath": "/multimedia/Yuga/Previsualizer yuga.png",
+      "indexable": true
+    },
+    {
+      "path": "/tattoo-artist",
+      "label": "Zona 7 Art",
+      "title": "Zona 7 Art | Estudio de tatuajes en Bogota",
+      "description": "Portafolio de Zona 7 Art con trabajos, ubicacion y contacto para reservas en Bosa, Bogota.",
+      "schemaType": "WebPage",
+      "type": "website",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "imagePath": "/multimedia/FotosTattosLopez/pre-tattos.png",
+      "indexable": true
+    },
+    {
+      "path": "/cuerna",
+      "label": "Cuerna",
+      "title": "Cuerna | El templo del desmadre en Bogota",
+      "description": "Experiencia digital de Cuerna con agenda, arsenal visual y detalles del espacio en Bogota.",
+      "schemaType": "WebPage",
+      "type": "website",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "imagePath": "/multimedia/cuerna/logo cuerna.webp",
+      "indexable": true
+    }
+  ]
+}

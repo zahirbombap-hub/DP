@@ -4,6 +4,7 @@ import { Footer } from "../components/agua-linda/Footer.jsx";
 import { Header } from "../components/agua-linda/Header.jsx";
 import { WhatsAppButton } from "../components/agua-linda/WhatsAppButton.jsx";
 import { AGUA_LINDA_WHATSAPP_HREF } from "../components/agua-linda/constants.js";
+import { RouteSeo } from "../components/Seo.jsx";
 
 const navItems = [
   { href: "#quienes-somos", label: "Quiénes somos" },
@@ -73,6 +74,7 @@ export default function AguaLindaEmpres() {
 
   return (
     <div id="top" className="relative bg-[#0B5ED7] dark:bg-[#0B1120] text-white dark:text-slate-200 font-['Inter',sans-serif] transition-colors duration-300 scroll-smooth snap-y snap-proximity scroll-pt-20">
+      <RouteSeo routePath="/agua-linda/empresa" />
       <Header navItems={navItems} />
       <main className="pt-20">
         <section className="relative overflow-hidden px-6 py-16 md:py-24">

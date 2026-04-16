@@ -7,6 +7,7 @@ import { Cases } from "./Cases.jsx";
 import { SEOContent } from "./SEOContent.jsx";
 import { Contact } from "./Contact.jsx";
 import { Footer } from "./Footer.jsx";
+import { RouteSeo } from "../Seo.jsx";
 // landing.css moved to global import in src/index.js
 
 const WELCOME_SCROLL_GAP = 16;
@@ -134,6 +135,7 @@ export function Welcome() {
       ref={pageRef}
       className="welcome-page font-['Space_Grotesk',sans-serif] text-white selection:bg-[#ff3d4d] selection:text-white antialiased bg-[#050505]"
     >
+      <RouteSeo routePath="/" />
       <a href="#main-content" className="skip-link">Saltar al contenido</a>
       <Header />
       <main id="main-content" role="main" className="cinematic-load">

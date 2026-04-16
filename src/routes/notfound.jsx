@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { FuzzyText } from "../components/FuzzyText.jsx";
+import { Seo } from "../components/Seo.jsx";
 
 export function meta() {
   return [{ title: "Not Found - Don Prueba" }];
@@ -10,6 +11,14 @@ export default function NotFound() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#050505] text-white">
+      <Seo
+        canonicalPath={location.pathname}
+        description="La ruta solicitada no existe dentro del sitio Don Prueba."
+        label="404"
+        noindex
+        schemaType="WebPage"
+        title="Pagina no encontrada | Don Prueba"
+      />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(138,0,18,0.35)_0%,_rgba(5,5,5,0)_55%)]" />
       <div className="absolute inset-0 opacity-60 [background-image:linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:60px_60px]" />
 

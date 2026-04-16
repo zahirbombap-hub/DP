@@ -7,6 +7,7 @@ import { Manifesto } from "../components/tattos/Manifesto.jsx";
 import { Location } from "../components/tattos/Location.jsx";
 import { Footer } from "../components/tattos/Footer.jsx";
 import CursorApp from "../components/tattos/CursorTattoo/App.jsx";
+import { RouteSeo } from "../components/Seo.jsx";
 
 export default function TattooArtist() {
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function TattooArtist() {
 
   return (
     <div data-root className="font-['Space_Grotesk',sans-serif] bg-black text-slate-100 selection:bg-[#8a0012] selection:text-white overflow-x-hidden cursor-none">
+      <RouteSeo routePath="/tattoo-artist" />
       <div className="grain-overlay"></div>
       <CursorApp />
 

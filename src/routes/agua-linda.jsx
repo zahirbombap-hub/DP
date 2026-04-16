@@ -6,6 +6,7 @@ import { Hero } from "../components/agua-linda/Hero.jsx";
 import { ProductCatalog } from "../components/agua-linda/ProductCatalog.jsx";
 import { ProductShowcase } from "../components/agua-linda/ProductShowcase.jsx";
 import { WhatsAppButton } from "../components/agua-linda/WhatsAppButton.jsx";
+import { RouteSeo } from "../components/Seo.jsx";
 
 export const meta = () => {
   return [
@@ -70,6 +71,7 @@ export default function AguaLinda() {
       id="top"
       className="bg-[#0B5ED7] dark:bg-[#0B1120] text-white dark:text-slate-200 font-['Inter',sans-serif] transition-colors duration-300 scroll-smooth snap-y snap-proximity scroll-pt-20"
     >
+      <RouteSeo routePath="/agua-linda" />
       <Header />
       <Hero />
       <ProductShowcase />

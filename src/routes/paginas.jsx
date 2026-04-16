@@ -5,6 +5,7 @@ import { Footer } from "../components/welcome/Footer.jsx";
 import { Icon } from "../components/Icon.jsx";
 import { ScrollStack } from "../components/paginas/ScrollStack.jsx";
 import { paginasCases } from "../components/paginas/paginasData.js";
+import { RouteSeo } from "../components/Seo.jsx";
 
 export function meta() {
   return [
@@ -37,7 +38,6 @@ function IntroCard({ title, text, icon }) {
 
 export default function Paginas() {
   useEffect(() => {
-    document.title = "Don Prueba | Paginas";
     document.documentElement.lang = "es";
     document.documentElement.classList.add("scroll-smooth");
 
@@ -48,6 +48,7 @@ export default function Paginas() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#050505] text-white selection:bg-[#ff3d4d] selection:text-white">
+      <RouteSeo routePath="/paginas" />
       <Header />
 
       <main className="pt-16 sm:pt-18">

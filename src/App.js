@@ -27,6 +27,7 @@ export default function Home() {
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/agua-linda" element={<AguaLinda />} />
+        <Route path="/agua-linda/empresa" element={<AguaLindaEmpres />} />
         <Route path="/agua-linda/empres" element={<AguaLindaEmpres />} />
         <Route path="/handmade-wool" element={<HandmadeWool />} />
         <Route

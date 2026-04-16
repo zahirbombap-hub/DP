@@ -5,6 +5,7 @@ import { Header } from "../components/tejidos/Header.jsx";
 import { CatalogoDigital } from "../components/tejidos/CatalogoDigital.jsx";
 import { Footer } from "../components/tejidos/Footer.jsx";
 import { CATALOG_URL } from "../components/tejidos/catalog.constants.js";
+import { RouteSeo } from "../components/Seo.jsx";
 
 function getSelectedFile(search) {
   const params = new URLSearchParams(search || "");
@@ -79,6 +80,7 @@ export default function HandmadeWoolCatalogo() {
       id="top"
       className="font-['Manrope',sans-serif] transition-colors duration-300 animate-[fadeIn_2s_ease-out_forwards] wool-page"
     >
+      <RouteSeo routePath="/handmade-wool/catalogo" noindexWhenSearch />
       <Header
         catalogItems={catalogItems}
         catalogLoading={catalogLoading}

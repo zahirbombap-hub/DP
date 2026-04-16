@@ -8,6 +8,7 @@ import { Philosophy } from "../components/tejidos/Philosophy.jsx";
 import { Newsletter } from "../components/tejidos/Newsletter.jsx";
 import { Footer } from "../components/tejidos/Footer.jsx";
 import { CATALOG_URL } from "../components/tejidos/catalog.constants.js";
+import { RouteSeo } from "../components/Seo.jsx";
 
 export default function HandmadeWool() {
   const navigate = useNavigate();
@@ -64,6 +65,7 @@ export default function HandmadeWool() {
       id="top"
       className="font-['Manrope',sans-serif] transition-colors duration-300 animate-[fadeIn_2s_ease-out_forwards] wool-page"
     >
+      <RouteSeo routePath="/handmade-wool" />
       <Header
         catalogItems={catalogItems}
         catalogLoading={catalogLoading}
