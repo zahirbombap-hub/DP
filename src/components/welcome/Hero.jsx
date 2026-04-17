@@ -111,7 +111,7 @@ function ScrollVelocityMarquee({ speed = 60 }) {
 
   return (
     <div
-      className="overflow-hidden border-y border-white/5 bg-white/[0.02] py-4 sm:py-5"
+      className="overflow-hidden border-y border-white/5 bg-white/[0.02] py-3 sm:py-3"
       style={{
         width: "100dvw",
         maxWidth: "100dvw",
@@ -141,7 +141,11 @@ function ScrollVelocityMarquee({ speed = 60 }) {
 
 export function Hero() {
   return (
-    <section id="inicio" className="welcome-hero welcome-scroll-section relative min-h-[100svh] lg:min-h-[80vh] flex flex-col items-center justify-center px-4 sm:px-6 pt-16 sm:pt-18 md:pt-20 overflow-hidden">
+    <section
+      id="inicio"
+      className="welcome-hero welcome-scroll-section relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-4 pb-6 sm:px-6 sm:pb-8 lg:min-h-[80vh]"
+      style={{ paddingTop: "calc(var(--welcome-header-height, 72px) + 1.5rem)" }}
+    >
       <style>{`
         @font-face {
           font-family: "DxRuiga SemiBold";

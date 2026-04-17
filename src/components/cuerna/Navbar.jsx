@@ -30,7 +30,7 @@ export function Navbar() {
               alt="Don Prueba Logo Icon"
               className={`object-contain transition-all duration-300 ${scrolled ? "h-8 w-8" : "h-10 w-10"}`}
               data-purpose="navbar-logo-dp"
-              src="/multimedia/dp-logo-2.png"
+              src="/multimedia/logoDP.png"
             />
           </a>
           <a className="block transition-transform duration-200 hover:scale-[1.03] transform-gpu" href="/cuerna">

@@ -21,9 +21,15 @@ export function Header({
             <a
               href="/"
               aria-label="Don Prueba"
-              className="dp-logo group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-white text-[#0B5ED7] font-black text-xl shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-transform duration-150 hover:-translate-y-px dark:bg-[#0077BE] dark:text-white"
+              className="dp-logo group relative flex h-11 w-11 items-center justify-center overflow-hidden transition-transform duration-150 hover:-translate-y-px"
             >
-              <span className="relative z-10">DP</span>
+              <img
+                src="/multimedia/logoDP azul.png"
+                alt="Don Prueba"
+                className="relative z-10 h-[96%] w-[96%] object-contain transition-transform duration-150 group-hover:scale-105"
+                decoding="async"
+                draggable="false"
+              />
               <span
                 aria-hidden="true"
                 className="dp-logo-sheen pointer-events-none absolute inset-y-[-35%] left-[-90%] w-[70%] rounded-full bg-[linear-gradient(115deg,transparent_40%,rgba(255,255,255,0.95)_50%,rgba(214,240,255,0.5)_55%,transparent_68%)] opacity-0"

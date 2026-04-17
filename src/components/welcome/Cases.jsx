@@ -45,7 +45,7 @@ function CaseCard({ item }) {
           window.scrollTo({ top: 0, left: 0, behavior: "auto" });
         }
       }}
-      className="min-w-[300px] md:min-w-[540px] snap-center group"
+      className="group min-w-[300px] snap-center md:min-w-[540px]"
     >
       <div
         className="relative aspect-[16/10] overflow-hidden brutal-border neon-glow bg-[#121212]"
@@ -75,17 +75,22 @@ function CaseCard({ item }) {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent" />
-        <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p className="text-[#8a0012] text-[9px] font-black tracking-[0.2em] mb-2 uppercase font-['Space_Grotesk',sans-serif]">
-              {item.subtitle}
-            </p>
-            <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter font-['Space_Grotesk',sans-serif]">
-              {item.title}
-            </h3>
-          </div>
-          <Icon name="trending_flat" className="text-[#ff3d4d] text-3xl group-hover:translate-x-2 transition-transform" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#050505]/85 via-[#050505]/20 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
+      </div>
+
+      <div className="flex items-end justify-between gap-4 px-1 pt-4">
+        <div className="min-w-0">
+          <p className="mb-2 text-[9px] font-black uppercase tracking-[0.2em] text-[#8a0012] font-['Space_Grotesk',sans-serif] sm:text-[10px]">
+            {item.subtitle}
+          </p>
+          <h3 className="text-xl font-black uppercase italic tracking-tighter text-white font-['Space_Grotesk',sans-serif] sm:text-2xl">
+            {item.title}
+          </h3>
         </div>
+        <Icon
+          name="trending_flat"
+          className="shrink-0 text-3xl text-[#ff3d4d] transition-transform group-hover:translate-x-2"
+        />
       </div>
     </Link>
   );

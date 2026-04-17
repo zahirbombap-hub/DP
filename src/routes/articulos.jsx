@@ -90,7 +90,6 @@ export default function Articulos() {
   return (
     <div className="welcome-page font-['Space_Grotesk',sans-serif] text-white selection:bg-[#ff3d4d] selection:text-white antialiased bg-[#050505]">
       <RouteSeo routePath="/articulos" />
-      <a href="#top" className="skip-link">Saltar al contenido</a>
       <Header />
 
       <main id="top" role="main" className="cinematic-load">

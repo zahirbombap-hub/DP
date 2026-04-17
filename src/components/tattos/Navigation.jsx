@@ -7,9 +7,15 @@ export function Navigation() {
           aria-label="Ir al inicio"
           title="Ir al inicio"
           onClick={() => window.location.reload()}
-          className="relative flex items-center justify-center size-9 bg-[#8a0012] text-white font-['JetBrains_Mono',monospace] font-extrabold text-lg dp-logo-mark transition-transform group-hover:bg-[#ff3d4d] group-hover:skew-x-[-10deg]"
+          className="group relative flex items-center justify-center size-9 dp-logo-mark transition-transform hover:skew-x-[-10deg]"
         >
-          DP
+          <img
+            src="/multimedia/logoDP.png"
+            alt="Don Prueba"
+            className="h-[100%] w-[100%] object-contain transition-transform duration-300 group-hover:scale-105 group-hover:skew-x-[10deg]"
+            decoding="async"
+            draggable="false"
+          />
         </a>
         <div className="flex gap-2">
           <a className="bg-[#8a0012] text-white px-3 py-1.5 font-black border-2 border-black text-xs uppercase shadow-[2px_2px_0px_black] hover:translate-y-0.5 transition-all" href="#paginas">PORTAFOLIO</a>

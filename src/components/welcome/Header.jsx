@@ -44,6 +44,18 @@ export function Header({
   const navigate = useNavigate();
   const headerRef = useRef(null);
 
+  const handleContactClick = () => {
+    const target = document.getElementById("contact-footer");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      const firstInput = document.getElementById("company-name");
+      setTimeout(() => firstInput?.focus(), 500);
+      return;
+    }
+
+    navigate("/#contact-footer");
+  };
+
   const handleHomeLinkClick = (event) => {
     if (pathname !== "/") {
       return;
@@ -113,7 +125,7 @@ export function Header({
   return (
     <header
       ref={headerRef}
-      className="welcome-fixed-header fixed top-0 left-0 z-50 w-full border-b border-[#8a0012]/30 bg-[#050505]/90 px-4 py-3 backdrop-blur-xl sm:px-6 sm:py-4 cinematic-load"
+      className="welcome-fixed-header fixed top-0 left-0 z-50 w-full border-b border-[#8a0012]/30 bg-[#050505]/90 px-3 py-3 backdrop-blur-xl sm:px-6 sm:py-4 cinematic-load"
     >
       <style>{`
         @font-face {
@@ -123,59 +135,31 @@ export function Header({
           font-weight: 400;
           font-display: swap;
         }
-
-        @media (min-width: 970px) {
-          .welcome-home-link {
-            display: none !important;
-          }
-
-          .welcome-desktop-nav {
-            display: flex !important;
-          }
-
-          .welcome-compact-nav {
-            display: none !important;
-          }
-        }
-
-        @media (max-width: 969.98px) {
-          .welcome-desktop-nav {
-            display: none !important;
-          }
-
-          .welcome-home-link {
-            display: inline-flex !important;
-          }
-
-          .welcome-compact-nav {
-            display: flex !important;
-          }
-        }
       `}</style>
 
-      <div className="mx-auto grid max-w-screen-2xl grid-cols-[auto_1fr_auto] items-center gap-4">
+      <div className="mx-auto grid max-w-screen-2xl grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 sm:grid-cols-[auto_1fr_auto] sm:gap-4">
         <Link
           aria-label="Don Prueba Inicio"
-          className="welcome-brand flex items-center gap-4 group"
+          className="welcome-brand group flex min-w-0 items-center gap-2.5 sm:gap-4"
           onClick={handleHomeLinkClick}
           to="/#inicio"
         >
-          <div className="welcome-brand-mark dp-logo-mark relative flex size-11 items-center justify-center overflow-hidden bg-transparent transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-[1.06] group-hover:rotate-[-3deg] sm:size-12">
+          <div className="welcome-brand-mark dp-logo-mark relative flex size-11 shrink-0 items-center justify-center overflow-hidden bg-transparent transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-[1.06] group-hover:rotate-[-3deg] sm:size-12">
             <img
               alt="DP"
-              className="h-[86%] w-[86%] object-contain transition-transform duration-300 ease-out group-hover:scale-105 group-hover:rotate-[2deg]"
+              className="h-full w-full object-contain transition-transform duration-300 ease-out group-hover:scale-105 group-hover:rotate-[2deg]"
               decoding="async"
               draggable="false"
-              src="/multimedia/logoDP.png"
+              src="/multimedia/Logo DonPrueba Procesado 7rojo.png"
             />
           </div>
-          <span className="welcome-brand-text font-['JetBrains_Mono',monospace] text-lg font-extrabold tracking-tighter uppercase text-white">
+          <span className="welcome-brand-text min-w-0 truncate font-['JetBrains_Mono',monospace] text-[0.95rem] font-extrabold uppercase leading-none tracking-tight text-white sm:text-lg">
             Don <span className="text-[#ff3d4d]">Prueba</span>
           </span>
         </Link>
 
-        <div className="flex min-w-0 justify-center">
-          <nav aria-label="Navegacion Principal" className="welcome-desktop-nav hidden items-center gap-8">
+        <div className="hidden min-w-0 justify-center min-[970px]:flex">
+          <nav aria-label="Navegacion Principal" className="welcome-desktop-nav items-center gap-8">
             {desktopNavItems.map((item) => (
               <NavItem
                 key={`${item.to}-${item.label}`}
@@ -186,21 +170,21 @@ export function Header({
           </nav>
         </div>
 
-        <div className="flex items-center justify-end gap-3 sm:gap-6">
+        <div className="flex items-center justify-end gap-2 sm:gap-3 lg:gap-6">
           <Link
-            className="welcome-home-link shrink-0 text-[10px] font-bold uppercase tracking-[0.2em] text-[#a1a1aa] transition-colors hover:text-[#ff3d4d]"
+            className="welcome-home-link hidden shrink-0 text-[9px] font-bold uppercase tracking-[0.16em] text-[#a1a1aa] transition-colors hover:text-[#ff3d4d] min-[420px]:inline-flex sm:text-[10px] min-[970px]:hidden"
             onClick={handleHomeLinkClick}
             to="/#inicio"
           >
             Inicio
           </Link>
 
-          <div className="welcome-compact-nav relative hidden items-center">
+          <div className="welcome-compact-nav relative flex items-center min-[970px]:hidden">
             <button
               aria-controls="mobile-menu"
               aria-expanded={open}
               aria-label={open ? "Cerrar menu" : "Abrir menu"}
-              className="group flex items-center gap-2 rounded-full border border-[#8a0012]/20 bg-white/[0.03] px-3 py-2 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]"
+              className="group flex h-10 w-10 items-center justify-center rounded-full border border-[#8a0012]/20 bg-white/[0.03] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/[0.06]"
               onClick={() => setOpen(!open)}
             >
               <svg
@@ -219,8 +203,8 @@ export function Header({
 
             <div
               id="mobile-menu"
-              className="absolute right-0 top-full z-50 mt-2 w-48 origin-top-right overflow-hidden rounded-md border border-[#8a0012]/20 bg-[#050505]/95 transition-all duration-300 ease-in-out"
-              style={{ maxHeight: open ? "320px" : "0px", opacity: open ? 1 : 0 }}
+              className="absolute right-0 top-full z-50 mt-2 w-[min(15rem,calc(100vw-1.5rem))] origin-top-right overflow-hidden rounded-2xl border border-white/10 bg-[#050505]/55 shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-2xl supports-[backdrop-filter]:bg-[#050505]/45 transition-all duration-300 ease-in-out"
+              style={{ maxHeight: open ? "320px" : "0px", opacity: open ? 1 : 0, pointerEvents: open ? "auto" : "none" }}
               aria-hidden={!open}
             >
               <nav className="flex flex-col text-sm">
@@ -237,22 +221,12 @@ export function Header({
           </div>
 
           <button
-            onClick={() => {
-              const target = document.getElementById("contact-footer");
-              if (target) {
-                target.scrollIntoView({ behavior: "smooth", block: "start" });
-                const firstInput = document.getElementById("company-name");
-                setTimeout(() => firstInput?.focus(), 500);
-                return;
-              }
-
-              navigate("/#contact-footer");
-            }}
+            onClick={handleContactClick}
             aria-label="Ir al formulario de contacto"
             title="Ir al formulario de contacto"
-            className="cta-button text-white px-3 py-2 text-[9px] font-black uppercase tracking-widest active:scale-95 sm:px-5 sm:text-[10px]"
+            className="cta-button inline-flex h-10 w-[9.25rem] shrink-0 items-center justify-center rounded-full px-0 text-[8.5px] font-black uppercase tracking-[0.16em] text-white whitespace-nowrap active:scale-95 min-[420px]:text-[9px]"
           >
-            Iniciar Proyecto
+            Comenzar Proyecto
           </button>
         </div>
       </div>
