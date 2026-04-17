@@ -159,7 +159,7 @@ export function Header({
         </Link>
 
         <div className="hidden min-w-0 justify-center min-[970px]:flex">
-          <nav aria-label="Navegacion Principal" className="welcome-desktop-nav items-center gap-8">
+          <nav aria-label="Navegacion Principal" className="welcome-desktop-nav flex items-center gap-8">
             {desktopNavItems.map((item) => (
               <NavItem
                 key={`${item.to}-${item.label}`}
