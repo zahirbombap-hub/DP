@@ -11,6 +11,7 @@ import Apps from "./routes/apps.jsx";
 import Paginas from "./routes/paginas.jsx";
 import Automatizaciones from "./routes/automatizaciones.jsx";
 import NotFound from "./routes/notfound.jsx";
+import { z7SportRoutes } from "./bhqz-bosa/index.jsx";
 import { ScrollToTop } from "./components/ScrollToTop.jsx";
 
 export function meta() {
@@ -40,6 +41,10 @@ export default function Home() {
         <Route path="/apps" element={<Apps />} />
         <Route path="/paginas" element={<Paginas />} />
         <Route path="/automatizaciones" element={<Automatizaciones />} />
+        
+        {/* BHQZ Bosa Routes */}
+        {z7SportRoutes}
+        
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

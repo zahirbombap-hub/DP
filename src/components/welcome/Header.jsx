@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { Icon } from "../Icon.jsx";
 
 const defaultDesktopNavItems = [
   { label: "Inicio", type: "link", to: "/#inicio" },
@@ -11,6 +12,7 @@ const defaultDesktopNavItems = [
 ];
 
 const defaultCompactNavItems = [
+  { label: "Inicio", type: "link", to: "/#inicio" },
   { label: "Paginas", type: "link", to: "/paginas#inicio" },
   { label: "Automatizaciones", type: "link", to: "/automatizaciones#inicio" },
   { label: "Apps", type: "link", to: "/apps#inicio" },
@@ -171,14 +173,6 @@ export function Header({
         </div>
 
         <div className="flex items-center justify-end gap-2 sm:gap-3 lg:gap-6">
-          <Link
-            className="welcome-home-link hidden shrink-0 text-[9px] font-bold uppercase tracking-[0.16em] text-[#a1a1aa] transition-colors hover:text-[#ff3d4d] min-[420px]:inline-flex sm:text-[10px] min-[970px]:hidden"
-            onClick={handleHomeLinkClick}
-            to="/#inicio"
-          >
-            Inicio
-          </Link>
-
           <div className="welcome-compact-nav relative flex items-center min-[970px]:hidden">
             <button
               aria-controls="mobile-menu"
@@ -203,20 +197,68 @@ export function Header({
 
             <div
               id="mobile-menu"
-              className="absolute right-0 top-full z-50 mt-2 w-[min(15rem,calc(100vw-1.5rem))] origin-top-right overflow-hidden rounded-2xl border border-white/10 bg-[#050505]/55 shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-2xl supports-[backdrop-filter]:bg-[#050505]/45 transition-all duration-300 ease-in-out"
-              style={{ maxHeight: open ? "320px" : "0px", opacity: open ? 1 : 0, pointerEvents: open ? "auto" : "none" }}
+              className="absolute right-0 top-full z-50 mt-2 w-[min(18rem,calc(100vw-1.25rem))] origin-top-right overflow-hidden rounded-[1.65rem] border border-[#3f1118] bg-[#12080b] shadow-[0_24px_55px_rgba(0,0,0,0.48)] transition-all duration-300 ease-in-out"
+              style={{ maxHeight: open ? "420px" : "0px", opacity: open ? 1 : 0, pointerEvents: open ? "auto" : "none" }}
               aria-hidden={!open}
             >
-              <nav className="flex flex-col text-sm">
-                {compactNavItems.map((item) => (
-                  <NavItem
-                    key={`${item.to}-${item.label}`}
-                    item={item}
-                    className="px-4 py-3 text-[#a1a1aa] transition-colors hover:bg-white/3 hover:text-white"
-                    onClick={() => setOpen(false)}
-                  />
-                ))}
-              </nav>
+              <div className="relative overflow-hidden bg-[linear-gradient(180deg,#2a0911,#13080b)] p-4">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,61,77,0.14),transparent_34%),linear-gradient(180deg,rgba(10,4,6,0),rgba(10,4,6,0.18))]"
+                />
+
+                <div className="relative z-10 flex flex-col gap-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="min-w-0 leading-tight">
+                      <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#ff3d4d]/90">
+                        Navegacion
+                      </p>
+                      <p className="mt-1 truncate text-sm font-bold uppercase tracking-[0.16em] text-white">
+                        Don Prueba
+                      </p>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/15"
+                      onClick={() => setOpen(false)}
+                      aria-label="Cerrar menu"
+                    >
+                      <Icon name="close" className="text-xl" />
+                    </button>
+                  </div>
+
+                  <nav className="flex flex-col gap-2 text-sm">
+                    {compactNavItems.map((item) => (
+                      <NavItem
+                        key={`${item.to}-${item.label}`}
+                        item={item}
+                        className="rounded-xl border border-white/10 bg-[#ffffff0d] px-4 py-3 font-semibold text-[#e4e4e7] transition-colors hover:bg-[#ffffff14] hover:text-white"
+                        onClick={(event) => {
+                          if (item.to === "/#inicio" && pathname === "/") {
+                            handleHomeLinkClick(event);
+                            return;
+                          }
+
+                          setOpen(false);
+                        }}
+                      />
+                    ))}
+                  </nav>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setOpen(false);
+                      handleContactClick();
+                    }}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-[#ff3d4d]/35 bg-[#ff3d4d] px-4 py-3 text-[10px] font-black uppercase tracking-[0.24em] text-white transition-all hover:bg-[#ff5664]"
+                  >
+                    <span>Comenzar</span>
+                    <Icon name="trending_flat" className="text-base" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 

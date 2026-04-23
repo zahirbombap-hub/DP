@@ -132,7 +132,7 @@ export function Cases() {
       <div className="px-4 sm:px-6 mb-6 sm:mb-8 flex flex-col md:flex-row md:items-end justify-between max-w-screen-2xl mx-auto gap-6">
         <div className="max-w-xl">
           <span className="text-[#8a0012] text-[10px] font-black tracking-[0.3em] uppercase mb-3 block font-['Space_Grotesk',sans-serif]">
-            Archivo 02 / Nuestros clientes
+            Nuestros clientes
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter uppercase italic leading-none text-white font-['Space_Grotesk',sans-serif]">
             Páginas para Empresas
@@ -180,17 +180,17 @@ export function Cases() {
             extraImgClass: "contrast-125 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100",
           },
           {
-            href: "/tattoo-artist",
-            img: "/multimedia/FotosTattosLopez/pre-tattos.png",
-            subtitle: "Tatuador // Estilo Puntillismo",
-            title: "Zona 7 Art Studio",
-            extraImgClass: "sepia-[0.3] brightness-75 group-hover:sepia-0 group-hover:brightness-100",
-          },
-          {
             href: "/agua-linda",
             img: "/multimedia/agua-linda/pre-agualinda.png",
             subtitle: "Distribuidora Agua Linda",
             title: "Agua Linda Villa de Leyva y Sutamarchán",
+            extraImgClass: "sepia-[0.3] brightness-75 group-hover:sepia-0 group-hover:brightness-100",
+          },
+          {
+            href: "/bhqz-bosa",
+            img: "/multimedia/BHQZ/previsualizacion.png",
+            subtitle: "Escuela deportiva",
+            title: "BHQZ Bosa",
             extraImgClass: "sepia-[0.3] brightness-75 group-hover:sepia-0 group-hover:brightness-100",
           },
           {
@@ -200,6 +200,13 @@ export function Cases() {
             title: "Historias Tejidas",
             extraImgClass: "sepia-[0.3] brightness-75 group-hover:sepia-0 group-hover:brightness-100",
           },
+          {
+            href: "/tattoo-artist",
+            img: "/multimedia/FotosTattosLopez/pre-tattos.png",
+            subtitle: "Tatuador // Estilo Puntillismo",
+            title: "Zona 7 Art Studio",
+            extraImgClass: "sepia-[0.3] brightness-75 group-hover:sepia-0 group-hover:brightness-100",
+          }
         ].map((item, index) => (
           <CaseCard key={index} item={item} />
         ))}

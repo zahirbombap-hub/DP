@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'DroidSansMono';
+  src: url('./DroidSansMono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DxRuiga';
+  src: url('./DxRuiga-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Apply font to all BHQZ elements */
+.z7-layout,
+.z7-layout * {
+  font-family: 'DroidSansMono', monospace !important;
+}
+
+/* Title and Subtitle font - DxRuiga */
+.z7-title-font,
+.z7-section-title,
+.z7-card-title {
+  font-family: 'DxRuiga', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Hero Title font - Bebas Neue (similar to Bagnard Sans) */
+.z7-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,150 @@
+/* BHQZ Bosa - Global Styles */
+/* CSS Variables and global definitions */
+
+:root {
+  /* Primary Colors */
+  --z7-primary-50: #eff6ff;
+  --z7-primary-100: #dbeafe;
+  --z7-primary-600: #2563eb;
+  --z7-primary-700: #1d4ed8;
+  --z7-primary-900: #111e45;
+  
+  /* Secondary Colors */
+  --z7-secondary-50: #f9fafb;
+  --z7-secondary-100: #f3f4f6;
+  --z7-secondary-200: #e5e7eb;
+  --z7-secondary-300: #d1d5db;
+  --z7-secondary-600: #4b5563;
+  --z7-secondary-700: #374151;
+  --z7-secondary-900: #111827;
+  
+  /* Accent Colors */
+  --z7-success: #10b981;
+  --z7-error: #ef4444;
+  --z7-warning: #f59e0b;
+  
+  /* Typography */
+  --z7-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --z7-font-mono: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  
+  /* Shadows */
+  --z7-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --z7-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --z7-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  
+  /* Border Radius */
+  --z7-radius-base: 0.5rem;
+  --z7-radius-lg: 1rem;
+  
+  /* Transitions */
+  --z7-transition-fast: 150ms ease-in-out;
+  --z7-transition-base: 250ms ease-in-out;
+  --z7-transition-slow: 350ms ease-in-out;
+}
+
+/* Apply font to body */
+body {
+  font-family: var(--z7-font-sans);
+}
+
+/* Common utility patterns */
+.z7-hero-gradient {
+  background: linear-gradient(to bottom, var(--z7-primary-900), var(--z7-primary-700));
+  color: white;
+}
+
+.z7-card-base {
+  background: white;
+  border-radius: var(--z7-radius-base);
+  box-shadow: var(--z7-shadow-md);
+  transition: box-shadow var(--z7-transition-base);
+}
+
+.z7-card-base:hover {
+  box-shadow: var(--z7-shadow-lg);
+}
+
+.z7-button-primary {
+  background-color: var(--z7-primary-600);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: var(--z7-radius-base);
+  font-weight: 600;
+  transition: background-color var(--z7-transition-base);
+}
+
+.z7-button-primary:hover {
+  background-color: var(--z7-primary-700);
+}
+
+.z7-button-secondary {
+  background-color: white;
+  color: var(--z7-primary-900);
+  padding: 0.75rem 2rem;
+  border-radius: var(--z7-radius-base);
+  font-weight: 600;
+  transition: background-color var(--z7-transition-base);
+}
+
+.z7-button-secondary:hover {
+  background-color: var(--z7-secondary-50);
+}
+
+.z7-input-base {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--z7-secondary-300);
+  border-radius: var(--z7-radius-base);
+  font-size: 1rem;
+  transition: all var(--z7-transition-base);
+}
+
+.z7-input-base:focus {
+  outline: none;
+  ring: 2px solid var(--z7-primary-600);
+}
+
+.z7-input-base.error {
+  border-color: var(--z7-error);
+}
+
+.z7-text-h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.z7-text-h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.z7-text-h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.z7-text-body {
+  font-size: 1rem;
+  color: var(--z7-secondary-700);
+  line-height: 1.5;
+}
+
+.z7-text-body-large {
+  font-size: 1.125rem;
+  color: var(--z7-secondary-700);
+  line-height: 1.6;
+}
+
+.z7-text-body-small {
+  font-size: 0.875rem;
+  color: var(--z7-secondary-600);
+}
+
+.z7-text-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--z7-secondary-900);
+}

@@ -140,6 +140,78 @@
       "changefreq": "monthly",
       "imagePath": "/multimedia/cuerna/logo cuerna.webp",
       "indexable": true
+    },
+    {
+      "path": "/bhqz-bosa",
+      "label": "BHQZ Bosa",
+      "title": "BHQZ Bosa | Arte, Cultura y Deporte",
+      "description": "Comunidad BHQZ Bosa dedicada al desarrollo integral a través del arte, la cultura y el deporte. Descubre nuestros programas, galería y únete a nosotros.",
+      "schemaType": "WebPage",
+      "type": "website",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "imagePath": "/multimedia/logoDP.png",
+      "indexable": true
+    },
+    {
+      "path": "/bhqz-bosa/nosotros",
+      "label": "BHQZ Bosa - Nosotros",
+      "title": "Nosotros | BHQZ Bosa - Misión, Visión y Valores",
+      "description": "Conoce la misión, visión y valores que guían a BHQZ Bosa en su compromiso con el arte, la cultura y el deporte.",
+      "schemaType": "WebPage",
+      "type": "website",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "imagePath": "/multimedia/logoDP.png",
+      "indexable": true
+    },
+    {
+      "path": "/bhqz-bosa/programas",
+      "label": "BHQZ Bosa - Programas",
+      "title": "Programas de Arte, Cultura y Deporte | BHQZ Bosa",
+      "description": "Explora nuestros 50+ programas y cursos en arte, cultura y deporte para todos los niveles de experiencia.",
+      "schemaType": "CollectionPage",
+      "type": "website",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "imagePath": "/multimedia/logoDP.png",
+      "indexable": true
+    },
+    {
+      "path": "/bhqz-bosa/galeria",
+      "label": "BHQZ Bosa - Galería",
+      "title": "Galería de Eventos y Trabajos | BHQZ Bosa",
+      "description": "Visualiza los momentos, proyectos y eventos de nuestra comunidad BHQZ Bosa a través de nuestra galería interactiva.",
+      "schemaType": "CollectionPage",
+      "type": "website",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "imagePath": "/multimedia/logoDP.png",
+      "indexable": true
+    },
+    {
+      "path": "/bhqz-bosa/inscripciones",
+      "label": "BHQZ Bosa - Inscripciones",
+      "title": "Inscripciones y Registro | BHQZ Bosa",
+      "description": "Regístrate en nuestros programas de arte, cultura y deporte. Completa el formulario y únete a la comunidad BHQZ Bosa.",
+      "schemaType": "WebPage",
+      "type": "website",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "imagePath": "/multimedia/logoDP.png",
+      "indexable": true
+    },
+    {
+      "path": "/bhqz-bosa/contacto",
+      "label": "BHQZ Bosa - Contacto",
+      "title": "Contacto | BHQZ Bosa - Información y Ubicación",
+      "description": "Ponte en contacto con BHQZ Bosa. Encuentra nuestra ubicación, horarios de atención y múltiples canales de comunicación.",
+      "schemaType": "WebPage",
+      "type": "website",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "imagePath": "/multimedia/logoDP.png",
+      "indexable": true
     }
   ]
 }
