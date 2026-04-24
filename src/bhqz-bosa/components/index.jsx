@@ -13,6 +13,7 @@ export { default as GalleryPreview } from './GalleryPreview.jsx';
 export { default as CarouselGallery } from './CarouselGallery.jsx';
 export { default as GalleryShowcaseSection } from './GalleryShowcaseSection.jsx';
 export { default as ProgramCard } from './ProgramCard.jsx';
+export { default as ProgramModal } from './ProgramModal.jsx';
 export { default as RegistrationForm } from './RegistrationForm.jsx';
 export { default as FilterButtons } from './FilterButtons.jsx';
 export { default as BoldPaymentButton } from './BoldPaymentButton.jsx';

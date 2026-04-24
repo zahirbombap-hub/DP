@@ -280,7 +280,7 @@ export default function Z7Layout({ children, isHome = false }) {
 
         {/* Main Content */}
         <main className="z7-main flex-1 w-full relative z-10" style={{ paddingTop: !isDesktop ? "5rem" : "0" }}>
-          <div className="max-w-7xl mx-auto my-auto">
+          <div className="w-full">
             {children}
           </div>
         </main>

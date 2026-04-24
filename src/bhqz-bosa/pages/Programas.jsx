@@ -2,11 +2,12 @@
 
 import { Seo } from '../../components/Seo.jsx';
 import { useState } from 'react';
-import { Z7Layout, ProgramCard, HeroSection, FilterButtons } from '../components/index.jsx';
+import { Z7Layout, ProgramCard, ProgramModal, HeroSection, FilterButtons } from '../components/index.jsx';
 import { PROGRAMS, getCategories } from '../data/programs.js';
 
 export default function Programas() {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedProgram, setSelectedProgram] = useState(null);
 
   const filteredPrograms = selectedCategory
     ? PROGRAMS.filter((program) => program.category === selectedCategory)
@@ -27,7 +28,9 @@ export default function Programas() {
         <HeroSection
           title="Nuestros Programas"
           subtitle="Descubre nuestros cursos, talleres y actividades disponibles para todos los niveles."
+          backgroundImage="/multimedia/BHQZ/programas2.png"
         />
+        
 
         <FilterButtons
           items={categoryItems}
@@ -41,7 +44,7 @@ export default function Programas() {
             {filteredPrograms.length > 0 ? (
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 md:gap-6">
                 {filteredPrograms.map((program) => (
-                  <ProgramCard key={program.id} program={program} />
+                  <ProgramCard key={program.id} program={program} onSelect={setSelectedProgram} />
                 ))}
               </div>
             ) : (
@@ -53,6 +56,10 @@ export default function Programas() {
             )}
           </div>
         </section>
+
+          {selectedProgram ? (
+            <ProgramModal program={selectedProgram} onClose={() => setSelectedProgram(null)} />
+          ) : null}
 
         <section className="relative overflow-hidden py-12 text-white md:py-16 lg:py-24">
           <img

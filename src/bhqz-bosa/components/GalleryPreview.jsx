@@ -17,12 +17,12 @@ export default function GalleryPreview({
   }
 
   // Mobile-first responsive grid with adaptive gap
-  const responsiveGap = 'gap-2 sm:gap-3 md:gap-4';
-  const gridColsClass = `grid-cols-1 md:grid-cols-2 ${columns >= 3 ? 'lg:grid-cols-3' : ''} ${columns >= 4 ? 'xl:grid-cols-4' : ''}`;
+  const responsiveGap = 'gap-1.5 sm:gap-3 md:gap-4';
+  const gridColsClass = `grid-cols-2 md:grid-cols-3 ${columns >= 4 ? 'lg:grid-cols-4' : ''}`;
 
   return (
-    <section className={`gallery-preview py-8 sm:py-12 md:py-16 ${className}`}>
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
+    <section className={`gallery-preview py-4 sm:py-8 md:py-12 ${className}`}>
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6">
         <div className={`grid ${gridColsClass} ${responsiveGap}`}>
           {images.map((image, index) => (
             <div key={index} className="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">

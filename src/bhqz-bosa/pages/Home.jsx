@@ -57,52 +57,84 @@ export default function Home() {
           ctaLink="/bhqz-bosa/programas"
         />
 
-        <AboutZ7
-          title="Sobre BHQZ Bosa"
-          description="BHQZ Bosa es una organizacion dedicada a promover el desarrollo integral de nuestros miembros a traves de la combinacion del arte, la cultura y el deporte. Creemos que estas disciplinas son fundamentales para crear una comunidad fuerte, inclusiva y transformadora."
-          stats={stats}
-        />
-
-        <section className="bg-[#080808]">
-          <div className="container mx-auto px-4">
-            <ProgressiveCarousel title="Nuestras Categorias" />
-          </div>
-        </section>
-
-        <SplitSection
-          leftContent={
-            <img
-              src="/multimedia/BHQZ/fotos/foto1.jpg"
-              alt="Jugador destacado de BHQZ"
-              className="h-[260px] w-full object-cover object-top md:h-full md:object-center"
+        <div style={{ position: 'relative' }}>
+          <div style={{ position: 'sticky', top: 0, zIndex: 10 }}>
+            <AboutZ7
+              title="Sobre BHQZ Bosa"
+              description="BHQZ Bosa es una organizacion dedicada a promover el desarrollo integral de nuestros miembros a traves de la combinacion del arte, la cultura y el deporte. Creemos que estas disciplinas son fundamentales para crear una comunidad fuerte, inclusiva y transformadora."
+              stats={stats}
             />
-          }
-          rightContent={
-            <div className="max-w-xl space-y-6">
-              <h3 className="z7-section-title text-[2rem] font-bold text-white">
-                Tu deporte, al siguiente nivel
-              </h3>
-              <p className="text-base leading-relaxed text-white">
-                Encuentros, entrenamientos y asesorias profesionales disenados para llevarte mas lejos, sin importar tu nivel.
-              </p>
-              <ul className="list-disc space-y-3 pl-5 text-base leading-relaxed text-white">
-                <li>Entrenamientos personalizados</li>
-                <li>Acompanamiento y asesoria profesional</li>
-                <li>Competencias y eventos deportivos</li>
-                <li>Actividades culturales y comunitarias</li>
-              </ul>
-              <a
-                href="/bhqz-bosa/programas"
-                className="inline-block rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
-              >
-                Ver todos los programas {'\u2192'}
-              </a>
-            </div>
-          }
-          containerClassName="my-0"
-        />
+          </div>
 
-        <GalleryShowcaseSection />
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 20,
+              borderRadius: '1.5rem 1.5rem 0 0',
+              overflow: 'hidden',
+              marginTop: '-2rem',
+            }}
+          >
+            <section className="bg-[#080808]">
+              <ProgressiveCarousel title="Nuestras Categorias" />
+            </section>
+          </div>
+
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 30,
+              borderRadius: '1.5rem 1.5rem 0 0',
+              overflow: 'hidden',
+              marginTop: '-2rem',
+            }}
+          >
+            <SplitSection
+              leftContent={
+                <img
+                  src="/multimedia/BHQZ/fotos/foto1.jpg"
+                  alt="Jugador destacado de BHQZ"
+                  className="h-[260px] w-full object-cover object-top md:h-full md:object-center"
+                />
+              }
+              rightContent={
+                <div className="max-w-xl space-y-6">
+                  <h3 className="z7-section-title text-[2rem] font-bold text-white">
+                    Tu deporte, al siguiente nivel
+                  </h3>
+                  <p className="text-base leading-relaxed text-white">
+                    Encuentros, entrenamientos y asesorias profesionales disenados para llevarte mas lejos, sin importar tu nivel.
+                  </p>
+                  <ul className="list-disc space-y-3 pl-5 text-base leading-relaxed text-white">
+                    <li>Entrenamientos personalizados</li>
+                    <li>Acompanamiento y asesoria profesional</li>
+                    <li>Competencias y eventos deportivos</li>
+                    <li>Actividades culturales y comunitarias</li>
+                  </ul>
+                    <a
+                      href="/bhqz-bosa/programas"
+                      className="inline-block rounded-lg px-8 py-3 font-semibold text-white bg-gradient-to-b from-red-700 via-red-800 to-red-900 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-red-600 shadow-sm"
+                    >
+                      Ver todos los programas
+                    </a>
+                </div>
+              }
+              containerClassName="my-0"
+            />
+          </div>
+
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 40,
+              borderRadius: '1.5rem 1.5rem 0 0',
+              overflow: 'hidden',
+              marginTop: '-2rem',
+            }}
+          >
+            <GalleryShowcaseSection />
+          </div>
+        </div>
 
         <section
           className="relative isolate w-screen overflow-hidden py-16 text-white md:py-24"
@@ -138,7 +170,7 @@ export default function Home() {
               </p>
               <a
                 href="/bhqz-bosa/inscripciones"
-                className="inline-block rounded-lg bg-white px-8 py-3 font-semibold text-blue-900 transition-colors hover:bg-blue-50"
+                className="inline-block rounded-lg px-8 py-3 font-semibold text-white bg-gradient-to-b from-red-700 via-red-800 to-red-900 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-red-600 shadow-sm"
               >
                 Inscribirse ahora
               </a>

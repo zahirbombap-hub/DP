@@ -83,10 +83,20 @@ export default function ProgressiveCarousel({
       }}
     >
       <div className="relative min-h-[24rem] overflow-hidden bg-[#080808] sm:min-h-[28rem] md:min-h-[36rem] lg:min-h-[42rem]">
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-20 mx-auto w-full max-w-7xl px-4 pt-8 sm:px-6 md:pt-10 lg:px-8">
-          <h2 className="z7-section-title text-center text-3xl font-bold text-white md:text-4xl">
-            {title}
-          </h2>
+        <div className="absolute inset-x-0 top-0 z-30 w-full px-4 pt-6 sm:pt-8 md:pt-10 lg:pt-12">
+          <div className="mx-auto max-w-7xl text-center">
+            <h2 className="z7-section-title text-3xl font-bold text-white md:text-4xl">
+              {title}
+            </h2>
+            <div className="mt-3">
+              <h3 className="text-xl font-semibold text-white sm:text-2xl">
+                {sportSections[activeIndex].title}
+              </h3>
+              <p className="mt-2 max-w-2xl mx-auto text-sm text-white/90">
+                {sportSections[activeIndex].message}
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="absolute right-2 top-1/2 z-20 -translate-y-1/2 sm:right-3 md:right-2 lg:right-3">
@@ -142,18 +152,7 @@ export default function ProgressiveCarousel({
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10" />
               <div className={`absolute inset-0 bg-gradient-to-br ${section.accentClassName}`} />
 
-              <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-7xl px-4 pb-8 pr-24 sm:px-6 sm:pr-28 md:pb-10 md:pr-32 lg:px-8 lg:pr-36">
-                <div className="max-w-2xl">
-                  <span
-                    className={`inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] ${section.badgeClassName}`}
-                  >
-                    {section.title}
-                  </span>
-                  <p className="mt-4 max-w-xl text-lg font-medium leading-relaxed text-white sm:text-xl">
-                    {section.message}
-                  </p>
-                </div>
-              </div>
+              {/* captions moved to top area to keep viewport-top alignment */}
             </article>
           );
         })}

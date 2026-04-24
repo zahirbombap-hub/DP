@@ -4,42 +4,71 @@
 import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+// The carouselImages array is now synchronized with the gallerySlides from GalleryShowcaseSection.jsx
 const carouselImages = [
   {
-    src: '/multimedia/BHQZ/fotos/hero1.jpeg',
-    alt: 'Momento destacado de BHQZ Bosa 1',
+    src: '/multimedia/BHQZ/fotos/foto1.jpg',
+    alt: 'Momento destacado BHQZ 1',
   },
   {
-    src: '/multimedia/BHQZ/fotos/hero2.jpeg',
-    alt: 'Momento destacado de BHQZ Bosa 2',
+    src: '/multimedia/BHQZ/fotos/foto3.jpg',
+    alt: 'Momento destacado BHQZ 2',
   },
   {
-    src: '/multimedia/BHQZ/fotos/hero3.jpeg',
-    alt: 'Momento destacado de BHQZ Bosa 3',
+    src: '/multimedia/BHQZ/fotos/foto5.jpg',
+    alt: 'Momento destacado BHQZ 3',
   },
   {
     src: '/multimedia/BHQZ/fotos/hero4.jpeg',
-    alt: 'Momento destacado de BHQZ Bosa 4',
+    alt: 'Momento destacado BHQZ 4',
   },
   {
-    src: '/multimedia/BHQZ/fotos/hero5.jpeg',
-    alt: 'Momento destacado de BHQZ Bosa 5',
+    src: '/multimedia/BHQZ/fotos/foto6.jpg',
+    alt: 'Momento destacado BHQZ 5',
   },
   {
-    src: '/multimedia/BHQZ/fotos/hero6.jpeg',
-    alt: 'Momento destacado de BHQZ Bosa 6',
+    src: '/multimedia/BHQZ/fotos/foto11.jpg',
+    alt: 'Momento destacado BHQZ 6',
   },
   {
-    src: '/multimedia/BHQZ/fotos/hero7.jpeg',
-    alt: 'Momento destacado de BHQZ Bosa 7',
+    src: '/multimedia/BHQZ/fotos/foto11.jpg',
+    alt: 'Momento destacado BHQZ 10',
   },
   {
-    src: '/multimedia/BHQZ/fotos/hero8.jpeg',
-    alt: 'Momento destacado de BHQZ Bosa 8',
+    src: '/multimedia/BHQZ/fotos/foto6.jpg',
+    alt: 'Momento destacado BHQZ 11',
   },
   {
-    src: '/multimedia/BHQZ/fotos/hero9.jpeg',
-    alt: 'Momento destacado de BHQZ Bosa 9',
+    src: '/multimedia/BHQZ/fotos/foto1.jpg',
+    alt: 'Momento destacado BHQZ 12',
+  },
+  {
+    src: '/multimedia/BHQZ/fotos/foto3.jpg',
+    alt: 'Momento destacado BHQZ 13',
+  },
+  {
+    src: '/multimedia/BHQZ/fotos/convocatoriavolley.jpg',
+    alt: 'Momento destacado BHQZ 14',
+  },
+  {
+    src: '/multimedia/BHQZ/fotos/voleyballbhqz.png',
+    alt: 'Momento destacado BHQZ 15',
+  },
+  {
+    src: '/multimedia/BHQZ/fotos/Vs-Japon.jpg',
+    alt: 'Momento destacado BHQZ 16',
+  },
+  {
+    src: '/multimedia/BHQZ/fotos/messi.avif',
+    alt: 'Momento destacado BHQZ 17',
+  },
+  {
+    src: '/multimedia/BHQZ/fotos/patinaje.png',
+    alt: 'Momento destacado BHQZ 18',
+  },
+  {
+    src: '/multimedia/BHQZ/fotos/patinajecol.png',
+    alt: 'Momento destacado BHQZ 19',
   },
 ];
 

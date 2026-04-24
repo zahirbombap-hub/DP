@@ -6,70 +6,69 @@ import { Z7_STYLES } from '../config/styles.js';
 export default function ProgramCard({ program, onSelect = null }) {
   const getCategoryColor = (category) => {
     const colors = {
-      'Arte': Z7_STYLES.colors.category.arte,
-      'Cultura': Z7_STYLES.colors.category.cultura,
-      'Deporte': Z7_STYLES.colors.category.deporte,
+      Arte: Z7_STYLES.colors.category.arte,
+      Cultura: Z7_STYLES.colors.category.cultura,
+      Deporte: Z7_STYLES.colors.category.deporte,
     };
     return colors[category] || 'bg-gray-100 text-gray-700';
   };
 
   return (
-    <div className={`program-card ${Z7_STYLES.patterns.card} overflow-hidden h-full flex flex-col`}>
-      {/* Header with category badge */}
-      <div className={`${Z7_STYLES.patterns.card} pb-2 sm:pb-3 border-b border-gray-200`}>
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2 sm:mb-0">
-          <h3 className="text-lg sm:text-xl font-bold text-gray-900 flex-1">
-            {program.title}
-          </h3>
-          <span className={`text-xs font-semibold px-2 sm:px-3 py-1 rounded-full whitespace-nowrap ${getCategoryColor(program.category)}`}>
+    <article className="program-card group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 flex flex-col h-full">
+      {/* Image */}
+      {program.image && (
+        <div className="h-40 w-full overflow-hidden">
+          <img src={program.image} alt={program.title} className="w-full h-full object-cover" />
+        </div>
+      )}
+
+      {/* Body */}
+      <div className="p-5 flex-1 flex flex-col">
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug">{program.title}</h3>
+          <span className={`text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap ${getCategoryColor(program.category)}`}>
             {program.category}
           </span>
         </div>
-      </div>
 
-      {/* Content */}
-      <div className={`${Z7_STYLES.patterns.card} flex-grow pt-2 sm:pt-4`}>
-        <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 leading-relaxed">
-          {program.description}
-        </p>
+        <p className="text-sm text-gray-700 mb-4 flex-1 leading-relaxed">{program.description}</p>
 
-        {/* Details */}
-        <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-600">
-          <div className="flex flex-col xs:flex-row xs:items-start gap-1 xs:gap-2">
-            <span className="font-semibold text-gray-900">Nivel:</span>
-            <span className="break-words">{program.level}</span>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-600 mb-4">
+          <div className="flex gap-3">
+            <div>
+              <div className="text-xs font-semibold text-gray-900">Nivel</div>
+              <div className="text-sm text-gray-700">{program.level}</div>
+            </div>
+            <div>
+              <div className="text-xs font-semibold text-gray-900">Horario</div>
+              <div className="text-sm text-gray-700">{program.schedule}</div>
+            </div>
           </div>
-          <div className="flex flex-col xs:flex-row xs:items-start gap-1 xs:gap-2">
-            <span className="font-semibold text-gray-900">Horario:</span>
-            <span className="break-words">{program.schedule}</span>
-          </div>
-          <div className="flex flex-col xs:flex-row xs:items-start gap-1 xs:gap-2">
-            <span className="font-semibold text-gray-900">Precio:</span>
-            <span className={`font-semibold break-words`} style={{ color: Z7_STYLES.colors.primary[600].split(' ')[1] }}>
-              {program.price}
-            </span>
+
+          <div className="text-right">
+            <div className="text-xs font-semibold text-gray-900">Precio</div>
+            <div className="text-sm font-semibold text-red-700">{program.price}</div>
           </div>
         </div>
-      </div>
 
-      {/* CTA */}
-      <div className={`${Z7_STYLES.patterns.card} pt-2 sm:pt-3 border-t border-gray-200 mt-2 sm:mt-3`}>
-        {onSelect ? (
-          <button
-            onClick={() => onSelect(program.id)}
-            className="w-full bg-blue-600 text-white py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors"
-          >
-            Más información
-          </button>
-        ) : (
-          <a
-            href={program.link}
-            className="block text-center bg-blue-600 text-white py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors"
-          >
-            Más información
-          </a>
-        )}
+        <div>
+          {onSelect ? (
+            <button
+              onClick={() => onSelect(program)}
+              className="w-full rounded-lg px-4 py-2 text-sm font-semibold text-white bg-gradient-to-b from-red-700 via-red-800 to-red-900 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-red-600 shadow-sm"
+            >
+              Más información
+            </button>
+          ) : (
+            <a
+              href={program.link}
+              className="inline-block w-full text-center rounded-lg px-4 py-2 text-sm font-semibold text-white bg-gradient-to-b from-red-700 via-red-800 to-red-900 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-red-600 shadow-sm"
+            >
+              Más información
+            </a>
+          )}
+        </div>
       </div>
-    </div>
+    </article>
   );
 }

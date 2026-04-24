@@ -41,7 +41,7 @@ export default function Nosotros() {
       <section 
         className="hero-nosotros py-16 md:py-24 text-white relative bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/multimedia/BHQZ/fondo%20Mingavsargen.webp)',
+          backgroundImage: 'url(/multimedia/BHQZ/fondo%20Mingavsargen.png)',
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -57,45 +57,52 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* About Section with Stats */}
-      <AboutZ7
-        title="Sobre BHQZ Bosa"
-        description="BHQZ Bosa es una organización dedicada a promover el desarrollo integral de nuestros miembros a través de la combinación del arte, la cultura y el deporte. Desde hace más de 15 años, hemos trabajado incansablemente para crear un espacio donde cada persona pueda descubrir su potencial y crecer en un ambiente de respeto, inclusión y excelencia."
-        stats={stats}
-      />
-
-      {/* Misión Section */}
-      <section className="mision-section py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              Nuestra Misión
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Promover el desarrollo integral de individuos y comunidades a través de programas innovadores que combinan arte, cultura y deporte. Nos comprometemos a crear espacios accesibles, inclusivos y transformadores donde cada persona pueda descubrir su potencial único y contribuir a una sociedad más justa y dinámica.
-            </p>
+      {/* About Section with Stats (sticky for scroll-stacking) */}
+      <div className="relative">
+        <div className="sticky top-0 z-10 h-screen flex items-center">
+          <div className="w-full">
+            <AboutZ7
+              title="Sobre BHQZ Bosa"
+              description="BHQZ Bosa es una organización dedicada a promover el desarrollo integral de nuestros miembros a través de la combinación del arte, la cultura y el deporte. Desde hace más de 15 años, hemos trabajado incansablemente para crear un espacio donde cada persona pueda descubrir su potencial y crecer en un ambiente de respeto, inclusión y excelencia."
+              stats={stats}
+            />
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Visión Section */}
-      <section className="vision-section py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              Nuestra Visión
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Ser una organización líder en la región, reconocida por la excelencia de nuestros programas, la calidad de nuestros profesionales y el impacto positivo que generamos en la vida de las personas. Aspiramos a ser un referente en la integración del arte, la cultura y el deporte como herramientas de transformación social y personal.
-            </p>
+      {/* Misión + Visión (shared gradient) */}
+      <div className="relative z-20 -mt-12 md:-mt-16 rounded-t-3xl overflow-hidden bg-gradient-to-b from-red-950 to-black text-white">
+        <section className="mision-section py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                Nuestra Misión
+              </h2>
+              <p className="text-lg text-white/90 leading-relaxed">
+                Promover el desarrollo integral de individuos y comunidades a través de programas innovadores que combinan arte, cultura y deporte. Nos comprometemos a crear espacios accesibles, inclusivos y transformadores donde cada persona pueda descubrir su potencial único y contribuir a una sociedad más justa y dinámica.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className="vision-section py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                Nuestra Visión
+              </h2>
+              <p className="text-lg text-white/90 leading-relaxed">
+                Ser una organización líder en la región, reconocida por la excelencia de nuestros programas, la calidad de nuestros profesionales y el impacto positivo que generamos en la vida de las personas. Aspiramos a ser un referente en la integración del arte, la cultura y el deporte como herramientas de transformación social y personal.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* Valores Section */}
       <section className="valores-section py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
             Nuestros Valores
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -117,18 +124,22 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-blue-900 text-white">
-        <div className="container mx-auto px-4 text-center">
+      {/* CTA Section (background image) */}
+      <section
+        className="py-16 md:py-24 text-white relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url(/multimedia/BHQZ/fotos/comunidad.jpg)' }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Únete a nuestra comunidad
           </h2>
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
             Si compartes nuestros valores y deseas ser parte de un movimiento transformador, te invitamos a conocer nuestros programas.
           </p>
           <a
             href="/bhqz-bosa/programas"
-            className="inline-block bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+            className="inline-block rounded-lg px-8 py-3 font-semibold text-white bg-gradient-to-b from-red-700 via-red-800 to-red-900 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-red-600 shadow-sm"
           >
             Explorar programas
           </a>

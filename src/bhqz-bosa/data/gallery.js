@@ -2,64 +2,43 @@
 // Central source for all gallery content organized by categories
 
 export const GALLERY_CATEGORIES = {
-  arte: {
-    name: 'Arte',
-    description: 'Nuestros talleres y exposiciones de artes visuales',
+  futbol: {
+    name: 'Fútbol',
+    description: 'Entrenamientos y competencias de nuestras categorías de fútbol.',
     images: [
-      { src: '/multimedia/Yuga/catalogo/placeholder-1.jpg', alt: 'Obra de arte 1', caption: 'Exposición de Artes Visuales' },
-      { src: '/multimedia/Yuga/catalogo/placeholder-2.jpg', alt: 'Obra de arte 2', caption: 'Técnicas de Pintura' },
-      { src: '/multimedia/Yuga/catalogo/placeholder-3.jpg', alt: 'Obra de arte 3', caption: 'Escultura' },
-      { src: '/multimedia/Yuga/catalogo/placeholder-4.jpg', alt: 'Obra de arte 4', caption: 'Instalación Artística' },
-      { src: '/multimedia/Yuga/catalogo/placeholder-5.jpg', alt: 'Obra de arte 5', caption: 'Taller de Dibujo' },
-      { src: '/multimedia/Yuga/catalogo/placeholder-6.jpg', alt: 'Obra de arte 6', caption: 'Muestra Colectiva' },
+      { src: '/multimedia/BHQZ/fotos/foto1.jpg', alt: 'Fútbol 1', caption: 'Entrenamiento matutino' },
+      { src: '/multimedia/BHQZ/fotos/foto3.jpg', alt: 'Fútbol 2', caption: 'Técnica individual' },
+      { src: '/multimedia/BHQZ/fotos/foto5.jpg', alt: 'Fútbol 3', caption: 'Trabajo en equipo' },
+      { src: '/multimedia/BHQZ/fotos/hero4.jpeg', alt: 'Fútbol 4', caption: 'Categorías juveniles' },
+      { src: '/multimedia/BHQZ/fotos/foto1.jpg', alt: 'Fútbol 5', caption: 'Sesión técnica' },
+      { src: '/multimedia/BHQZ/fotos/foto3.jpg', alt: 'Fútbol 6', caption: 'Enfoque y disciplina' },
     ],
   },
-  cultura: {
-    name: 'Cultura',
-    description: 'Eventos culturales, charlas y actividades comunitarias',
+  voleibol: {
+    name: 'Voleibol',
+    description: 'Nuestra formación integral en la disciplina de voleibol.',
     images: [
-      { src: '/multimedia/agua-linda/placeholder-1.jpg', alt: 'Evento cultural 1', caption: 'Festival Cultural' },
-      { src: '/multimedia/agua-linda/placeholder-2.jpg', alt: 'Evento cultural 2', caption: 'Charla Patrimonial' },
-      { src: '/multimedia/agua-linda/placeholder-3.jpg', alt: 'Evento cultural 3', caption: 'Cine Debate' },
-      { src: '/multimedia/agua-linda/placeholder-4.jpg', alt: 'Evento cultural 4', caption: 'Conferencia' },
-      { src: '/multimedia/agua-linda/placeholder-5.jpg', alt: 'Evento cultural 5', caption: 'Actividad Comunitaria' },
-      { src: '/multimedia/agua-linda/placeholder-6.jpg', alt: 'Evento cultural 6', caption: 'Taller Cultural' },
+      { src: '/multimedia/BHQZ/fotos/voleyballbhqz.png', alt: 'Voleibol 1', caption: 'Equipo representativo' },
+      { src: '/multimedia/BHQZ/fotos/convocatoriavolley.jpg', alt: 'Voleibol 2', caption: 'Nuevos talentos' },
+      { src: '/multimedia/BHQZ/fotos/Vs-Japon.jpg', alt: 'Inspiración', caption: 'Referentes del deporte' },
     ],
   },
-  deporte: {
-    name: 'Deporte',
-    description: 'Entrenamientos, competencias y actividades deportivas',
+  patinaje: {
+    name: 'Patinaje',
+    description: 'Velocidad y destreza en nuestras jornadas sobre ruedas.',
     images: [
-      { src: '/multimedia/cuerna/placeholder-1.jpg', alt: 'Actividad deportiva 1', caption: 'Entrenamiento de Fútbol' },
-      { src: '/multimedia/cuerna/placeholder-2.jpg', alt: 'Actividad deportiva 2', caption: 'Clase de Yoga' },
-      { src: '/multimedia/cuerna/placeholder-3.jpg', alt: 'Actividad deportiva 3', caption: 'Boxeo Fitness' },
-      { src: '/multimedia/cuerna/placeholder-4.jpg', alt: 'Actividad deportiva 4', caption: 'Partido Amistoso' },
-      { src: '/multimedia/cuerna/placeholder-5.jpg', alt: 'Actividad deportiva 5', caption: 'Competencia' },
-      { src: '/multimedia/cuerna/placeholder-6.jpg', alt: 'Actividad deportiva 6', caption: 'Evento Deportivo' },
+      { src: '/multimedia/BHQZ/fotos/patinaje.png', alt: 'Patinaje 1', caption: 'Escuela de formación' },
+      { src: '/multimedia/BHQZ/fotos/patinajecol.png', alt: 'Patinaje 2', caption: 'Orgullo local' },
     ],
   },
-  danza: {
-    name: 'Danza',
-    description: 'Presentaciones de danza contemporánea y folklórica',
+  comunidad: {
+    name: 'Comunidad',
+    description: 'Momentos que fortalecen la identidad de BHQZ Bosa.',
     images: [
-      { src: '/multimedia/FotosTattosLopez/placeholder-1.jpg', alt: 'Danza 1', caption: 'Danza Contemporánea' },
-      { src: '/multimedia/FotosTattosLopez/placeholder-2.jpg', alt: 'Danza 2', caption: 'Ensayo' },
-      { src: '/multimedia/FotosTattosLopez/placeholder-3.jpg', alt: 'Danza 3', caption: 'Presentación en Vivo' },
-      { src: '/multimedia/FotosTattosLopez/placeholder-4.jpg', alt: 'Danza 4', caption: 'Taller de Movimiento' },
-      { src: '/multimedia/FotosTattosLopez/placeholder-5.jpg', alt: 'Danza 5', caption: 'Actuación' },
-      { src: '/multimedia/FotosTattosLopez/placeholder-6.jpg', alt: 'Danza 6', caption: 'Espectáculo' },
-    ],
-  },
-  eventos: {
-    name: 'Eventos',
-    description: 'Momentos especiales y encuentros de la comunidad',
-    images: [
-      { src: '/multimedia/Yuga/placeholder-1.jpg', alt: 'Evento 1', caption: 'Encuentro Comunitario' },
-      { src: '/multimedia/Yuga/placeholder-2.jpg', alt: 'Evento 2', caption: 'Celebración' },
-      { src: '/multimedia/Yuga/placeholder-3.jpg', alt: 'Evento 3', caption: 'Convivencia' },
-      { src: '/multimedia/Yuga/placeholder-4.jpg', alt: 'Evento 4', caption: 'Actividad Social' },
-      { src: '/multimedia/Yuga/placeholder-5.jpg', alt: 'Evento 5', caption: 'Torneo' },
-      { src: '/multimedia/Yuga/placeholder-6.jpg', alt: 'Evento 6', caption: 'Cierre de Temporada' },
+      { src: '/multimedia/BHQZ/fotos/foto6.jpg', alt: 'Comunidad 1', caption: 'Valores compartidos' },
+      { src: '/multimedia/BHQZ/fotos/foto11.jpg', alt: 'Comunidad 2', caption: 'Identidad BHQZ' },
+      { src: '/multimedia/BHQZ/fotos/foto11.jpg', alt: 'Impacto Social', caption: 'Transformando vidas' },
+      { src: '/multimedia/BHQZ/fotos/messi.avif', alt: 'Inspiración', caption: 'Nuestros sueños' },
     ],
   },
 };

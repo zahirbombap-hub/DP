@@ -67,6 +67,7 @@ export default function Contacto() {
         <HeroSection
           title="Contacto"
           subtitle="Nos encanta escucharte. Comunicate con nosotros para cualquier consulta."
+          backgroundImage="/multimedia/BHQZ/profe.webp"
         />
 
         <section className="contact-info py-12 md:py-16">
@@ -229,7 +230,7 @@ export default function Contacto() {
             </p>
             <a
               href="mailto:info@z7sport.com"
-              className="inline-block rounded-lg bg-white px-6 py-2 text-sm font-semibold text-blue-900 transition-colors hover:bg-blue-50 sm:px-8 sm:py-3 sm:text-base"
+              className="inline-block rounded-lg px-8 py-3 font-semibold text-white bg-gradient-to-b from-red-700 via-red-800 to-red-900 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-red-600 shadow-sm"
             >
               Enviar Email
             </a>

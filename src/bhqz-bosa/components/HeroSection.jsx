@@ -2,14 +2,12 @@
 // Reusable hero section with title and subtitle for pages
 
 export default function HeroSection({ title, subtitle, backgroundImage, overlayClass }) {
-  const bg = backgroundImage || '/multimedia/BHQZ/fotos/dog.png';
+  const hasBg = Boolean(backgroundImage);
 
   return (
     <section
       className="hero-section py-16 md:py-24 text-white relative bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `url(${bg})`,
-      }}
+      style={hasBg ? { backgroundImage: `url(${backgroundImage})` } : undefined}
     >
       <div className={`absolute inset-0 ${overlayClass || 'bg-black/50'}`} />
       <div className="container mx-auto px-4 relative z-10">

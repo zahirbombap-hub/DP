@@ -2,22 +2,22 @@
 // Reusable form component with basic validation
 
 import { useState } from 'react';
-import { Z7_STYLES } from '../config/styles.js';
 
-export default function RegistrationForm({ onSubmit = null }) {
-  const [formData, setFormData] = useState({
+export default function RegistrationForm({ onSubmit = null, initialData = {} }) {
+  const [formData, setFormData] = useState(() => ({
     nombre: '',
     correo: '',
     telefono: '',
     mensaje: '',
-  });
+    ...initialData,
+  }));
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
   const formContainerClass = 'bg-white rounded-lg border border-gray-200 p-4 sm:p-6 md:p-8 max-w-2xl mx-auto w-full shadow-sm';
   const labelClass = 'block text-sm font-medium text-gray-700 mb-1.5';
-  const inputClass = 'w-full px-3 py-2 text-sm border border-gray-200 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow';
+  const inputClass = 'w-full px-3 py-2 text-sm text-gray-900 placeholder-gray-400 border border-gray-200 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow';
   const errorClass = 'text-sm text-red-600 mt-1';
 
   /**
@@ -188,7 +188,7 @@ export default function RegistrationForm({ onSubmit = null }) {
 
         <button
           type="submit"
-          className={`bg-gradient-to-b from-red-700 via-red-800 to-red-900 text-white inline-flex items-center justify-center w-full rounded-md px-4 py-2 font-semibold hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-red-600 transition shadow-sm`}
+          className={`inline-flex items-center justify-center w-full rounded-lg px-6 py-2 font-semibold text-white bg-gradient-to-b from-red-700 via-red-800 to-red-900 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-red-600 shadow-sm`}
         >
           Enviar Inscripción
         </button>

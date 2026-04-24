@@ -19,8 +19,9 @@ export const PROGRAMS = [
     description: 'Ejercitá tu cuerpo y mente con combinaciones de patinaje en un entorno motivador y profesional.',
     level: 'Todos los niveles',
     schedule: 'Martes y jueves, 5:00 PM - 6:00 PM',
-    price: 'La proxima convocatoria iniciará muy pronto, mantente atento a nuestras redes sociales para más información.',
+    price: '--',
     link: '/bhqz-bosa/programas/patinaje',
+    novedad: 'La próxima convocatoria iniciará muy pronto, mantente atento a nuestras redes sociales para más información.',
   },
   {
     id: 'voleibol',
@@ -29,8 +30,9 @@ export const PROGRAMS = [
     description: 'Participá en entrenamientos tácticos y partidos amistosos, desarrollando tu habilidad y estrategia de juego en equipo.',
     level: 'Todos los niveles',
     schedule: 'Viernes, 3:00 PM - 5:00 PM',
-    price: 'La proxima convocatoria iniciará muy pronto, mantente atento a nuestras redes sociales para más información.',
+    price: '--',
     link: '/bhqz-bosa/programas/voleibol',
+    novedad: 'La próxima convocatoria iniciará muy pronto, mantente atento a nuestras redes sociales para más información.',
   },
 ];
 
