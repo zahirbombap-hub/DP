@@ -2,6 +2,7 @@
 // Reusable form component with basic validation
 
 import { useState } from 'react';
+import { Z7_STYLES } from '../config/styles.js';
 
 export default function RegistrationForm({ onSubmit = null }) {
   const [formData, setFormData] = useState({
@@ -14,10 +15,10 @@ export default function RegistrationForm({ onSubmit = null }) {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  const formContainerClass = 'bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 max-w-2xl mx-auto w-full';
-  const labelClass = 'block text-xs sm:text-sm font-semibold text-gray-900 mb-1 sm:mb-2';
-  const inputClass = 'w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors';
-  const errorClass = 'text-xs sm:text-sm text-red-600 mt-1';
+  const formContainerClass = 'bg-white rounded-lg border border-gray-200 p-4 sm:p-6 md:p-8 max-w-2xl mx-auto w-full shadow-sm';
+  const labelClass = 'block text-sm font-medium text-gray-700 mb-1.5';
+  const inputClass = 'w-full px-3 py-2 text-sm border border-gray-200 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow';
+  const errorClass = 'text-sm text-red-600 mt-1';
 
   /**
    * Validate form fields
@@ -120,67 +121,74 @@ export default function RegistrationForm({ onSubmit = null }) {
 
   return (
     <div className={formContainerClass}>
-      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-        {/* Nombre */}
-        <div>
-          <label className={labelClass}>Nombre</label>
-          <input
-            type="text"
-            name="nombre"
-            value={formData.nombre}
-            onChange={handleChange}
-            className={inputClass}
-            placeholder="Tu nombre completo"
-          />
-          {errors.nombre && <p className={errorClass}>{errors.nombre}</p>}
+      <form onSubmit={handleSubmit} className="grid gap-4">
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="nombre" className={labelClass}>Nombre</label>
+            <input
+              id="nombre"
+              type="text"
+              name="nombre"
+              value={formData.nombre}
+              onChange={handleChange}
+              className={inputClass}
+              placeholder="Tu nombre completo"
+              aria-invalid={errors.nombre ? 'true' : 'false'}
+            />
+            {errors.nombre && <p className={errorClass}>{errors.nombre}</p>}
+          </div>
+
+          <div>
+            <label htmlFor="correo" className={labelClass}>Correo Electrónico</label>
+            <input
+              id="correo"
+              type="email"
+              name="correo"
+              value={formData.correo}
+              onChange={handleChange}
+              className={inputClass}
+              placeholder="tu@email.com"
+              aria-invalid={errors.correo ? 'true' : 'false'}
+            />
+            {errors.correo && <p className={errorClass}>{errors.correo}</p>}
+          </div>
         </div>
 
-        {/* Email */}
-        <div>
-          <label className={labelClass}>Correo Electrónico</label>
-          <input
-            type="email"
-            name="correo"
-            value={formData.correo}
-            onChange={handleChange}
-            className={inputClass}
-            placeholder="tu@email.com"
-          />
-          {errors.correo && <p className={errorClass}>{errors.correo}</p>}
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="telefono" className={labelClass}>Teléfono</label>
+            <input
+              id="telefono"
+              type="tel"
+              name="telefono"
+              value={formData.telefono}
+              onChange={handleChange}
+              className={inputClass}
+              placeholder="123456789"
+              aria-invalid={errors.telefono ? 'true' : 'false'}
+            />
+            {errors.telefono && <p className={errorClass}>{errors.telefono}</p>}
+          </div>
+
+          <div>
+            <label htmlFor="mensaje" className={labelClass}>Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              value={formData.mensaje}
+              onChange={handleChange}
+              rows="4"
+              className={`${inputClass} resize-none`}
+              placeholder="Cuéntanos más sobre tu interés"
+              aria-invalid={errors.mensaje ? 'true' : 'false'}
+            ></textarea>
+            {errors.mensaje && <p className={errorClass}>{errors.mensaje}</p>}
+          </div>
         </div>
 
-        {/* Teléfono */}
-        <div>
-          <label className={labelClass}>Teléfono</label>
-          <input
-            type="tel"
-            name="telefono"
-            value={formData.telefono}
-            onChange={handleChange}
-            className={inputClass}
-            placeholder="123456789"
-          />
-          {errors.telefono && <p className={errorClass}>{errors.telefono}</p>}
-        </div>
-
-        {/* Mensaje */}
-        <div>
-          <label className={labelClass}>Mensaje</label>
-          <textarea
-            name="mensaje"
-            value={formData.mensaje}
-            onChange={handleChange}
-            rows="4"
-            className={`${inputClass} resize-none`}
-            placeholder="Cuéntanos más sobre tu interés"
-          ></textarea>
-          {errors.mensaje && <p className={errorClass}>{errors.mensaje}</p>}
-        </div>
-
-        {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors active:bg-blue-800"
+          className={`bg-gradient-to-b from-red-700 via-red-800 to-red-900 text-white inline-flex items-center justify-center w-full rounded-md px-4 py-2 font-semibold hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-red-600 transition shadow-sm`}
         >
           Enviar Inscripción
         </button>

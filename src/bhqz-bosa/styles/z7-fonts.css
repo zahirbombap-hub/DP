@@ -1,38 +1,30 @@
-@font-face {
-  font-family: 'DroidSansMono';
-  src: url('./DroidSansMono.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+.z7-layout {
+  --z7-font-body: "BHQZObjectSans", sans-serif;
+  --z7-font-display: "BHQZObjectSansHeavySlanted", sans-serif;
+  --z7-font-number: "BHQZDroidSansMono", monospace;
 }
 
-@font-face {
-  font-family: 'DxRuiga';
-  src: url('./DxRuiga-SemiBold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-/* Apply font to all BHQZ elements */
+/* Base typography for the entire BHQZ experience */
 .z7-layout,
 .z7-layout * {
-  font-family: 'DroidSansMono', monospace !important;
+  font-family: var(--z7-font-body) !important;
 }
 
-/* Title and Subtitle font - DxRuiga */
-.z7-title-font,
-.z7-section-title,
-.z7-card-title {
-  font-family: 'DxRuiga', sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+/* Headings, section titles and explicit subtitles */
+.z7-layout h1,
+.z7-layout h2,
+.z7-layout h3,
+.z7-layout h4,
+.z7-layout h5,
+.z7-layout h6,
+.z7-layout .z7-title-font,
+.z7-layout .z7-section-title,
+.z7-layout .z7-card-title,
+.z7-layout .z7-hero-title,
+.z7-layout .z7-subtitle-font {
+  font-family: var(--z7-font-display) !important;
 }
 
-/* Hero Title font - Bebas Neue (similar to Bagnard Sans) */
-.z7-hero-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.z7-layout .z7-number-font {
+  font-family: var(--z7-font-number) !important;
 }

@@ -18,6 +18,31 @@ export default function Z7Layout({ children, isHome = false }) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1180);
   const showBosaLogoBackdrop = isHome && !hasScrolled && !mobileMenuOpen;
+  const fontFaceStyles = `
+    @font-face {
+      font-family: "BHQZObjectSans";
+      src: url("/fuentes/PPObjectSans-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "BHQZObjectSansHeavySlanted";
+      src: url("/fuentes/PPObjectSans-HeavySlanted.otf") format("opentype");
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "BHQZDroidSansMono";
+      src: url("/fuentes/DroidSansMono.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+  `;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -148,6 +173,7 @@ export default function Z7Layout({ children, isHome = false }) {
 
   return (
     <>
+      <style>{fontFaceStyles}</style>
       <div 
         className="z7-layout flex flex-col min-h-screen lg:min-h-screen"
         style={{ 

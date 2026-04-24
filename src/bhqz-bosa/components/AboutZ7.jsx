@@ -54,7 +54,7 @@ export default function AboutZ7({
                   key={index}
                   className="glow-card stat-card text-center p-6 sm:p-7 md:p-8 backdrop-blur-sm rounded-xl"
                 >
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-300 mb-2 sm:mb-3">
+                  <div className="z7-number-font text-3xl sm:text-4xl md:text-5xl font-bold text-blue-300 mb-2 sm:mb-3">
                     {stat.value}
                   </div>
                   <p className="text-xs sm:text-sm md:text-base text-white/90 font-semibold line-clamp-2">

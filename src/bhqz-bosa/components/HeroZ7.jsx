@@ -29,7 +29,7 @@ export default function HeroZ7({
           <h1 className="z7-hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
             {headline}
           </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto">
+          <p className="z7-subtitle-font text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto">
             {subheadline}
           </p>
           <a
