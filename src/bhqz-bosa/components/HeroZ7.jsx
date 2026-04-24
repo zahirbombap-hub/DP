@@ -14,7 +14,7 @@ export default function HeroZ7({
     >
       {/* Background Image */}
       <img
-        src="/multimedia/BHQZ/fondo.png"
+        src="/multimedia/BHQZ/fondo.webp"
         alt="Fondo Hero"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: 'center bottom' }}

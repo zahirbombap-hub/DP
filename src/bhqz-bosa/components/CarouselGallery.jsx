@@ -7,67 +7,63 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 // The carouselImages array is now synchronized with the gallerySlides from GalleryShowcaseSection.jsx
 const carouselImages = [
   {
-    src: '/multimedia/BHQZ/fotos/foto1.jpg',
+    src: '/multimedia/BHQZ/fotos/foto1.webp',
     alt: 'Momento destacado BHQZ 1',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto3.jpg',
+    src: '/multimedia/BHQZ/fotos/foto3.webp',
     alt: 'Momento destacado BHQZ 2',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto5.jpg',
+    src: '/multimedia/BHQZ/fotos/foto5.webp',
     alt: 'Momento destacado BHQZ 3',
   },
   {
-    src: '/multimedia/BHQZ/fotos/hero4.jpeg',
+    src: '/multimedia/BHQZ/fotos/hero4.webp',
     alt: 'Momento destacado BHQZ 4',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto6.jpg',
+    src: '/multimedia/BHQZ/fotos/foto6.webp',
     alt: 'Momento destacado BHQZ 5',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto11.jpg',
+    src: '/multimedia/BHQZ/fotos/foto11.webp',
     alt: 'Momento destacado BHQZ 6',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto11.jpg',
-    alt: 'Momento destacado BHQZ 10',
-  },
-  {
-    src: '/multimedia/BHQZ/fotos/foto6.jpg',
+    src: '/multimedia/BHQZ/fotos/foto6.webp',
     alt: 'Momento destacado BHQZ 11',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto1.jpg',
+    src: '/multimedia/BHQZ/fotos/foto1.webp',
     alt: 'Momento destacado BHQZ 12',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto3.jpg',
+    src: '/multimedia/BHQZ/fotos/foto3.webp',
     alt: 'Momento destacado BHQZ 13',
   },
   {
-    src: '/multimedia/BHQZ/fotos/convocatoriavolley.jpg',
+    src: '/multimedia/BHQZ/fotos/convocatoriavolley.webp',
     alt: 'Momento destacado BHQZ 14',
   },
   {
-    src: '/multimedia/BHQZ/fotos/voleyballbhqz.png',
+    src: '/multimedia/BHQZ/fotos/voleyballbhqz.webp',
     alt: 'Momento destacado BHQZ 15',
   },
   {
-    src: '/multimedia/BHQZ/fotos/Vs-Japon.jpg',
+    src: '/multimedia/BHQZ/fotos/Vs-Japon.webp',
     alt: 'Momento destacado BHQZ 16',
   },
   {
-    src: '/multimedia/BHQZ/fotos/messi.avif',
+    src: '/multimedia/BHQZ/fotos/messi.webp',
     alt: 'Momento destacado BHQZ 17',
   },
   {
-    src: '/multimedia/BHQZ/fotos/patinaje.png',
+    src: '/multimedia/BHQZ/fotos/patinaje.webp',
     alt: 'Momento destacado BHQZ 18',
   },
   {
-    src: '/multimedia/BHQZ/fotos/patinajecol.png',
+    src: '/multimedia/BHQZ/fotos/patinajecol.webp',
     alt: 'Momento destacado BHQZ 19',
   },
 ];

@@ -28,7 +28,7 @@ export default function Programas() {
         <HeroSection
           title="Nuestros Programas"
           subtitle="Descubre nuestros cursos, talleres y actividades disponibles para todos los niveles."
-          backgroundImage="/multimedia/BHQZ/programas2.png"
+          backgroundImage="/multimedia/BHQZ/programas2.webp"
         />
         
 
@@ -63,7 +63,7 @@ export default function Programas() {
 
         <section className="relative overflow-hidden py-12 text-white md:py-16 lg:py-24">
           <img
-            src="/multimedia/BHQZ/programas.png"
+            src="/multimedia/BHQZ/programas.webp"
             alt=""
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover"

@@ -105,7 +105,7 @@ export default function Z7Layout({ children, isHome = false }) {
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-400/20 border border-yellow-400/40">
                   <img
-                    src="/multimedia/BHQZ/logo.png"
+                    src="/multimedia/BHQZ/logo.webp"
                     alt="BHQZ"
                     className="h-8 w-8 object-contain"
                   />
@@ -213,7 +213,7 @@ export default function Z7Layout({ children, isHome = false }) {
                   className="transition-all duration-300 transform hover:scale-110 hover:rotate-3"
                 >
                   <img 
-                    src="/multimedia/BHQZ/logo.png"
+                    src="/multimedia/BHQZ/logo.webp"
                     alt="BHQZ Logo" 
                     className="h-12 sm:h-20 w-auto object-contain cursor-pointer"
                   />
@@ -268,7 +268,7 @@ export default function Z7Layout({ children, isHome = false }) {
                   }`}
                 >
                   <img 
-                    src="/multimedia/BHQZ/bosaazul.png"
+                    src="/multimedia/BHQZ/bosaazul.webp"
                     alt="BHQZ Bosa" 
                     className="h-12 sm:h-20 w-auto object-contain"
                   />
@@ -297,7 +297,7 @@ export default function Z7Layout({ children, isHome = false }) {
                   <div className="mb-3 flex items-center justify-center gap-3 sm:mb-4 sm:gap-4 sm:justify-start">
                     <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 p-1.5 shadow-[0_14px_28px_rgba(0,0,0,0.22)] sm:h-24 sm:w-24 sm:rounded-2xl sm:p-2.5">
                       <img 
-                        src="/multimedia/BHQZ/logo.gif"
+                        src="/multimedia/BHQZ/logoescudo.webp"
                         alt="BHQZ Logo"
                         className="h-full w-full object-contain"
                       />
@@ -319,7 +319,7 @@ export default function Z7Layout({ children, isHome = false }) {
                       aria-label="WhatsApp"
                     >
                       <img
-                        src="/multimedia/whatssappblanco.png"
+                        src="/multimedia/whatssappblanco.webp"
                         alt=""
                         aria-hidden="true"
                         className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
@@ -333,7 +333,7 @@ export default function Z7Layout({ children, isHome = false }) {
                       aria-label="Instagram"
                     >
                       <img
-                        src="/multimedia/logoinstagram.png"
+                        src="/multimedia/logoinstagram.webp"
                         alt=""
                         aria-hidden="true"
                         className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"

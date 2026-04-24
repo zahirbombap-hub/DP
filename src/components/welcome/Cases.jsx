@@ -188,7 +188,7 @@ export function Cases() {
           },
           {
             href: "/bhqz-bosa",
-            img: "/multimedia/BHQZ/previsualizacion.png",
+            img: "/multimedia/BHQZ/previsualizacion.webp",
             subtitle: "Escuela deportiva",
             title: "BHQZ Bosa",
             extraImgClass: "sepia-[0.3] brightness-75 group-hover:sepia-0 group-hover:brightness-100",

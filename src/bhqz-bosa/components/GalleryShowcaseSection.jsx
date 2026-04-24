@@ -6,112 +6,105 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const gallerySlides = [
   {
-    src: '/multimedia/BHQZ/fotos/foto1.jpg',
+    src: '/multimedia/BHQZ/fotos/foto1.webp',
     alt: 'Momento destacado BHQZ 1',
     title: 'Escenas que cuentan nuestra energia',
     description:
       'Entrenamientos, encuentros y celebraciones que dejan huella en cada temporada de BHQZ Bosa.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto3.jpg',
+    src: '/multimedia/BHQZ/fotos/foto3.webp',
     alt: 'Momento destacado BHQZ 2',
     title: 'Una galeria con movimiento real',
     description:
       'La cancha, la comunidad y la pasion deportiva aparecen aqui como una sola historia visual.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto5.jpg',
+    src: '/multimedia/BHQZ/fotos/foto5.webp',
     alt: 'Momento destacado BHQZ 3',
     title: 'Recuerdos de alto impacto',
     description:
       'Cada imagen captura momentos de esfuerzo, tecnica y conexion que definen el espiritu del club.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/hero4.jpeg',
+    src: '/multimedia/BHQZ/fotos/hero4.webp',
     alt: 'Momento destacado BHQZ 4',
     title: 'Historias que merecen quedarse',
     description:
       'Una seleccion visual de momentos que firman la identidad competitiva y humana de BHQZ Bosa.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto6.jpg',
+    src: '/multimedia/BHQZ/fotos/foto6.webp',
     alt: 'Momento destacado BHQZ 5',
     title: 'El pulso de nuestra energía',
     description:
       'La galeria mezcla deporte, companerismo y crecimiento en una escena inmersiva de punta a punta.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto11.jpg',
+    src: '/multimedia/BHQZ/fotos/foto11.webp',
     alt: 'Momento destacado BHQZ 6',
     title: 'Postales de alto impacto',
     description:
       'Cada toma refuerza la disciplina, el orgullo de equipo y la presencia de BHQZ en cada actividad.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto11.jpg',
-    alt: 'Momento destacado BHQZ 10',
-    title: 'Impacto social y deportivo',
-    description:
-      'Más que un club, somos un motor de transformación para jóvenes y familias en toda la localidad.',
-  },
-  {
-    src: '/multimedia/BHQZ/fotos/foto6.jpg',
+    src: '/multimedia/BHQZ/fotos/foto6.webp',
     alt: 'Momento destacado BHQZ 11',
     title: 'Pasión en cada jugada',
     description:
       'Capturamos la intensidad y el enfoque de nuestros miembros durante los momentos clave de la acción.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto1.jpg',
+    src: '/multimedia/BHQZ/fotos/foto1.webp',
     alt: 'Momento destacado BHQZ 12',
     title: 'Tu deporte al siguiente nivel',
     description:
       'Formación profesional diseñada para potenciar el talento individual dentro de un marco colectivo sólido.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto3.jpg',
+    src: '/multimedia/BHQZ/fotos/foto3.webp',
     alt: 'Momento destacado BHQZ 13',
     title: 'Acción en la cancha',
     description:
       'Momentos de intensidad y enfoque técnico durante los entrenamientos de fútbol.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/convocatoriavolley.jpg',
+    src: '/multimedia/BHQZ/fotos/convocatoriavolley.webp',
     alt: 'Momento destacado BHQZ 14',
     title: 'Talento y Formación',
     description:
       'Espacios dedicados a potenciar las habilidades en voleibol para todas las edades.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/voleyballbhqz.png',
+    src: '/multimedia/BHQZ/fotos/voleyballbhqz.webp',
     alt: 'Momento destacado BHQZ 15',
     title: 'Pasión por el Voleibol',
     description:
       'Nuestros equipos en constante crecimiento, fomentando el trabajo colaborativo.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/Vs-Japon.jpg',
+    src: '/multimedia/BHQZ/fotos/Vs-Japon.webp',
     alt: 'Momento destacado BHQZ 16',
     title: 'Inspiración Deportiva',
     description:
       'Referentes del deporte internacional que motivan a nuestra comunidad día a día.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/messi.avif',
+    src: '/multimedia/BHQZ/fotos/messi.webp',
     alt: 'Momento destacado BHQZ 17',
     title: 'Grandes Referentes',
     description:
       'El deporte como lenguaje universal y motor de sueños para nuestros jóvenes.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/patinaje.png',
+    src: '/multimedia/BHQZ/fotos/patinaje.webp',
     alt: 'Momento destacado BHQZ 18',
     title: 'Velocidad y Destreza',
     description:
       'Nuestras jornadas de patinaje, promoviendo el equilibrio y la disciplina física.',
   },
   {
-    src: '/multimedia/BHQZ/fotos/patinajecol.png',
+    src: '/multimedia/BHQZ/fotos/patinajecol.webp',
     alt: 'Momento destacado BHQZ 19',
     title: 'Orgullo sobre Ruedas',
     description:

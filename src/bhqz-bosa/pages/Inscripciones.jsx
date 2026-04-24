@@ -57,7 +57,7 @@ export default function Inscripciones() {
         <HeroSection
           title="Inscripciones"
           subtitle="Únete a nuestra comunidad y comienza tu camino en BHQZ Bosa."
-          backgroundImage="/multimedia/BHQZ/fondoinscripciones.png"
+          backgroundImage="/multimedia/BHQZ/fondoinscripciones.webp"
           overlayClass="bg-black/20"
         />
           <div>
@@ -65,7 +65,7 @@ export default function Inscripciones() {
               <section
                 id="inscripcion-form"
                 className="form-section py-12 md:py-16 bg-cover bg-center relative"
-                style={{ backgroundImage: 'url(/multimedia/BHQZ/fondocanchas.png)' }}
+                style={{ backgroundImage: 'url(/multimedia/BHQZ/fondocanchas.webp)' }}
               >
                 <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
                   <div className="relative mx-auto max-w-3xl overflow-hidden rounded-[2rem] bg-white px-4 py-8 shadow-[0_24px_70px_rgba(0,0,0,0.18)] sm:px-6 sm:py-10 md:px-8 md:py-12">
@@ -134,7 +134,7 @@ export default function Inscripciones() {
 
         <section className="relative overflow-hidden py-12 text-white md:py-16 lg:py-24">
           <img
-            src="/multimedia/BHQZ/inscripcion.jpg"
+            src="/multimedia/BHQZ/inscripcion.webp"
             alt=""
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover"

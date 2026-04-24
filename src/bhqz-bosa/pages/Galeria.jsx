@@ -46,7 +46,7 @@ export default function Galeria() {
         <HeroSection
           title="Galería"
           subtitle="Descubre los momentos, trabajos y eventos de nuestra comunidad BHQZ Bosa."
-          backgroundImage="/multimedia/BHQZ/fotos/dog.png"
+          backgroundImage="/multimedia/BHQZ/fotos/dog.webp"
         />
 
         {/* Category Filters */}
@@ -149,7 +149,7 @@ export default function Galeria() {
           className="bg-cover bg-center bg-no-repeat py-12 text-white md:py-16 lg:py-24"
           style={{
             backgroundImage:
-              "linear-gradient(120deg, rgba(10, 10, 10, 0.72), rgba(23, 23, 23, 0.58)), url('/multimedia/BHQZ/fotos/foto11.jpg')",
+              "linear-gradient(120deg, rgba(10, 10, 10, 0.72), rgba(23, 23, 23, 0.58)), url('/multimedia/BHQZ/fotos/foto11.webp')",
           }}
         >
           <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 text-center">

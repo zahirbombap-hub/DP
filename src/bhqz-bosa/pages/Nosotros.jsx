@@ -41,7 +41,7 @@ export default function Nosotros() {
       <section 
         className="hero-nosotros py-16 md:py-24 text-white relative bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/multimedia/BHQZ/fondo%20Mingavsargen.png)',
+          backgroundImage: 'url(/multimedia/BHQZ/fondo%20Mingavsargen.webp)',
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -127,7 +127,7 @@ export default function Nosotros() {
       {/* CTA Section (background image) */}
       <section
         className="py-16 md:py-24 text-white relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/multimedia/BHQZ/fotos/comunidad.jpg)' }}
+        style={{ backgroundImage: 'url(/multimedia/BHQZ/fotos/comunidad.webp)' }}
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="container mx-auto px-4 text-center relative z-10">

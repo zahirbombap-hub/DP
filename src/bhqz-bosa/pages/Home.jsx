@@ -14,17 +14,17 @@ import {
 
 const ctaBackgroundImages = [
   {
-    src: '/multimedia/BHQZ/fotos/convocatoriavolley.jpg',
+    src: '/multimedia/BHQZ/fotos/convocatoriavolley.webp',
     alt: 'Convocatoria de volleyball',
     position: 'center 44%',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto6.jpg',
+    src: '/multimedia/BHQZ/fotos/foto6.webp',
     alt: 'Jugadora de BHQZ en cancha',
     position: 'center 5%',
   },
   {
-    src: '/multimedia/BHQZ/fotos/patinaje.png',
+    src: '/multimedia/BHQZ/fotos/patinaje.webp',
     alt: 'Entrenamiento de patinaje BHQZ',
     position: 'center 38%',
   },
@@ -92,7 +92,7 @@ export default function Home() {
             <SplitSection
               leftContent={
                 <img
-                  src="/multimedia/BHQZ/fotos/foto1.jpg"
+                  src="/multimedia/BHQZ/fotos/foto1.webp"
                   alt="Jugador destacado de BHQZ"
                   className="h-[260px] w-full object-cover object-top md:h-full md:object-center"
                 />
