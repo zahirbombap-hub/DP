@@ -262,56 +262,62 @@ export default function Z7Layout({ children, isHome = false }) {
         {/* Footer */}
         <footer className="w-full bg-gradient-to-b from-red-950 to-black text-white">
           {/* Main Footer */}
-          <div className="w-full px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+          <div className="w-full px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+            <div className="max-w-5xl mx-auto">
               {/* Top section with logo and description */}
-              <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-12 md:grid-cols-2 xl:grid-cols-5 xl:gap-12">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-6 border-b border-white/10 pb-6 sm:gap-x-8 sm:gap-y-7 sm:pb-8 lg:grid-cols-12">
                 {/* Brand Section */}
-                <div className="text-center md:col-span-2 md:text-left xl:col-span-2">
-                  <div className="mb-6 flex flex-col items-center gap-5 md:flex-row md:items-center">
-                    <div className="flex h-28 w-28 shrink-0 items-center justify-center rounded-3xl border border-white/10 bg-white/5 p-3 shadow-[0_18px_40px_rgba(0,0,0,0.28)]">
+                <div className="col-span-2 text-center sm:text-left lg:col-span-5">
+                  <div className="mb-3 flex items-center justify-center gap-3 sm:mb-4 sm:gap-4 sm:justify-start">
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 p-1.5 shadow-[0_14px_28px_rgba(0,0,0,0.22)] sm:h-24 sm:w-24 sm:rounded-2xl sm:p-2.5">
                       <img 
                         src="/multimedia/BHQZ/logo.gif"
                         alt="BHQZ Logo"
                         className="h-full w-full object-contain"
                       />
                     </div>
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-yellow-300">BHQZ</p>
-                      <h3 className="text-2xl font-bold text-white sm:text-3xl">Bosa</h3>
+                    <div className="space-y-1">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-yellow-300 sm:text-xs">BHQZ</p>
+                      <h3 className="text-lg font-bold text-white sm:text-2xl">Bosa</h3>
                     </div>
                   </div>
-                  <p className="mx-auto max-w-md text-sm leading-6 text-gray-300 md:mx-0">
+                  <p className="mx-auto max-w-xs text-[13px] leading-5 text-gray-300 sm:mx-0 sm:max-w-sm sm:text-sm sm:leading-6 lg:max-w-md">
                     Más que un club, una familia. Promoviendo el arte, la cultura y el deporte.
                   </p>
-                  <div className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
+                  <div className="mt-4 flex flex-wrap justify-center gap-2 sm:mt-5 sm:gap-2.5 sm:justify-start">
                     <a
                       href="https://wa.me/573219943061"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all duration-300 hover:bg-yellow-400 hover:text-red-950"
+                      className="group flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 p-1.5 text-white transition-all duration-300 hover:bg-yellow-400 hover:text-red-950 sm:h-10 sm:w-10 sm:p-2"
                       aria-label="WhatsApp"
                     >
-                      <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.732 5.41 2.123 7.723l-2.254 8.23 8.467-2.222c2.236 1.214 4.743 1.857 7.466 1.857 9.793 0 17.789-7.995 17.789-17.789 0-4.726-1.888-9.169-5.320-12.601-3.432-3.432-7.875-5.32-12.601-5.32"/>
-                      </svg>
+                      <img
+                        src="/multimedia/whatssappblanco.png"
+                        alt=""
+                        aria-hidden="true"
+                        className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                      />
                     </a>
                     <a
                       href="https://instagram.com/bhqzfc"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all duration-300 hover:bg-yellow-400 hover:text-red-950"
+                      className="group flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 p-1.5 text-white transition-all duration-300 hover:bg-yellow-400 hover:text-red-950 sm:h-10 sm:w-10 sm:p-2"
                       aria-label="Instagram"
                     >
-                      <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
-                      </svg>
+                      <img
+                        src="/multimedia/logoinstagram.png"
+                        alt=""
+                        aria-hidden="true"
+                        className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                      />
                     </a>
                     <a
                       href="https://facebook.com/bhqzfc"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all duration-300 hover:bg-yellow-400 hover:text-red-950"
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all duration-300 hover:bg-yellow-400 hover:text-red-950 sm:h-10 sm:w-10"
                       aria-label="Facebook"
                     >
                       <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -322,63 +328,63 @@ export default function Z7Layout({ children, isHome = false }) {
                 </div>
 
                 {/* Información Links */}
-                <div className="text-center md:text-left">
-                  <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-white">Información</h4>
-                  <nav className="flex flex-col gap-3">
-                    <a href="/bhqz-bosa" className="text-sm text-gray-300 hover:text-yellow-300 transition-colors duration-300">
+                <div className="mx-auto w-full max-w-[10rem] text-left lg:col-span-2 lg:max-w-none">
+                  <h4 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white sm:mb-3 sm:text-sm">Información</h4>
+                  <nav className="flex flex-col gap-1.5 sm:gap-2.5">
+                    <a href="/bhqz-bosa" className="text-[13px] text-gray-300 transition-colors duration-300 hover:text-yellow-300 sm:text-sm">
                       Inicio
                     </a>
-                    <a href="/bhqz-bosa/nosotros" className="text-sm text-gray-300 hover:text-yellow-300 transition-colors duration-300">
+                    <a href="/bhqz-bosa/nosotros" className="text-[13px] text-gray-300 transition-colors duration-300 hover:text-yellow-300 sm:text-sm">
                       Nosotros
                     </a>
-                    <a href="/bhqz-bosa/programas" className="text-sm text-gray-300 hover:text-yellow-300 transition-colors duration-300">
+                    <a href="/bhqz-bosa/programas" className="text-[13px] text-gray-300 transition-colors duration-300 hover:text-yellow-300 sm:text-sm">
                       Programas
                     </a>
-                    <a href="/bhqz-bosa/galeria" className="text-sm text-gray-300 hover:text-yellow-300 transition-colors duration-300">
+                    <a href="/bhqz-bosa/galeria" className="text-[13px] text-gray-300 transition-colors duration-300 hover:text-yellow-300 sm:text-sm">
                       Galería
                     </a>
                   </nav>
                 </div>
 
                 {/* Contacto Links */}
-                <div className="text-center md:text-left">
-                  <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-white">Comunidad</h4>
-                  <nav className="flex flex-col gap-3">
-                    <a href="/bhqz-bosa/inscripciones" className="text-sm text-gray-300 hover:text-yellow-300 transition-colors duration-300">
+                <div className="mx-auto w-full max-w-[10rem] text-left lg:col-span-2 lg:max-w-none">
+                  <h4 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white sm:mb-3 sm:text-sm">Comunidad</h4>
+                  <nav className="flex flex-col gap-1.5 sm:gap-2.5">
+                    <a href="/bhqz-bosa/inscripciones" className="text-[13px] text-gray-300 transition-colors duration-300 hover:text-yellow-300 sm:text-sm">
                       Inscripciones
                     </a>
-                    <a href="/bhqz-bosa/contacto" className="text-sm text-gray-300 hover:text-yellow-300 transition-colors duration-300">
+                    <a href="/bhqz-bosa/contacto" className="text-[13px] text-gray-300 transition-colors duration-300 hover:text-yellow-300 sm:text-sm">
                       Contacto
                     </a>
-                    <span className="text-sm text-gray-300">
+                    <span className="text-[13px] text-gray-300 sm:text-sm">
                       Eventos
                     </span>
-                    <span className="text-sm text-gray-300">
+                    <span className="text-[13px] text-gray-300 sm:text-sm">
                       Noticias
                     </span>
                   </nav>
                 </div>
 
                 {/* Categorías */}
-                <div className="text-center md:text-left">
-                  <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-white">Categorías</h4>
-                  <div className="flex flex-wrap justify-center gap-2 md:justify-start">
-                    <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-200">Sub-10</div>
-                    <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-200">Sub-12</div>
-                    <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-200">Sub-15</div>
-                    <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-200">Sub-17</div>
-                    <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-200">Mayores</div>
+                <div className="col-span-2 mx-auto w-full max-w-sm text-left sm:text-left lg:col-span-3 lg:max-w-none">
+                  <h4 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white sm:mb-3 sm:text-sm">Categorías</h4>
+                  <div className="flex flex-wrap gap-1.5 sm:justify-start">
+                    <div className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-gray-200 sm:px-3 sm:text-sm">Sub-10</div>
+                    <div className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-gray-200 sm:px-3 sm:text-sm">Sub-12</div>
+                    <div className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-gray-200 sm:px-3 sm:text-sm">Sub-15</div>
+                    <div className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-gray-200 sm:px-3 sm:text-sm">Sub-17</div>
+                    <div className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-gray-200 sm:px-3 sm:text-sm">Mayores</div>
                   </div>
                 </div>
               </div>
 
               {/* Bottom section with copyright */}
-              <div className="flex flex-col gap-6 pt-8 text-center lg:flex-row lg:items-center lg:justify-between lg:text-left">
-                <div className="text-sm text-gray-400">
+              <div className="flex flex-col gap-2 pt-4 text-center sm:pt-6 md:flex-row md:items-center md:justify-between md:text-left">
+                <div className="text-xs text-gray-400 sm:text-sm">
                   <p>© 2026 BHQZ Bosa. Todos los derechos reservados.</p>
-                  <p className="mt-2 text-xs text-gray-500">Participamos en los mejores torneos de Colombia.</p>
+                  <p className="mt-1 text-[11px] text-gray-500 sm:text-xs">Participamos en los mejores torneos de Colombia.</p>
                 </div>
-                <div className="text-sm text-gray-400">
+                <div className="text-xs text-gray-400 sm:text-sm">
                   <p>Diseño y Desarrollo: 
                     <a
                       href="https://donprueba.online/"
@@ -395,10 +401,10 @@ export default function Z7Layout({ children, isHome = false }) {
           </div>
 
           {/* Legal Links Bar */}
-          <div className="border-t border-white/10 bg-black/50">
-            <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-              <div className="flex flex-col gap-4 text-center text-xs text-gray-400 md:flex-row md:items-center md:justify-between md:text-left">
-                <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
+          <div className="border-t border-white/10 bg-black/40">
+            <div className="max-w-5xl mx-auto px-4 py-3 sm:px-6 sm:py-5 lg:px-8">
+              <div className="flex flex-col gap-2 text-center text-[11px] text-gray-400 sm:text-xs md:flex-row md:items-center md:justify-between md:text-left">
+                <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 md:justify-start">
                   <span>Términos y Condiciones</span>
                   <span>Política de Privacidad</span>
                 </div>
