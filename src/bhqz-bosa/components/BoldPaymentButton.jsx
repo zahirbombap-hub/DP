@@ -8,6 +8,7 @@ export default function BoldPaymentButton({
   className = "",
   variant = "primary",
   loading = false,
+  ...props
 }) {
   const handlePayment = () => {
     if (onPaymentClick) {
@@ -17,10 +18,10 @@ export default function BoldPaymentButton({
     }
   };
 
-    const baseStyles = "flex items-center justify-center gap-2 px-6 md:px-8 py-1 md:py-1.5 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed";
+    const baseStyles = "flex items-center justify-center gap-2 px-6 md:px-8 py-1 md:py-1.5 rounded-full font-semibold disabled:opacity-50 disabled:cursor-not-allowed";
 
     const variantStyles = {
-        primary: "text-white hover:shadow-lg hover:opacity-90",
+        primary: "text-white hover:opacity-95 shadow-md",
         secondary: "bg-white border-2 hover:opacity-90",
         outline: "bg-transparent border-2 hover:opacity-10",
     };
@@ -44,7 +45,7 @@ export default function BoldPaymentButton({
             onClick={handlePayment}
             disabled={loading}
             className={`${baseStyles} ${variantStyles[variant]} ${className}`}
-            style={gradientStyle[variant]}
+            style={{ ...gradientStyle[variant], ...props.style }}
             aria-label="Pagar con "
         >
             <span className="text-xs md:text-xs lg:text-sm whitespace-nowrap">

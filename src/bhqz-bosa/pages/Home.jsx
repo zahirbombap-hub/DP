@@ -30,12 +30,13 @@ const ctaBackgroundImages = [
   },
 ];
 
+const STATS_DATA = [
+  { value: '500', label: 'Miembros activos' },
+  { value: '10', label: 'Programas' },
+  { value: '15', label: 'Años de experiencia' },
+];
+
 export default function Home() {
-  const stats = [
-    { value: '500+', label: 'Miembros activos' },
-    { value: '10+', label: 'Programas' },
-    { value: '15+', label: 'Años de experiencia' },
-  ];
   const [ctaBackgroundIndex, setCtaBackgroundIndex] = useState(0);
 
   useEffect(() => {
@@ -55,16 +56,15 @@ export default function Home() {
           subheadline="Descubre nuestros programas y servicios deportivos"
           ctaText="Explorar programas"
           ctaLink="/bhqz-bosa/programas"
+          showHeader={false}
         />
 
         <div style={{ position: 'relative' }}>
-          <div style={{ position: 'sticky', top: 0, zIndex: 10 }}>
-            <AboutZ7
-              title="Sobre BHQZ Bosa"
-              description="BHQZ Bosa es una organizacion dedicada a promover el desarrollo integral de nuestros miembros a traves de la combinacion del arte, la cultura y el deporte. Creemos que estas disciplinas son fundamentales para crear una comunidad fuerte, inclusiva y transformadora."
-              stats={stats}
-            />
-          </div>
+          <AboutZ7
+            title="Sobre BHQZ Bosa"
+            description="BHQZ Bosa es una organizacion dedicada a promover el desarrollo integral de nuestros miembros a traves de la combinacion del arte, la cultura y el deporte. Creemos que estas disciplinas son fundamentales para crear una comunidad fuerte, inclusiva y transformadora."
+            stats={STATS_DATA}
+          />
 
           <div
             style={{
@@ -72,7 +72,7 @@ export default function Home() {
               zIndex: 20,
               borderRadius: '1.5rem 1.5rem 0 0',
               overflow: 'hidden',
-              marginTop: '-2rem',
+              marginTop: '-2rem', // Se mantiene para desktop, pero AboutZ7 ahora tiene pb-20
             }}
           >
             <section className="bg-[#080808]">

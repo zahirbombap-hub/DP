@@ -13,11 +13,13 @@ const navItems = [
   { label: "Contacto", to: "/bhqz-bosa/contacto" },
 ];
 
-export default function Z7Layout({ children, isHome = false }) {
+export default function Z7Layout({ children, isHome = false, hideHeader = false }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1180);
-  const showBosaLogoBackdrop = isHome && !hasScrolled && !mobileMenuOpen;
+  const isHomeHeroState = isHome && !hasScrolled && !mobileMenuOpen;
+  const showBosaLogoBackdrop = isHomeHeroState;
+  const useFixedHeader = isHome || !isDesktop;
   const fontFaceStyles = `
     @font-face {
       font-family: "BHQZObjectSans";
@@ -161,7 +163,7 @@ export default function Z7Layout({ children, isHome = false }) {
                 amount={50000}
                 productName="Membresía BHQZ"
                 variant="primary"
-                className="w-full justify-center text-xs sm:text-sm py-3"
+                className="w-full justify-center"
                 onClick={closeMobileMenu}
               />
             </div>
@@ -184,8 +186,9 @@ export default function Z7Layout({ children, isHome = false }) {
         }}
       >
         {/* Header */}
+        {!hideHeader && (
         <header
-          className={`${isDesktop ? "sticky" : "fixed"} top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+          className={`${useFixedHeader ? "fixed" : "sticky"} top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
             isHome
               ? (hasScrolled || mobileMenuOpen
                   ? "bg-gradient-to-l from-black via-red-950 to-red-900 shadow-[0_14px_34px_rgba(0,0,0,0.28)]"
@@ -193,7 +196,7 @@ export default function Z7Layout({ children, isHome = false }) {
               : "bg-gradient-to-l from-black via-red-950 to-red-900 shadow-[0_14px_34px_rgba(0,0,0,0.28)]"
           }`}
           style={
-            !isDesktop ? {
+            useFixedHeader ? {
               position: "fixed",
               top: 0,
               left: 0,
@@ -242,7 +245,7 @@ export default function Z7Layout({ children, isHome = false }) {
                   amount={50000}
                   productName="Membresía BHQZ"
                   variant="primary"
-                  className="text-xs sm:text-sm py-2 px-2 sm:px-3 sm:py-2 flex-shrink-0"
+                  className="flex-shrink-0"
                 />
               </div>
 
@@ -252,7 +255,11 @@ export default function Z7Layout({ children, isHome = false }) {
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className={`${isDesktop ? "hidden" : "inline-flex"} items-center justify-center p-2 text-yellow-300 hover:text-yellow-200 transition-colors`}
+                  className={`${isDesktop ? "hidden" : "inline-flex"} items-center justify-center transition-all duration-300 ${
+                    isHomeHeroState
+                      ? "h-11 w-11 rounded-full border border-white/15 bg-white/5 text-white shadow-[0_14px_30px_rgba(0,0,0,0.18)] backdrop-blur-sm hover:border-white/30 hover:bg-white/10"
+                      : "p-2 text-yellow-300 hover:text-yellow-200"
+                  }`}
                   aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
                   aria-expanded={mobileMenuOpen}
                 >
@@ -263,23 +270,24 @@ export default function Z7Layout({ children, isHome = false }) {
                 <div
                   className={`hidden sm:flex items-center justify-center rounded-2xl transition-all duration-300 ${
                     showBosaLogoBackdrop
-                      ? "border border-white/10 bg-red-900/40 px-2 py-1.5 shadow-[0_14px_30px_rgba(0,0,0,0.22)] backdrop-blur-sm"
+                      ? "rounded-[1.65rem] border border-red-500/20 bg-red-950/40 px-3 py-2 shadow-[0_18px_34px_rgba(153,27,27,0.3)] backdrop-blur-md"
                       : "border border-transparent bg-transparent px-0 py-0 shadow-none"
                   }`}
                 >
                   <img 
                     src="/multimedia/BHQZ/bosaazul.webp"
                     alt="BHQZ Bosa" 
-                    className="h-12 sm:h-20 w-auto object-contain"
+                    className="h-12 sm:h-20 lg:h-[4.4rem] w-auto object-contain"
                   />
                 </div>
               </div>
             </div>
           </div>
         </header>
+        )}
 
         {/* Main Content */}
-        <main className="z7-main flex-1 w-full relative z-10" style={{ paddingTop: !isDesktop ? "5rem" : "0" }}>
+        <main className="z7-main flex-1 w-full relative z-10" style={{ paddingTop: !isDesktop && !hideHeader && !isHome ? "5rem" : "0" }}>
           <div className="w-full">
             {children}
           </div>
@@ -444,9 +452,11 @@ export default function Z7Layout({ children, isHome = false }) {
       </div>
 
       {/* Mobile Menu Portal */}
-      {typeof document !== "undefined"
-        ? createPortal(mobileMenu, document.body)
-        : mobileMenu}
+      {!hideHeader && (
+        typeof document !== "undefined"
+          ? createPortal(mobileMenu, document.body)
+          : mobileMenu
+      )}
     </>
   );
 }
