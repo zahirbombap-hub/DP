@@ -8,7 +8,7 @@ import {
   HeroZ7,
   AboutZ7,
   ProgressiveCarousel,
-  SplitSection,
+  SportLevelSection,
   GalleryShowcaseSection,
 } from '../components/index.jsx';
 
@@ -19,9 +19,9 @@ const ctaBackgroundImages = [
     position: 'center 44%',
   },
   {
-    src: '/multimedia/BHQZ/fotos/foto6.webp',
-    alt: 'Jugadora de BHQZ en cancha',
-    position: 'center 5%',
+    src: '/multimedia/BHQZ/fotos/comunidad.webp',
+    alt: 'Charla de equipo',
+    position: '',
   },
   {
     src: '/multimedia/BHQZ/fotos/patinaje.webp',
@@ -89,38 +89,7 @@ export default function Home() {
               marginTop: '-2rem',
             }}
           >
-            <SplitSection
-              leftContent={
-                <img
-                  src="/multimedia/BHQZ/fotos/foto1.webp"
-                  alt="Jugador destacado de BHQZ"
-                  className="h-[260px] w-full object-cover object-top md:h-full md:object-center"
-                />
-              }
-              rightContent={
-                <div className="max-w-xl space-y-6">
-                  <h3 className="z7-section-title text-[2rem] font-bold text-white">
-                    Tu deporte, al siguiente nivel
-                  </h3>
-                  <p className="text-base leading-relaxed text-white">
-                    Encuentros, entrenamientos y asesorias profesionales disenados para llevarte mas lejos, sin importar tu nivel.
-                  </p>
-                  <ul className="list-disc space-y-3 pl-5 text-base leading-relaxed text-white">
-                    <li>Entrenamientos personalizados</li>
-                    <li>Acompanamiento y asesoria profesional</li>
-                    <li>Competencias y eventos deportivos</li>
-                    <li>Actividades culturales y comunitarias</li>
-                  </ul>
-                    <a
-                      href="/bhqz-bosa/programas"
-                      className="inline-block rounded-lg px-8 py-3 font-semibold text-white bg-gradient-to-b from-red-700 via-red-800 to-red-900 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-red-600 shadow-sm"
-                    >
-                      Ver todos los programas
-                    </a>
-                </div>
-              }
-              containerClassName="my-0"
-            />
+            <SportLevelSection />
           </div>
 
           <div

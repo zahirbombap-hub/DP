@@ -454,7 +454,7 @@ export default function HeroZ7({
         <div className="relative z-20 flex min-h-screen items-end">
           <div className="mx-auto flex w-full max-w-7xl px-4 pb-16 pt-32 sm:px-6 sm:pb-20 sm:pt-36 lg:px-8 lg:pb-24 lg:pt-40">
             <div className="max-w-4xl text-white">
-              <h1 className="z7-hero-title text-4xl font-black leading-[0.9] tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
+              <h1 className="z7-hero-title text-4xl font-normal leading-[0.9] tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
                 {headlineWords.map((word, index) => (
                   <span
                     key={`${word}-${index}`}
@@ -476,7 +476,7 @@ export default function HeroZ7({
               </h1>
 
               <p
-                className="z7-subtitle-font reveal reveal-delay mt-6 max-w-2xl text-base leading-relaxed text-white/82 sm:text-lg md:mt-8 md:text-xl"
+                className="reveal reveal-delay mt-6 max-w-2xl text-base leading-relaxed text-white/82 sm:text-lg md:mt-8 md:text-xl font-normal"
                 data-delay="0.58"
                 style={{
                   '--reveal-y': '30px',

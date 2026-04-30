@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Seo } from '../../components/Seo.jsx';
 import { Z7Layout, AboutZ7 } from '../components/index.jsx';
+import { CTA_CAROUSEL_IMAGES } from '../data/ctaCarouselImages.js';
 
 function usePageLoadAnimation() {
   const [isActive, setIsActive] = useState(false);
@@ -21,29 +22,13 @@ function usePageLoadAnimation() {
 }
 
 const NOSOTROS_STATS = [
-  { value: '500+', label: 'Miembros activos' },
-  { value: '50+', label: 'Programas' },
-  { value: '15+', label: 'Años de experiencia' }
+  { value: '500', label: 'Miembros activos' },
+  { value: '50', label: 'Programas' },
+  { value: '15', label: 'Años de experiencia' }
 ];
 
 export default function Nosotros() {
-  const ctaBackgroundImages = [
-    {
-      src: '/multimedia/BHQZ/fotos/comunidad.webp',
-      alt: 'Comunidad BHQZ',
-      position: 'center 44%',
-    },
-    {
-      src: '/multimedia/BHQZ/fotos/foto6.webp',
-      alt: 'Evento BHQZ',
-      position: 'center 5%',
-    },
-    {
-      src: '/multimedia/BHQZ/fotos/patinaje.webp',
-      alt: 'Patinaje BHQZ',
-      position: 'center 38%',
-    },
-  ];
+  const ctaBackgroundImages = CTA_CAROUSEL_IMAGES;
 
   const values = [
     {
@@ -182,20 +167,22 @@ export default function Nosotros() {
 
       <div className="relative">
         {/* About Section with Stats */}
-        <div className="relative z-10 reveal-trigger">
-          <div className="w-full">
-            <AboutZ7
-              title="Sobre BHQZ Bosa"
-              description="BHQZ Bosa es una organización dedicada a promover el desarrollo integral de nuestros miembros a través de la combinación del arte, la cultura y el deporte. Desde hace más de 15 años, hemos trabajado incansablemente para crear un espacio donde cada persona pueda descubrir su potencial y crecer en un ambiente de respeto, inclusión y excelencia."
-              stats={NOSOTROS_STATS}
-            />
+        <section className="relative z-10 overflow-hidden rounded-b-[2.5rem]" style={{ backgroundColor: '#0f0404' }}>
+          <div className="reveal-trigger">
+            <div className="w-full">
+              <AboutZ7
+                title="Sobre BHQZ Bosa"
+                description="BHQZ Bosa es una organización dedicada a promover el desarrollo integral de nuestros miembros a través de la combinación del arte, la cultura y el deporte. Desde hace más de 15 años, hemos trabajado incansablemente para crear un espacio donde cada persona pueda descubrir su potencial y crecer en un ambiente de respeto, inclusión y excelencia."
+                stats={NOSOTROS_STATS}
+              />
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* Misión + Visión + Valores Section */}
         <section 
           ref={sectionRef}
-          className="relative z-20 -mt-12 overflow-hidden rounded-t-[2.5rem] pb-16 pt-16 md:-mt-16 md:pb-24 md:pt-24"
+          className="relative z-20 overflow-hidden rounded-t-[2.5rem] pb-16 pt-4 md:pb-24 md:pt-4"
           style={{ backgroundColor: '#0f0404' }}
         >
         <style>{`
@@ -262,7 +249,7 @@ export default function Nosotros() {
           }
           
           .eyebrow {
-            font-size: 10px;
+            font-size: 12px;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: #cc3300;
@@ -271,7 +258,7 @@ export default function Nosotros() {
           }
           
           .card-title {
-            font-size: 22px;
+            font-size: 28px;
             font-weight: bold;
             font-style: italic;
             color: #ffffff;
@@ -279,7 +266,7 @@ export default function Nosotros() {
           }
           
           .card-body {
-            font-size: 14px;
+            font-size: 16px;
             color: #999999;
             line-height: 1.6;
           }
@@ -292,14 +279,14 @@ export default function Nosotros() {
           }
           
           .valor-emoji {
-            font-size: 18px;
+            font-size: 24px;
             margin-bottom: 6px;
             display: block;
             transition: transform 0.25s ease;
           }
           
           .valor-title {
-            font-size: 11px;
+            font-size: 13px;
             text-transform: uppercase;
             color: #e04020;
             font-weight: bold;
@@ -308,7 +295,7 @@ export default function Nosotros() {
           }
           
           .valor-desc {
-            font-size: 10px;
+            font-size: 12px;
             color: #777777;
             line-height: 1.5;
           }

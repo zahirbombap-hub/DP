@@ -341,10 +341,10 @@ export default function AboutZ7({
                     style={{ transitionDelay: `${index * STAGGER_DELAY_MS}ms` }}
                   >
                     <div
-                      className="z7-number-font text-xl sm:text-4xl md:text-5xl font-bold text-red-500 mb-1 sm:mb-3"
+                      className="z7-number-font text-xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-3"
                       style={{ fontVariantNumeric: 'tabular-nums' }}
                     >
-                      {stat.value}
+                      +{stat.value}
                       {suffix}
                     </div>
                     <p className="text-[10px] leading-tight sm:text-sm md:text-base text-white/90 font-semibold line-clamp-2">

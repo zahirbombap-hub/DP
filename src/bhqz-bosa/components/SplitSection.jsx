@@ -13,7 +13,7 @@ export default function SplitSection({
 }) {
   return (
     <section
-      className={`split-section relative w-screen overflow-hidden bg-black py-0 ${containerClassName}`}
+      className={`mb-8 split-section relative w-screen overflow-hidden bg-black py-0 ${containerClassName}`}
       style={{
         marginLeft: 'calc(50% - 50vw)',
         marginRight: 'calc(50% - 50vw)',
