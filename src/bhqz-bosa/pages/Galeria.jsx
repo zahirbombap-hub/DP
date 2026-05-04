@@ -5,32 +5,12 @@ import { Seo } from '../../components/Seo.jsx';
 import { Z7Layout, HeroSection, CtaCarouselSection } from '../components/index.jsx';
 
 const GALLERY_DATA = [
-  // Fútbol
-  { id: 1, src: '/multimedia/BHQZ/fotos/foto1.webp', caption: 'Entrenamiento en el campo', category: 'futbol' },
-  { id: 2, src: '/multimedia/BHQZ/fotos/foto3.webp', caption: 'Partida de práctica', category: 'futbol' },
-  { id: 3, src: '/multimedia/BHQZ/fotos/foto6.webp', caption: 'Sesión de entrenamiento grupal', category: 'futbol' },
-  { id: 4, src: '/multimedia/BHQZ/fotos/messi.webp', caption: 'Técnica y habilidad', category: 'futbol' },
-  { id: 5, src: '/multimedia/BHQZ/fotos/Vs-Japon.webp', caption: 'Torneo Internacional', category: 'futbol' },
-  { id: 6, src: '/multimedia/BHQZ/fotos/DSC0799-1024x683.webp', caption: 'Práctica competitiva', category: 'futbol' },
-  { id: 7, src: '/multimedia/BHQZ/fotos/DSC0837-1024x683.webp', caption: 'Momento de juego', category: 'futbol' },
-  
-  // Voleibol
-  { id: 8, src: '/multimedia/BHQZ/fotos/convocatoriavolley.webp', caption: 'Convocatoria voleibol', category: 'voleibol' },
-  { id: 9, src: '/multimedia/BHQZ/fotos/voleyballbhqz.webp', caption: 'Sesión de voleibol BHQZ', category: 'voleibol' },
-  
-  // Patinaje
-  { id: 10, src: '/multimedia/BHQZ/fotos/patinaje.webp', caption: 'Entrenamiento de patinaje', category: 'patinaje' },
-  { id: 11, src: '/multimedia/BHQZ/fotos/patinajecol.webp', caption: 'Patinaje en grupo', category: 'patinaje' },
-  
-  // Comunidad
-  { id: 12, src: '/multimedia/BHQZ/fotos/comunidad.webp', caption: 'Evento comunitario', category: 'comunidad' },
-  { id: 13, src: '/multimedia/BHQZ/fotos/foto5.webp', caption: 'Encuentro comunitario', category: 'comunidad' },
-  { id: 14, src: '/multimedia/BHQZ/fotos/foto11.webp', caption: 'Reunión del equipo', category: 'comunidad' },
-  { id: 15, src: '/multimedia/BHQZ/fotos/fotoprofe.webp', caption: 'Con nuestros entrenadores', category: 'comunidad' },
-  { id: 16, src: '/multimedia/BHQZ/fotos/DSC0586-683x1024.webp', caption: 'Momento especial de la comunidad', category: 'comunidad' },
-  { id: 17, src: '/multimedia/BHQZ/fotos/DSC0624-1365x2048.webp', caption: 'Celebración comunitaria', category: 'comunidad' },
-  { id: 18, src: '/multimedia/BHQZ/fotos/DSC0763-copia.webp', caption: 'Actividad grupal', category: 'comunidad' },
-  { id: 19, src: '/multimedia/BHQZ/fotos/DSC1012-1365x2048.webp', caption: 'Diversidad en BHQZ', category: 'comunidad' },
+  { id: 1, src: '/multimedia/BHQZ/fotos/foto1.webp', caption: 'Entrenamiento matutino', category: 'futbol' },
+  { id: 2, src: '/multimedia/BHQZ/fotos/foto2.webp', caption: 'Partido de práctica', category: 'futbol' },
+  { id: 3, src: '/multimedia/BHQZ/fotos/foto3.webp', caption: 'Sesión de voleibol', category: 'voleibol' },
+  { id: 4, src: '/multimedia/BHQZ/fotos/foto4.webp', caption: 'Evento comunitario', category: 'comunidad' },
+  { id: 5, src: '/multimedia/BHQZ/fotos/foto5.webp', caption: 'Patinaje avanzado', category: 'patinaje' },
+  { id: 6, src: '/multimedia/BHQZ/fotos/foto6.webp', caption: 'Entrenamiento grupal', category: 'futbol' },
 ];
 
 const CATEGORIES = [
