@@ -177,7 +177,7 @@ export function Hero() {
           <span className="text-[#ff3d4d] text-[9px] font-black tracking-[0.4em] uppercase font-['Space_Grotesk',sans-serif]">Don Prueba // Desarrollo de Software</span>
         </div>
         <h1 className="hero-title text-[14vw] sm:text-[11vw] leading-[0.82] not-italic uppercase tracking-[-0.04em] mb-8 text-white select-none">
-          DON <br className="md:hidden" /> PRUEBA
+          DON <br className="md:hidden" /> P
         </h1>
         <div className="max-w-3xl space-y-6">
           <p className="text-lg md:text-xl text-[#a1a1aa] font-light leading-snug tracking-tight font-['Space_Grotesk',sans-serif]">
